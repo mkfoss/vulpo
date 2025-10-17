@@ -1,0 +1,126 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>code4optAll</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\code4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=428>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="../code4.css">
+
+
+
+<!--(Style Sheet)===================================================-->
+
+<style>
+<!--
+
+A:visited {
+	color: #800080;
+}
+
+A:link {
+	color: #0000ff;
+}
+
+-->
+</style>
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>code4optAll</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int code4optAll( CODE4 *codebase )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function ensures that memory optimization is completely 
+ implemented. To do this, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4optAll 
+ </span></span>locks and fully read/write optimizes all data, index and 
+ memo files. Finally memory optimization is turned on through a call to 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4optStart</span></span>.</p>
+
+<p class=Body
+	style="text-indent: 0px;">By calling <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">code4optAll</span></span>, 
+ you can get an idea of how fast your application could run when it fully 
+ uses memory optimization. Call this function after you have opened all 
+ of your files.</p>
+
+<p class=Body
+	style="text-indent: 0px;">Use this function with caution in multi-user 
+ applications. Refer to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4optimize 
+ </span></span>and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4optimizeWrite 
+ </span></span>for more information.</p>
+
+<p class=Body><span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success</span></span>&nbsp;&nbsp; 
+ Success.</p>
+
+<p class=Body><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ r4locked</span></span>&nbsp;&nbsp; A required lock failed, so no optimization 
+ is implemented.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span>&nbsp;&nbsp; Error. The flushing failed when the optimization 
+ was disabled or <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ contained a negative value.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="code4optStart.htm">code4optStart</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../../Data_File_Functions/d4lockAll.htm">d4lockAll</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../../Data_File_Functions/d4lockAddAll.htm">d4lockAddAll</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="code4lock.htm">code4lock</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../../Data_File_Functions/d4optimize.htm">d4optimize</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../../Data_File_Functions/d4optimizeWrite.htm">d4optimizeWrite</a></span></p>
+
+</body>
+
+</html>

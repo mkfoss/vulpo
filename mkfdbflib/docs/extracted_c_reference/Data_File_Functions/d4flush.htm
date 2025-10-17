@@ -1,0 +1,233 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4flush</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1061>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4flush</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int d4flush( DATA4 *data )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>The data file, its index files (if any), and its memo files 
+ (if any) are all explicitly written to disk. This includes any field value 
+ changes. Once completed, the &quot;record changed&quot; flag is reset 
+ to false (zero). </p>
+
+<p class=Body
+	style="text-indent: 0px;">In addition, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4flush </span></span>tries 
+ to guarantee that all file changes are physically written to disk through 
+ a call to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">file4flush</span></span>. 
+ Refer to function <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">file4flush 
+ </span></span>for more information. </p>
+
+<p class=Body
+	style="text-indent: 0px;">If the current record number is unknown due 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4appendStart</span></span> 
+ being called or due to the file having been opened but not positioned 
+ to a record, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4flush 
+ </span></span>discards memo field changes and resets the &quot;record 
+ changed&quot; flag to false (zero). </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1039" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>If you are flushing a data file on a regular basis it 
+ is best to disable memory write optimization for the data file. This is 
+ because explicit flushing negates the benefits of write optimization. 
+ Refer to <span class=InlineFunctionNames><span style="font-size: 10.0pt;">CODE4.optimizeWrite</span></span>. 
+ </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ r4success&nbsp;&nbsp;&nbsp; </span></span>Success. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4locked&nbsp;&nbsp;&nbsp; 
+ </span></span>A required lock attempt did not succeed. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4unique&nbsp;&nbsp;&nbsp; 
+ </span></span>The record was not written due to the following circumstances: 
+ writing the record caused a duplicate key in a unique key tag and <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">t4unique 
+ </span></span>returned <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4unique</span></span> 
+ for the tag. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Error. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:&nbsp;&nbsp;&nbsp; 
+ </span></span>If changes have been made to any field, the record must 
+ be locked before it can be flushed. If a new lock is required, everything 
+ is unlocked according to the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4unlockAuto</span></span> 
+ setting and then the required lock is placed. If the required lock is 
+ already in place, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4flush</span></span> 
+ does not unlock or lock anything and after the flush is completed, the 
+ previous locks remain in place. </p>
+
+<p class=Body
+	style="text-indent: 0px;">The index files and append bytes may need 
+ to be locked during updates. If index files require locking, they are 
+ locked prior to the flush. After the flushing is complete, the index files 
+ are unlocked. If the index files are already locked, no new locking is 
+ required and after the flushing is finished, the index files remain locked. 
+ </p>
+
+<p class=Body
+	style="text-indent: 0px;">The above discussion on locking procedures 
+ for index files not only applies to flushing but to any case where index 
+ locking is performed.</p>
+
+<p class=Body><span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Client-Server:&nbsp;&nbsp;&nbsp; </span></span>In the client-server configuration, 
+ the changes are flushed to the server.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../File_Functions/file4flush.htm">file4flush</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CODE4_Structure_Variables/CODE4.optimizeWrite.htm">CODE4.optimizeWrite</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CodeBase_Function_Reference/code4unlockAuto.htm">code4unlockAuto</a></span></p>
+
+<p class=SourceCode>/*ex44.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FIELD4 *age ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;INFO&quot; 
+ );</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4top( data );</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4go( data, 2 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; age = d4field( data, &quot;AGE&quot; ) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4lockAll( data );</p>
+
+<p class=SourceCode>&nbsp;&nbsp; f4assignLong( age, 49 ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Explicitly flush the change to disk 
+ in case power goes out */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4flush( data ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* some other code*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4close( data ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

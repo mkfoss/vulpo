@@ -1,0 +1,411 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800002">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="C User's Guide">
+    <param name="Local" value="TITLE.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Legal Notices">
+      <param name="Local" value="LegalNotices.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Local" value="Introduction.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="How To Use This Manual">
+        <param name="Local" value="Introduction.htm#How_To_Use_This_Manual">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Database Concepts">
+      <param name="Local" value="Database_Concepts/1_Database_Concepts.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CodeBase File Format">
+        <param name="Local" value="Database_Concepts/1_Database_Concepts.htm#CodeBase_File_Format">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="C Programming">
+      <param name="Local" value="C_Programming/2_C_Programming.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Memory Corruption">
+        <param name="Local" value="C_Programming/2_C_Programming.htm#Memory_Corruption">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Structure Parameters">
+        <param name="Local" value="C_Programming/2_C_Programming.htm#Structure_Parameters">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="DataBase Access">
+      <param name="Local" value="DataBase_Access/3_DataBase_Access.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Getting Started">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Getting_Started">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CodeBase Components">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#CodeBase_Components">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="An Example CodeBase Program">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#An_Example_CodeBase_Program">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Initializing The CODE4 Structure">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Initializing_The_CODE4_Structure">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Opening Data Files">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Opening_Data_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Closing Data Files">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Closing_Data_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Moving Between Records">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Moving_Between_Records">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Accessing Fields">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Accessing_Fields">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Retrieving A Field's Contents">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Retrieving_A_Field_s_Contents">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Creating Data Files">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Creating_Data_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Adding New Records">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Adding_New_Records">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Assigning Field Values">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Assigning_Field_Values">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Removing Records">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Removing_Records">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Data File Information">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Data_File_Information">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Advanced Topics">
+        <param name="Local" value="DataBase_Access/3_DataBase_Access.htm#Advanced_Topics">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Indexing">
+      <param name="Local" value="Indexing/4_Indexing.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Indexes &amp; Tags">
+        <param name="Local" value="Indexing/4_Indexing.htm#Indexes_And_Tags">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Index Expressions">
+        <param name="Local" value="Indexing/4_Indexing.htm#Index_Expressions">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Creating An Index File">
+        <param name="Local" value="Indexing/4_Indexing.htm#Creating_An_Index_File">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Maintaining Index Files">
+        <param name="Local" value="Indexing/4_Indexing.htm#Maintaining_Index_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Opening Index Files">
+        <param name="Local" value="Indexing/4_Indexing.htm#Opening_Index_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Referencing Tags">
+        <param name="Local" value="Indexing/4_Indexing.htm#Referencing_Tags">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Selecting Tags">
+        <param name="Local" value="Indexing/4_Indexing.htm#Selecting_Tags">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Tag Filters">
+        <param name="Local" value="Indexing/4_Indexing.htm#Tag_Filters">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Unique Keys">
+        <param name="Local" value="Indexing/4_Indexing.htm#Unique_Keys">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Seeking">
+        <param name="Local" value="Indexing/4_Indexing.htm#Seeking">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Group Files">
+        <param name="Local" value="Indexing/4_Indexing.htm#Group_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Bypassing Group Files">
+        <param name="Local" value="Indexing/4_Indexing.htm#Bypassing_Group_Files">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Reindexing">
+        <param name="Local" value="Indexing/4_Indexing.htm#Reindexing">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Advanced Topics">
+        <param name="Local" value="Indexing/4_Indexing.htm#Advanced_Topics">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Queries And Relations">
+      <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Relations">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Relations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Complex Relations">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Complex_Relations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Relation Types">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Relation_Types">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Creating Relations">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Creating_Relations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Setting The Relation Type">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Setting_The_Relation_Type">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Moving Through The Composite Data File">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Moving_Through_The_Composite_Data_File">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Queries And Sorting">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Queries_And_Sorting">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Accessing The Query Set">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Accessing_The_Query_Set">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Queries On Multi-Layered Relation Sets">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Queries_On_Multi_Layered_Relation_Sets">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lookups On Relations">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Lookups_On_Relations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Iterating Through The Relations">
+        <param name="Local" value="Queries_And_Relations/5_Queries_And_Relations.htm#Iterating_Through_The_Relations">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Query Optimization">
+      <param name="Local" value="Query_Optimization/6_Query_Optimization.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="What is Query Optimization">
+        <param name="Local" value="Query_Optimization/6_Query_Optimization.htm#What_is_Query_Optimization">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="When is Query Optimization Used">
+        <param name="Local" value="Query_Optimization/6_Query_Optimization.htm#When_is_Query_Optimization_Used">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="How To Use Query Optimization">
+        <param name="Local" value="Query_Optimization/6_Query_Optimization.htm#How_To_Use_Query_Optimization">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Date Functions">
+      <param name="Local" value="Date_Functions/7_Date_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Date Pictures">
+        <param name="Local" value="Date_Functions/7_Date_Functions.htm#Date_Pictures">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Date Formats">
+        <param name="Local" value="Date_Functions/7_Date_Functions.htm#Date_Formats">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Testing For Invalid Dates">
+        <param name="Local" value="Date_Functions/7_Date_Functions.htm#Testing_For_Invalid_Dates">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Other Date Functions">
+        <param name="Local" value="Date_Functions/7_Date_Functions.htm#Other_Date_Functions">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Linked Lists">
+      <param name="Local" value="Linked_Lists/8_Linked_Lists.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="The Linked List">
+        <param name="Local" value="Linked_Lists/8_Linked_Lists.htm#The_Linked_List">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CodeBase Linked Lists">
+        <param name="Local" value="Linked_Lists/8_Linked_Lists.htm#CodeBase_Linked_Lists">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Dynamic Allocation">
+        <param name="Local" value="Linked_Lists/8_Linked_Lists.htm#Dynamic_Allocation">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Stacks And Queues">
+        <param name="Local" value="Linked_Lists/8_Linked_Lists.htm#Stacks_And_Queues">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Memory Optimizations">
+      <param name="Local" value="Memory_Optimizations/9_Memory_Optimizations.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Using Memory Optimizations">
+        <param name="Local" value="Memory_Optimizations/9_Memory_Optimizations.htm#Using_Memory_Optimizations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Memory Requirements">
+        <param name="Local" value="Memory_Optimizations/9_Memory_Optimizations.htm#Memory_Requirements">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="When To Use Memory Optimization">
+        <param name="Local" value="Memory_Optimizations/9_Memory_Optimizations.htm#When_To_Use_Memory_Optimization">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Multi-User Applications">
+      <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Locking">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Locking">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Creating Multi-User Applications">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Creating_Multi_User_Applications">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Common Multi-User Tasks">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Common_Multi_User_Tasks">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Multi-User Optimizations">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Multi_User_Optimizations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Avoiding Deadlock">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Avoiding_Deadlock">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Exclusive Access">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Exclusive_Access">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Read Only Mode">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Read_Only_Mode">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lock Attempts">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Lock_Attempts">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Automatic Record Locking">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Automatic_Record_Locking">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Enforced Locking">
+        <param name="Local" value="Multi_User_Applications/10_Multi-User_Applications.htm#Enforced_Locking">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Performance Tips">
+      <param name="Local" value="Performance_Tips/11_Performance_Tips.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Memory Optimization">
+        <param name="Local" value="Performance_Tips/11_Performance_Tips.htm#Memory_Optimization">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Locking">
+        <param name="Local" value="Performance_Tips/11_Performance_Tips.htm#Locking">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appending">
+        <param name="Local" value="Performance_Tips/11_Performance_Tips.htm#Appending">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Time Consuming Functions">
+        <param name="Local" value="Performance_Tips/11_Performance_Tips.htm#Time_Consuming_Functions">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Queries and Relations">
+        <param name="Local" value="Performance_Tips/11_Performance_Tips.htm#Queries_and_Relations">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="General Tips">
+        <param name="Local" value="Performance_Tips/11_Performance_Tips.htm#General_Tips">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Transaction Processing">
+      <param name="Local" value="Transaction_Processing/12_Transaction_Processing.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Logging in the Stand-Alone Case">
+        <param name="Local" value="Transaction_Processing/12_Transaction_Processing.htm#Logging_in_the_Stand_Alone_Case">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Logging in the Client-Server Case">
+        <param name="Local" value="Transaction_Processing/12_Transaction_Processing.htm#Logging_in_the_Client_Server_Case">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Locking">
+        <param name="Local" value="Transaction_Processing/12_Transaction_Processing.htm#Locking">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Transactions">
+        <param name="Local" value="Transaction_Processing/12_Transaction_Processing.htm#Transactions">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

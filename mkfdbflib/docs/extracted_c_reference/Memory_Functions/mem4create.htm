@@ -1,0 +1,134 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>mem4create</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=604>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>mem4create</h2>
+
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 193.5pt;
+			text-indent: -193.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>MEM4 *mem4create(CODE4 *code, int&nbsp;unitsStart, int&nbsp;unitSize, 
+ int&nbsp;unitsExpand, int&nbsp;makeTemp) </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>A pointer to a <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> 
+ structure is returned. This pointer can be used with<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> mem4alloc</span></span> 
+ to allocate memory from the pool.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">code&nbsp;&nbsp;&nbsp; 
+ </span></span>Under DOS, if the application has multiple <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> structures, 
+ it is preferable to send a null pointer for this parameter so that the 
+ memory may be shared among the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4s</span></span>. 
+ If there is only one <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> 
+ structure in the application, then pass the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> pointer, 
+ which allows CodeBase to free up memory when it's running low under DOS.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">unitsStart&nbsp;&nbsp;&nbsp; 
+ </span></span>This is the number of memory blocks that should be initially 
+ allocated, from operating system memory, for the memory type. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">unitSize&nbsp;&nbsp;&nbsp; 
+ </span></span>This is the size of each memory block to be allocated in 
+ terms of bytes. This value must be greater than or equal to 8 bytes. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">unitsExpand&nbsp;&nbsp;&nbsp; 
+ </span></span>This is the number of additional memory blocks that should 
+ be allocated, from operating system memory, when all of the memory blocks 
+ initially allocated are used. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">makeTemp&nbsp;&nbsp;&nbsp; 
+ </span></span>If <i>makeTemp </i>(make temporary) is false (zero), a pointer 
+ to a previously allocated <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> 
+ structure may be returned. This occurs when the <i>unitSize </i>parameter 
+ is the same as with a previous call. If a <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> structure 
+ is used twice, the values of <i>unitsStart </i>(if applicable) and <i>unitsExpand 
+ </i>become equal to either the previous settings or the new parameter 
+ values, whichever are the largest. </p>
+
+<p class=Body
+	style="text-indent: 0px;">Note that this capability allows index file 
+ blocks of the same size to be allocated and deallocated from the same 
+ pool of memory. </p>
+
+<p class=Body
+	style="text-indent: 0px;">If <i>makeTemp </i>is true (non-zero), a 
+ new <span class=InlineFunctionNames
+			style="font-size: 10.0pt; font-family: Arial;">MEM4</span> 
+ entry is always used and the entry is never used twice. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Not 
+ Null&nbsp;&nbsp;&nbsp; </span></span>A pointer to a MEM4 structure. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Null&nbsp;&nbsp;&nbsp; 
+ </span></span>Error. Use<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ CODE4.errorCode</span></span> to determine the error. </p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="mem4release.htm">mem4release</a></span></p>
+
+</body>
+
+</html>

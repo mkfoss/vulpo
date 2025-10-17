@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+ <title>mem4alloc</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="mem4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>mem4alloc</h2>
+
+<p class="Body">                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>void *mem4alloc( MEM4
+*memoryType ) </p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>A block of memory, the size of
+the <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">mem4create</span></span> <i>unitSize </i>parameter, is partitioned from
+the memory pool, and a pointer to that memory is returned. If no more units are
+available, <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">mem4alloc</span></span>
+expands the pool of memory. The allocated memory is initialized to null. </p>
+
+<p class=Body>         <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Parameters:</span></span></p>
+
+<p class=Body>         <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">memoryType</span></span>   A pointer to a <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">MEM4 </span></span>structure that was
+returned by an earlier call to <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">mem4create.</span></span></p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">               <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:    </span></span>A null pointer return means
+that there were no memory blocks left and that the operating system could not
+allocate any additional memory for new blocks. </p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>f4name</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=428>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="field4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>f4name</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>const char *f4name( const FIELD4 *field )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>The name of the field is returned as a null terminated character 
+ pointer. This is the name of the field originally specified when the data 
+ file was created.</p>
+
+<p class=SourceCode>/*ex101.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main()</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FIELD4 *field ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ); </p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;INFO&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; field = d4fieldJ( data, 1 ); </p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;the first field is called 
+ %s\n&quot;, f4name( field ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

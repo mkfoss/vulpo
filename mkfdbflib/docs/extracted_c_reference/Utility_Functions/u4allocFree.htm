@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\util4.doc">
+ <title>u4allocFree</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="util4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>u4allocFree</h2>
+
+<p class=Body>              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:        </span></span>void *u4allocFree( CODE4
+*codeBase, long len ) </p>
+
+<p class=Body>       <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>This function allocates
+memory from the operating system. If the operating system cannot allocate the
+memory, CodeBase tries to free up some lower priority memory and then tries
+again. CodeBase considers memory allocated for memory optimization as being
+lower priority. Consequently, if memory optimization is being used and memory
+cannot be allocated, <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">code4optSuspend</span></span>
+is called, another attempt is made to allocate the memory from the operating
+system, and then <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">code4optStart</span></span>
+is called to start up the memory optimization once again. </p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">            <span class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:        </span></span>A
+pointer to the allocated memory is returned. The memory is initialized to null.
+</p>
+
+</div>
+</body>
+</html>

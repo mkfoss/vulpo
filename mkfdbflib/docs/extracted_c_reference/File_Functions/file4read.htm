@@ -1,0 +1,145 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>file4read</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\file4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=667>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="file4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<div style="border: none;
+			border-bottom: solid #000000 2.25pt;
+			padding: 0in 0in 1.0pt 0in;">
+<h2>file4read</h2>
+</div>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>unsigned file4read( FILE4 *file, long pos, void *ptr, unsigned 
+ len )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>Information is read from the file, starting at byte <i>pos</i>, 
+ and stored in <i>ptr</i>. An attempt is made to read <i>len </i>bytes 
+ into <i>ptr</i>.</p>
+
+<p class=Body
+	style="text-indent: 0px;">If the end of the file is reached before 
+ the requested number of bytes are read, as many bytes as possible are 
+ read. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">pos&nbsp;&nbsp;&nbsp; 
+ </span></span>A byte offset within the file. For example, 0L represents 
+ the first byte in the file. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">ptr&nbsp;&nbsp;&nbsp; 
+ </span></span>Points to where the file information is to be stored. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">len&nbsp;&nbsp;&nbsp; 
+ </span></span>The number of bytes to read from the file. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&gt;=0&nbsp;&nbsp;&nbsp; 
+ </span></span>The number of bytes actually read. If the return is zero, 
+ it may be an error condition. <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ can be checked to determine whether an error actually occurred. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span>&nbsp;&nbsp; An error has occurred.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="file4readAll.htm">file4readAll</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="file4refresh.htm">file4refresh</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="file4optimize.htm">file4optimize</a></span></p>
+
+<p class=SourceCode>/*ex110.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main()</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FILE4 file ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; char buf[11] ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; int pos ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4open( &amp;file, &amp;cb, &quot;TEST.FIL&quot;, 
+ 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; memset( buf, 0, sizeof( buf ) ) ; /* ensure 
+ null termination for output */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; pos = file4read( &amp;file, 0L, buf, sizeof( 
+ buf ) - 1 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if( cb.errorCode &lt; 0 ) return ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;%s\n&quot;, buf ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

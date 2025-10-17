@@ -1,0 +1,265 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4changed</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1071>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4changed</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>short d4changed( DATA4 *data, short flag )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>Normally, after the record buffer is changed using a field 
+ function, the change is automatically written to the data file at an appropriate 
+ time. (i.e. When a data file function such as <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4go</span></span> or <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4skip 
+ </span></span>is called.) CodeBase accomplishes this by maintaining a 
+ 'record changed' flag for each data file. When a field function changes 
+ the record buffer, this flag is set to true (non-zero). When the changes 
+ are written to disk this flag is changed to false (zero). <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4changed </span></span>changes 
+ and returns the previous status of this 'record changed' flag.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">flag&nbsp;&nbsp;&nbsp; 
+ </span></span>The record changed flag&nbsp;is set to the value of <i>flag</i>. 
+ The possible settings are:</p>
+
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&gt; 
+ 0</span></span>&nbsp;&nbsp; The record buffer is flagged as 'changed'. 
+ This is useful when the record buffer is modified directly by the application. 
+ CodeBase will then know to flush the changes at the appropriate time. 
+ </p>
+
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">0&nbsp;&nbsp;&nbsp; 
+ </span></span>The record buffer is flagged as 'not changed'. This effectively 
+ tells CodeBase not to flush any record buffer changes. </p>
+
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Nothing is done except that the current 
+ status of the 'record changed' flag is returned.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1032" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>A typical data file edit function could directly change 
+ the data file record buffer, using the field functions, to save editing 
+ changes. If the end-user decides to abort the changes, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">d4changed(datafile, 0) </span></span>could 
+ be called before any positioning statements to instruct CodeBase not to 
+ flush the changes to the data file.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:&nbsp;&nbsp;&nbsp; 
+ </span></span>The previous status of the &quot;record changed&quot; flag 
+ is returned.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Non-Zero&nbsp;&nbsp;&nbsp; 
+ </span></span>The flag status was ‘changed’.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Zero&nbsp;&nbsp;&nbsp; 
+ </span></span>The flag status was ‘not changed’.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1033" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>Changes that have been &quot;written&quot; to the data 
+ file but have not been flushed to disk, due to memory write optimization, 
+ may not be aborted.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CODE4_Structure_Variables/CODE4.lockEnforce.htm">CODE4.lockEnforce</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="d4appendStart.htm">d4appendStart</a></span></p>
+
+<p class=SourceCode>/*ex37.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FIELD4 *field ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;DATA2&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; field = d4field( data, &quot;NAME&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4top( data ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if ( d4changed( data, -1 ) != 0 ) /*Displays 
+ FALSE */</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Changed 
+ status: TRUE\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; else</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Changed 
+ status: FALSE\n&quot;) ; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; f4assign( field, &quot;TEMP DATA&quot;) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if ( d4changed( data, -1 ) != 0 ) /*Displays 
+ TRUE */</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Changed 
+ status: TRUE\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; else</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Changed 
+ status: FALSE\n&quot;) ; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4changed( data, 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4close( data ) ; /* The top record is 
+ not flushed.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

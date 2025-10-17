@@ -1,0 +1,198 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Sequential Write Functions</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\file4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=569>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="file4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h1>Sequential Write Functions</h1>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqWrite.htm">file4seqWrite</a></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqWriteFlush.htm">file4seqWriteFlush</a></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqWriteInit.htm">file4seqWriteInit</a></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqWriteRepeat.htm">file4seqWriteRepeat</a></td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0px;">The file sequential write 
+ functions are used to efficiently write information&nbsp;to a file in 
+ a sequential manner. The file sequential write functions boost performance 
+ by buffering information in memory before it is written to disk. This 
+ gives the advantage of quickly writing to memory instead of continually 
+ having to wait for the comparatively slow hardware to locate and write 
+ the information. </p>
+
+<p class=Body
+	style="text-indent: 0px;">The file sequential write functions are used 
+ to augment the memory optimizations used by the file module. When the 
+ memory allocated for the sequential write is filled, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">file4write</span></span> 
+ is called to write to disk. If write optimizations have been enabled for 
+ the file, this write will then be buffered in the CodeBase write pool. 
+ However, if write optimizations are not enabled, the program-allocated 
+ buffer can provide a low-memory method of buffering written information. 
+ It is therefore not critical to call <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">file4optimizeWrite</span></span> 
+ from a <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">file4seqWrite</span></span> 
+ function if write buffering is desired.</p>
+
+<p class=Body
+	style="text-indent: 0px;">It is possible to have more than one sequential 
+ read and/or sequential write happening at once on the same file. For example, 
+ it is possible to have two sequential writes occurring on the same file. 
+ However, if the two sequential writes occur on overlapping sections of 
+ the file, the results will be undefined. This is because the buffer is 
+ not flushed until it is full or re-written until it is empty.</p>
+
+<p class=Body
+	style="text-indent: 0px;">The sequential write functions do no locking. 
+ </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1036" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>In general, the file functions should be used for file 
+ reading and writing, since they use the CodeBase memory optimizations. 
+ The sequential write functions are provided for programmers who may be 
+ in a low memory situation where the added memory for write optimizations 
+ is unavailable. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0px;">An example of using the 
+ sequential write functions<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ </span></span>may be found in the introduction to sequential read functions. 
+ </p>
+
+</body>
+
+</html>

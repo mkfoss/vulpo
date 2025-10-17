@@ -1,0 +1,200 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>file4flush</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\file4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=842>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="file4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<div style="border: none;
+			border-bottom: solid #000000 2.25pt;
+			padding: 0in 0in 1.0pt 0in;">
+<h2>file4flush</h2>
+</div>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int file4flush( FILE4 *file )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function flushes all buffers to disk for the specified 
+ file. This ensures that file changes have been saved thus avoiding data 
+ loss and allowing other users access to these changes. </p>
+
+<p class=Body
+	style="text-indent: 0px;">Since CodeBase automatically performs file 
+ flushing, it is generally unnecessary to call this function. Files are 
+ automatically flushed when they are closed and when memory optimizations 
+ are turned off. This function is useful when the file is being write-optimized 
+ or when Microsoft Windows is being used and data is saved to a local drive. 
+ In both of these situations, data is sometimes not immediately written 
+ to disk after a <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">file4write</span></span> 
+ call has been performed. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in;
+			text-indent: 0in;
+			font-size: 16.0pt;
+			font-family: Arial;"><b style="font-weight: bold;"><sup style="vertical-align: super;"><img src="../Images/Warning.gif" v:shapes="_x0000_i1026" x-maintain-ratio="TRUE" style="width: 91px;
+			height: 57px;
+			float: none;
+			border-style: none;" width="91" height="57" border="0"></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>This function does not work as expected with some cache 
+ software -- in particular RAM disk software. To determine whether <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">file4flush 
+ </span></span>works for any particular operating system configuration, 
+ flush some information to the file and turn the computer’s power off. 
+ Then turn the computer back on and check if the information is present. 
+ </td></tr>
+</table>
+
+<p class=Body>&nbsp;</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Error. </p>
+
+<p class=Body><span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Locking:</span></span>&nbsp;&nbsp; Any locking required for the flush 
+ is done. After the flush is completed, the file is unlocked according 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4unlockAuto</span></span>.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CodeBase_Function_Reference/code4optStart.htm">code4optStart</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CODE4_Structure_Variables/CODE4.fileFlush.htm">CODE4.fileFlush</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="file4write.htm">file4write</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="file4refresh.htm">file4refresh</a></span></p>
+
+<p class=SourceCode>/*ex106.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ; /* for all Borland 
+ compilers */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FILE4 testFile ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ; </p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.safety = 0 ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4create( &amp;testFile, &amp;cb, &quot;TEMP.FIL&quot;, 
+ 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4optStart( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4write( &amp;testFile, 0, &quot;Is 
+ this information written?&quot;, 27 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Written to memory, not disk*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4flush( &amp;testFile ) ; /* Physically 
+ write to disk*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;Flushing complete. \n&quot;) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;Check TEMP.FIL after you 
+ power off the computer.\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

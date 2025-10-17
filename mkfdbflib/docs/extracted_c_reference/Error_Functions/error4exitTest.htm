@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\error4.doc">
+ <title>error4exitTest</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="error4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>error4exitTest</h2>
+
+<p class=Body>              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:        </span></span>void error4exitTest( CODE4
+*codebase ) </p>
+
+<p class=Body>       <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>This function tests to see
+if there has been an error. If <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">CODE4.errorCode
+</span></span>is negative, <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">code4exit
+</span></span>is called to exit the application. If <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">CODE4.errorCode</span></span><span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; font-weight:normal; "> </span></span>is
+zero or a positive value, <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">error4exitTest
+</span></span>returns and the application continues to execute. </p>
+
+<p class=SourceCode>/*ex88.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>   CODE4 cb ;</p>
+
+<p class=SourceCode>   DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   code4init( &amp;cb
+) ;</p>
+
+<p class=SourceCode>   data = d4open(
+&amp;cb, &quot;FILE&quot; ) ;</p>
+
+<p class=SourceCode>   error4exitTest(
+&amp;cb ) ; /* the program will exit if FILE cannot be opened */</p>
+
+<p class=SourceCode>   /*... other code
+... */</p>
+
+<p class=SourceCode>   code4initUndo(
+&amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

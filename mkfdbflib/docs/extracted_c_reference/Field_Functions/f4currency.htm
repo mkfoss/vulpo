@@ -1,0 +1,191 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>f4currency</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=428>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="field4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>f4currency</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>char *f4currency( FIELD4 *field, short numDec )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:</span></span>&nbsp;&nbsp; 
+ A copy of the field’s contents is returned.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Warning.gif" v:shapes="_x0000_i1027" x-maintain-ratio="TRUE" style="width: 91px;
+															height: 57px;
+															float: none;
+															border-style: none;" width="91" height="57" border="0"></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>The buffer is overlaid with new data from the field each 
+ time <span class=InlineFunctionNames><span style="font-size: 10.0pt;">f4currency</span></span> 
+ is called. See the Warning under <b><span style="font-size: 10.0pt;">f4str</span></b> 
+ for further explanation.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1028" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText
+	style="background-color: #e5e5e5;">A field in a Visual FoxPro database 
+ that is marked as null will still appear to contain its previous value 
+ when viewing it. If a field may contain a null value, <b><span style="font-size: 10.0pt;">f4null</span> 
+ </b>should first be called.</td></tr>
+</table>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">field&nbsp;&nbsp;&nbsp; 
+ </span></span>A pointer to the field’s <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">FIELD4 </span></span>structure.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ numDec<span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp; 
+ </span></span>The number of decimals to format into the output string.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Not 
+ Null&nbsp;&nbsp;&nbsp; </span></span>A pointer to the field’s value, converted 
+ into the format XXXXX.XXX, is returned.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Null</span></span>&nbsp;&nbsp; 
+ An error has occurred.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="f4assignCurrency.htm">f4assignCurrency</a></span>,<span 
+ class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="f4assignDouble.htm">f4assignDouble</a></span>,<span 
+ class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="f4null.htm">f4null</a></span></p>
+
+</body>
+
+</html>

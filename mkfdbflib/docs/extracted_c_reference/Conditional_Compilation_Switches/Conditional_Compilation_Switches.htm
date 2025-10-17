@@ -1,0 +1,4570 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Conditional Compilation Switches</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\switch.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=9026>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="switch.css">
+
+
+
+<!--(Style Sheet)===================================================-->
+
+<style>
+<!--
+
+A:visited {
+	color: #800080;
+}
+
+A:link {
+	color: #0000ff;
+}
+
+-->
+</style>
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h1>Conditional Compilation Switches</h1>
+
+<p class=Body
+	style="text-indent: 0px;">C/C++ supports conditional compilation by 
+ use of the following language construct: </p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">#ifdef SWITCH_NAME </p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">&nbsp;</p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">&nbsp;&nbsp; // Some code </p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">&nbsp;</p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">#else </p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">&nbsp;</p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">&nbsp;&nbsp; // Some other code </p>
+
+<p class=SourceCode
+	style="margin-left: 94.5pt;">&nbsp;</p>
+
+<p class=Body
+	style="margin-left: 94.5pt;
+			text-indent: 0in;
+			background-color: #e5e5e5;"><span style="font-size: 8.0pt; font-family: 'Courier New';">#endif</span></p>
+
+<p class=Body
+	style="text-indent: 0px;">CodeBase takes advantage of conditional compilation 
+ to help support different compilers and configurations. Following are 
+ the conditional compilation switches which can be used when compiling 
+ CodeBase source code and applications. The switches are located in the 
+ 'd4all.h' header file.</p>
+
+<p class=Body
+	style="text-indent: 0px;">If any of the switches listed in this chapter 
+ are used when compiling the CodeBase library, then they must also be used 
+ when compiling the application. The switches have been broken into several 
+ categories: compiler, file format, screen output, operating environment, 
+ client-server configuration, general configuration and spoken language. 
+ </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: .9pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1025" x-maintain-ratio="TRUE" style="border-style: none;
+															width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 315.0pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=315pt>
+<p class=NoteText>As documented in the Getting Started manual, we suggest 
+ defining the appropriate switches at the top of include &quot;d4all.h&quot;.&nbsp;It 
+ is also recommended that you run the example program d4verify.c or w4verify.c. 
+ These examples have special logic which verifies that the switches used 
+ when the library was built are compatible with the switches used when 
+ building this example.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Compiler_Switches>Compiler Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">CodeBase 
+ has conditional compilation switches for a number of specific compiler 
+ products. Usually, the compiler has a predefined switch that CodeBase 
+ uses. In this case, you do not have to explicitly set any switch. If you 
+ do, the name of the switch is documented in the compiler support file 
+ 'COMPILER.TXT'. Refer to the Getting Started manual. </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=File_Format_Switches>File Format Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 6.0pt;"><span style="font-size: 11.0pt;">CodeBase 
+ supports several different file formats.</span><span style="font-size: 11.0pt;">&nbsp;Note 
+ that these switches change the multi-user protocol as well. This is because 
+ CodeBase is multi-user compatible with dBASE IV</span><span style="font-size: 11.0pt;">, 
+ FoxPro</span><span style="font-size: 11.0pt;">&nbsp;and Clipper</span><span 
+ style="font-size: 11.0pt;">. Only one of the following file format switches 
+ may be defined at a time.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name </td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;Description </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4CLIPPER</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;"><span style="font-size: 11.0pt;">This switch 
+ adds support for Clipper</span><span style="font-size: 11.0pt;">&nbsp;file 
+ formats. Specifically, the <b>.NTX</b></span><span style="font-size: 11.0pt;">&nbsp;index 
+ files and the Clipper memo files are supported. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">When the</span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> S4CLIPPER</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;switch is defined, all of the CodeBase 
+ functions can be used. In addition, the functions </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">t4open</span></span><span style="font-size: 11.0pt;"> 
+ and </span><span class=InlineFunctionNames><span style="font-family: Arial;">t4close</span></span><span 
+ style="font-size: 11.0pt;"> can be used. Refer to the section on Clipper 
+ support in the User's Guide. </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4FOX</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;"><span style="font-size: 11.0pt;">This switch 
+ adds support for FoxPro</span><span style="font-size: 11.0pt;">&nbsp;file 
+ formats including Visual FoxPro which supports code pages and collation 
+ sequences. This includes <b>.CDX</b></span><span style="font-size: 11.0pt;">&nbsp;compound 
+ index files, compact <b>.IDX</b></span><span style="font-size: 11.0pt;">&nbsp;index 
+ files, and <b>.FPT</b></span><span style="font-size: 11.0pt;">&nbsp;memo 
+ files.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;"><span style="font-size: 11.0pt;">Because 
+ compound and compact index file formats are almost identical, and can 
+ easily be distinguished from one another, both are supported at the same 
+ time. When using the</span><span class=InlineFunctionNames><span style="font-family: Arial;"> 
+ S4FOX</span></span><span style="font-size: 11.0pt;">&nbsp;switch, a single 
+ program could open up both <b>.CDX</b></span><span style="font-size: 11.0pt;">&nbsp;and 
+ &quot;compact&quot;<b> .IDX</b></span><span style="font-size: 11.0pt;">&nbsp;index 
+ files at the same time. However, the default file name extension is<b> 
+ .CDX</b>. If you wish to use an <b>.IDX</b> index file, it is necessary 
+ to explicitly specify the <b>.IDX</b> file name extension. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">See Also: 
+ FoxPro</span><span style="font-size: 11.0pt;">&nbsp;Configuration Switches</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4MDX</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;"><span style="font-size: 11.0pt;">This switch 
+ adds support for dBASE IV</span><span style="font-size: 11.0pt;">&nbsp;file 
+ formats. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Specifically, 
+ the <b>.MDX</b></span><span style="font-size: 11.0pt;">&nbsp;index files 
+ and the dBASE IV memo files are supported. </span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<h4><a name=FoxPro_Configuration_Switches>FoxPro&nbsp;Configuration Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Normal
+	style="margin-top: 6.0pt;"><span style="font-size: 11.0pt;">These switches 
+ provide support for the code pages and collation sequences that are used 
+ by Visual FoxPro</span><span style="font-size: 11.0pt;">. These switches 
+ can only be defined if the </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4FOX</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">&nbsp;</span></span><span style="font-size: 11.0pt;">switch 
+ has also been defined.</span></p>
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">The following 
+ switches provide support for code pages. One or both may be defined at 
+ a time.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name</td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Description</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">S4CODEPAGE_437</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">U.S. MS-DOS code page number 437.</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">S4CODEPAGE_1251</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">Windows ANSI code page number 1252.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0px;">The following switches 
+ provide support for international languages. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name</td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Description</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: .0001pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">S4GENERAL</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;">Adds support for the general 
+ collation sequence. This sort ordering supports English, French, German, 
+ Modern Spanish, Portuguese, and other Western European languages.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=401.4pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">S4USE_GENERAL_TAGS_IN_RELATE</span></span></td>
+<td_null></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: .0001pt;
+			margin-left: .05in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;">If this switch is defined, 
+ the CodeBase Relation/Query module will use any available tag to enable 
+ Query Optimization. This behavior can also be achieved by setting <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.useGeneralTagsInRelate</span></span>. 
+ If this switch is not defined, only tags that use Machine collation will 
+ be used to enable Query Optimization. </td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Screen_Output_Switches>Screen Output Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">CodeBase 
+ can be configured to work in almost any operating environment, since it 
+ is a database management library. By default, when CodeBase needs to display 
+ output, it sends error messages to <span class=InlineLanguageType>stderr</span> 
+ and other output to <span class=InlineLanguageType>stdout</span></span><span 
+ style="font-size: 11.0pt;">.</span></td></tr>
+</table>
+
+<p class=Normal
+	style="margin-left: 1.25in;"><span style="font-size: 11.0pt;">In order 
+ to configure CodeBase to output using a different output method from one 
+ of the methods described here, you need to modify the error message reporting. 
+ Refer to conditional compilation switch </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">E4HOOK</span></span><span style="font-size: 11.0pt;">. 
+ In addition, if the report module is used, you need to refer to the report 
+ module documentation. </span></p>
+
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Define 
+ one of these switches when non-standard output is required.</span></p>
+
+<p class=BodyTextIndent
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 1.25in;">Only one of these switches can be defined 
+ at once.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name </td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;Description </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames
+									style="font-family: Arial;">S4CODE_SCREENS</span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Define 
+ this switch when Sequiter's DOS screen management library CodeScreens</span><span 
+ style="font-size: 11.0pt;">&nbsp;is being used.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4CONSOLE</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;"><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">S4CONSOLE</span></span>&nbsp;should 
+ be defined when you want to run an application from the console or send 
+ output to the console.</td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Operating_System_Switches>Operating System Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">The standard 
+ version of CodeBase supports DOS, OS/2</span><span style="font-size: 11.0pt;">&nbsp;and 
+ Microsoft Windows. </span></p>
+<p class=Normal
+	style="margin-bottom: 6.0pt;"><span style="font-size: 11.0pt;">If you 
+ are using Unix</span><span style="font-size: 11.0pt;">&nbsp;or a different 
+ operating environment, you need to purchase the portability version of 
+ CodeBase. The portability version comes with additional documentation 
+ and software which is useful in order to get CodeBase working under other 
+ operating systems. </span></p>
+<p class=Normal><span style="font-size: 11.0pt;">There are two sets of 
+ switches in this category. The first set of switches define the type of 
+ library that will be used, static or dynamically linked. The second set 
+ of switches defines the type of operating system being used. Only one 
+ switch from each set may be defined at once.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name </td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;Description </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4STATIC</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ must be defined when using a CodeBase static library.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4DLL</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ must be defined when using a CodeBase dynamic link library.</span></td></tr>
+</table>
+
+<p class=tocSub
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-family: Arial;">Switch 
+ Name</span></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-family: Arial;">Description</span></b></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4DOS</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Use this 
+ switch when compiling under DOS.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OS2</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is used when compiling under OS/2</span><span style="font-size: 11.0pt;">.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4WIN16</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Use this 
+ switch when compiling CodeBase under WIN16.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=90.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4WIN32</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Use this 
+ switch when compiling CodeBase under WIN32.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<h4><a name=Client_Server_Configuration_Switches>Client-Server Configuration 
+ Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal><span style="font-size: 11.0pt;">These switches determine 
+ whether the target being built is a client or a non-client. Only one of 
+ these switches can be defined.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name</td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Description</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">S4CLIENT</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">When the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">S4CLIENT</span></span>&nbsp;switch 
+ is defined, the application is a client in a client-server configuration. 
+ Therefore, when this switch is defined, the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">S4STAND_ALONE</span></span>&nbsp;switch 
+ can NOT be defined.</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">S4STAND_ALONE</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">When the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">S4STAND_ALONE</span></span>&nbsp;switch 
+ is defined, the application is NOT a client in a client-server configuration 
+ and the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">S4CLIENT</span></span>&nbsp;switch 
+ can NOT be defined.</td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<h4><a name=General_Configuration_Switches>General Configuration Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal><span style="font-size: 11.0pt;">Any number of the following 
+ switches can be defined at the same time.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name</td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;Description </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4CB51</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=4in>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">When this switch is defined, the 5.1 API 
+ can be used in CodeBase 6. The new locking protocol that is used in CodeBase 
+ 6 will not available when this switch is defined. The following CodeBase 
+ 6 functions will not be available when this switch is defined: <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4seekNext</span></span>, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4seekNextDouble</span></span>, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4seekNextN</span></span>.</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4LOCK_HOOK</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ modifies the CodeBase locking functions so that they call function </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">code4lockHook</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;when a lock fails. It is up to the programmer 
+ to define function </span><span class=InlineFunctionNames><span style="font-family: Arial;">code4lockHook</span></span><span 
+ style="font-size: 11.0pt;">. </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">code4lockHook</span></span><span style="font-size: 11.0pt;"> 
+ is designed to allow the end user the opportunity to retry the lock. </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">The function 
+ is found in the file 'C4HOOK.C' and is described by the following</span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">: </span></span></p>
+<p class=Normal
+	style="margin-left: 84.6pt; text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><b><span style="font-size: 9.0pt; font-family: Arial;">Usage:</span></b></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; int code4lockHook</span><span 
+ style="font-size: 11.0pt;">(&nbsp; CODE4 *cb, </span></p>
+<p class=Normal
+	style="margin-left: 84.95pt; text-indent: -84.95pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ const char *fileName,</span></p>
+<p class=Normal
+	style="margin-left: 84.95pt; text-indent: -84.95pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ const char *userId, </span></p>
+<p class=Normal
+	style="margin-left: 84.95pt; text-indent: -84.95pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ const char *networkId,</span></p>
+<p class=Normal
+	style="margin-left: 84.95pt; text-indent: -84.95pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ long item,</span></p>
+<p class=Normal
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.95pt;
+			text-indent: -84.95pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ int numAttempts)</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><b><span style="font-size: 9.0pt; font-family: Arial;">Parameters</span></b></span><b><span 
+ style="font-size: 11.0pt;">:</span></b></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">cb</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; A reference to the </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">CODE4</span></span><span 
+ style="font-size: 11.0pt;"> structure.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">fileName</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This is the name of the file for 
+ which the lock contention occurred.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">userId</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This is the name of the user who 
+ holds the contentious lock. Use null if the <i>userId</i> is unknown.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">networkId</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This is the network identification 
+ of the user who hold the contentious lock. Use null if the <i>networkId</i> 
+ is unknown.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">item</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This is the item for which the 
+ lock is contentious. The value of <i>item </i>can be one of the following:</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.55in;
+			text-indent: -1.55in;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&gt; 
+ 0</span></span><span style="font-size: 11.0pt;">&nbsp;&nbsp; This the 
+ record number of the locked record.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.55in;
+			text-indent: -1.55in;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">0</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This indicates that the append 
+ bytes are locked.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.55in;
+			text-indent: -1.55in;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">- 
+ 1</span></span><span style="font-size: 11.0pt;">&nbsp;&nbsp; This indicates 
+ that the file is locked.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.55in;
+			text-indent: -1.55in;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">- 
+ 2</span></span><span style="font-size: 11.0pt;">&nbsp;&nbsp; This indicates 
+ that item locked cannot be identified.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">numAttempts</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This is the number of times the 
+ lock has been attempted.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span class=InlineCommentText><b style="font-weight: bold;"><span 
+ style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Returns:</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">0</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This return indicates to the top 
+ level CodeBase function to try again.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4locked</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; This return indicates to the top 
+ level CodeBase function to return </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">r4locked</span></span><span style="font-size: 11.0pt;">.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span><span style="font-size: 11.0pt;">&nbsp;&nbsp; This return 
+ indicates to the top level CodeBase function to return a negative value. 
+ Generally, if this is done, it is also appropriate for the </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">code4lockHook</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;to call </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">error4set</span></span><span style="font-size: 11.0pt;"> 
+ to set a CodeBase error.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">NOTE:</span></b><span 
+ style="font-size: 11.0pt;"> In general, calling CodeBase functions from 
+ within the </span><span class=InlineFunctionNames><span style="font-family: Arial;">code4lockHook</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;function is discouraged since it can 
+ cause conflicts within the internal structure settings. For example, calling 
+ </span><span class=InlineFunctionNames><span style="font-family: Arial;">d4go</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ style="font-size: 11.0pt;"> to change the current record in the data file 
+ for which the lock has failed, will cause internal consistency problems 
+ when returning to the function that called the hook function. However, 
+ it is acceptable to call </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">error4set</span></span><span style="font-size: 11.0pt;"> 
+ from </span><span class=InlineFunctionNames><span style="font-family: Arial;">code4lockHook</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-family: Arial;"> 
+ </span></span><span style="font-size: 11.0pt;">when applicable.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4MAX</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">This switch adds code to limit the amount 
+ of memory functions <span class=InlineFunctionNames><span style="font-family: Arial;">u4alloc</span></span>, 
+ <span class=InlineFunctionNames><span style="font-family: Arial;">u4allocErr</span></span> 
+ and<span class=InlineFunctionNames><span style="font-family: Arial;"> 
+ u4allocFree</span></span> will allocate in total. </p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">When this switch is used, it is necessary 
+ to also use the <span class=InlineFunctionNames><span style="font-family: Arial;">E4MISC</span></span>&nbsp;switch. 
+ </p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">CodeBase puts the current amount of memory 
+ allocated in the global variable<b> <span class=InlineLanguageType>long</span> 
+ </b><span class=InlineFunctionNames><span style="font-family: Arial;">mem4allocated</span></span>. 
+ The maximum amount of memory is placed in the global variable <span class=InlineLanguageType>long</span> 
+ <span class=InlineFunctionNames><span style="font-family: Arial;">mem4maxMemory</span></span>. 
+ This is useful for simulating conditions when little memory is available. 
+ By default, <span class=InlineFunctionNames><span style="font-family: Arial;">mem4maxMemory</span></span> 
+ is 16K. When using switch<span class=InlineFunctionNames><span style="font-family: Arial;"> 
+ S4MAX</span></span>, CodeBase assumes that<span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> mem4maxMemory</span></span> is less than 
+ the actual maximum available memory. </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4SAFE</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=tocSub
+	style="margin-bottom: .0001pt;"><span style="font-family: 'Times New Roman';">Setting 
+ this switch causes CodeBase to immediately update file lengths after information 
+ has been written to file. This avoids delayed &quot;out of disk space&quot; 
+ error messages when memory write-optimization is being used. </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			font-family: Arial;"><span class=InlineFunctionNames><a name=S4TIMEOUT_HOOK>S4TIMEOUT_HOOK</a></span></td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">When this switch is defined, CodeBase calls 
+ <span class=InlineFunctionNames><span style="font-family: Arial;">code4timeoutHook</span></span>&nbsp;whenever 
+ a CodeBase client is waiting to <span style="font-size: 11.0pt;">receive 
+ a message from the</span> server and the <span class=InlineFunctionNames><span 
+ style="font-family: Arial;">CODE4.timeout</span></span> has expired.</p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">It is up to the programmer to define the 
+ function <span class=InlineFunctionNames><span style="font-family: Arial;">code4timeoutHook</span></span>. 
+ This function is designed so that the programmer may specify what action 
+ should take place when a time out occurs. This function is especially 
+ useful when used in conjunction with <span class=InlineFunctionNames><span 
+ style="font-family: Arial;">code4lockHook</span></span>&nbsp;in order 
+ to determine whether CodeBase is delaying because of a lock or is waiting 
+ for a communication reply. The function is provided in the file 'C4HOOK.C'. 
+ The description of <span class=InlineFunctionNames><span style="font-family: Arial;">code4timeoutHook</span></span> 
+ is as follows:</p>
+<p class=Normal
+	style="margin-left: 125.8pt; text-indent: -125.8pt;"><span class=InlineCommentText><b 
+ style="font-weight: bold;"><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Usage:</span></b></span>&nbsp;&nbsp;&nbsp; int code4timeoutHook( CODE4&nbsp;*cb, 
+ int&nbsp;numAttempts, long&nbsp;numHundredths)</p>
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 85.5pt;
+			text-indent: -85.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><b><span style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></b></span></p>
+<p class=Normal
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 85.5pt;
+			text-indent: -85.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">cb</span></span>&nbsp;&nbsp;&nbsp; 
+ This is a reference to the <span class=InlineFunctionNames><span style="font-family: Arial;">CODE4</span></span> 
+ structure.</p>
+<p class=Normal
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 85.5pt;
+			text-indent: -85.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">numAttempts</span></span>&nbsp;&nbsp;&nbsp; 
+ This the number of times the hook function has been called for this particular 
+ time out.</p>
+<p class=Normal
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 85.5pt;
+			text-indent: -85.5pt;">&nbsp;&nbsp;&nbsp; <span class=InlineCommentText><span 
+ style="font-size: 9.0pt; font-family: Arial;">numHundredths</span></span>&nbsp;&nbsp;&nbsp; 
+ This is the total elapsed time that the network has been delaying, in 
+ hundredths of seconds.</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 85.5pt;
+			text-indent: -85.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><b><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></b></span>&nbsp;&nbsp;&nbsp; 
+ A return of zero indicates that the application should continue to wait 
+ for a response. Any other value will be passed up to the calling functions.</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 113.4pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=113.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_THREAD&nbsp;</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 4.0in;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=4in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">By default, 
+ the CodeBase 32-bit library is built with some multi-threading enabled 
+ for file read/write optimization. To prevent CodeBase from using multi-threading, 
+ define S4OFF_THREAD and rebuild the CodeBase library.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ only controls how the CodeBase behaves internally. Defining it does not 
+ prevent the programmer from using CodeBase in a multi-threaded environment.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Error_Switches>Error Switches</a></td>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=BodyTable
+	style="margin-top: 6.0pt;">The following switches, when defined within 
+ the CodeBase library, determine what actions occur when an error is generated. 
+ Any number of the following switches can be defined at the same time.</td>
+<td_null></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Description</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4ANALYZE</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch is used to perform structure 
+ analysis on internal CodeBase structures at runtime. This switch is especially 
+ useful during the development stage of applications. It should not be 
+ used during the final application compiles, since it adds significant 
+ code to CodeBase and decreases performance.</p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">When this switch is defined, it automatically 
+ defines <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4LINK</span></span>&nbsp;and 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4PARM_LOW</span></span>.<span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ E4PARM_LOW </span></span>checks the parameters in low level CodeBase functions.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4DEBUG</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">This switch automatically defines the following 
+ error switches:</p>
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: .3in;
+			text-indent: 0in;"><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4PARM_HIGH</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ E4ANALYZE</span></span><span class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span> 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4MISC</span></span>&nbsp;and 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4STOP</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">_CRITICAL</span></span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4HOOK</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch modifies the CodeBase error 
+ functions so that they call function <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span>&nbsp;to 
+ display any error messages. It is up to the programmer to modify function 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span>. 
+ The prototype of <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span> 
+ as found in 'd4data.h' and is as follows:<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> </span></span></p>
+<p class=Body
+	style="margin-left: 116.1pt; text-indent: -116.1pt;"><span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Usage:&nbsp;&nbsp;&nbsp; </span></span>void error4hook( CODE4&nbsp;*codebase, 
+ int&nbsp;errCode1, long&nbsp;errCode2, const&nbsp;char&nbsp;*desc1, const&nbsp;char 
+ *desc2, const&nbsp;char&nbsp;*desc3&nbsp;)</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-left: 84.6pt; text-indent: -84.6pt;"><span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Description:&nbsp;&nbsp;&nbsp; </span></span>The purpose of the this function 
+ is to allow the programmer to easily alter or turn off error reporting. 
+ When CodeBase is built with the conditional compilation switch <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">E4HOOK</span></span>, <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span>&nbsp;is 
+ called by <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4 
+ </span></span>and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4describe</span></span> 
+ to display messages. By default, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span> 
+ does nothing.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-left: 84.6pt; text-indent: 0in;">Consequently, to turn 
+ off error reporting, just define <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">E4HOOK</span></span>&nbsp;and 
+ do nothing else.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-left: 108px; text-indent: 0px;">To alter error reporting, 
+ alter <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span>&nbsp;to 
+ display error messages as desired. Function <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span> 
+ is defined statically in 'C4HOOK.C'.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-left: 84.6pt; text-indent: -84.6pt;"><span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Parameters:&nbsp;&nbsp;&nbsp; </span></span>The parameters to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span>&nbsp;correspond 
+ to parameters passed to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4 
+ </span></span>and<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ error4describe.</span></span></p>
+<p class=Body
+	style="margin-left: 108px; text-indent: 0px;">If <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4hook</span></span>&nbsp;is 
+ displaying error messages for <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4 
+ </span></span>then the parameters <i>desc2</i> and <i>desc3</i> are null. 
+ The parameter <i>desc1</i> may also be null depending on whether the error 
+ code has any auxiliary information associated with it.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-bottom: .0001pt;
+			margin-left: 108px;
+			text-indent: 0px;">Call<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> error4text</span></span> 
+ to get the error string associated with either <i>errCode1</i> or <i>errCode2</i>. 
+ Note that if <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4OFF</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">_STRING</span></span>&nbsp;or 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4OFF</span></span> 
+ is defined, the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">error4text</span></span> 
+ function will return the string &quot;Invalid or unknown Error Code&quot;.</p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 84.6pt;
+			text-indent: -84.6pt;"><span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ See Also:</span></span>&nbsp;&nbsp; <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ error4describe</span></span>, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4OFF</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ E4OFF_STRING</span></span><span class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ error4text</span></span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4LINK</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch provides link-list error checking 
+ in the CodeBase library. Whenever an item is added or removed from a CodeBase 
+ linked list the list is &quot;run&quot; to verify its internal integrity. 
+ Since CodeBase linked lists are all circular, this is easy to do. </p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This is most useful when debugging applications 
+ which make use of the provided link-list functions. Compiling with this 
+ switch may increase the application execution time by a factor of 2 or 
+ more.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4MISC</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">Using this switch adds extra code for CodeBase 
+ self diagnostics and additional error checking. Following are the effects 
+ of using the<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ E4MISC</span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">&nbsp;</span></span>switch:</p>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;">Whenever a memory item 
+ is allocated, the returned pointer is saved in a list. When the pointer 
+ is subsequently freed, it is looked up in the list to verify that it was 
+ previously allocated. In addition, an extra 22 bytes are allocated as 
+ follows: </p>
+<p class=Body
+	style="margin-left: .3in; text-indent: -.3in;">FFFFFFFFFFLL, Allocated 
+ Memory, FFFFFFFFFF </p>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;">The 'F' represents a special 
+ fill character, and the 'L' is the number of allocated bytes. When the 
+ allocated memory is subsequently freed, a check is made to ensure that 
+ the fill characters have not changed. This is useful because C programmers 
+ sometimes modify more memory than they allocate. </p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">Function <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">mem4freeCheck(int maxAlloc)</span></span> 
+ is also defined. </td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This function, whose prototype is defined 
+ in 'd4declar.h', returns the number of memory allocations for which there 
+ have been no subsequent free. If this number is greater than the value 
+ of parameter <i>maxAlloc</i>, a severe error is generated.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4OFF</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch disables all CodeBase error 
+ messages. This performs the same function as runtime flag<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> CODE4.errOff</span></span>. 
+ This switch does not affect the functionality of an application, however, 
+ only error numbers are available in an application. Using this switch 
+ results in a smaller executable size, since the text for the error messages 
+ is not included. Error hooks can still be used and this switch also does 
+ not effect the actual generation of CodeBase errors. When <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">E4OFF</span></span>&nbsp;is 
+ defined then <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">E4OFF_STRING</span></span>&nbsp;is 
+ implicitly defined. Defining this switch will cause <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4text</span></span> 
+ to return the string &quot;Invalid or Unknown Error Code&quot; whenever 
+ it is called.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4OFF</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">_STRING</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch removes all the extended error 
+ strings from the CodeBase application. Consequently, CodeBase will display 
+ a unique error number and the basic error description associated with 
+ the error. Defining this switch will decrease the size of the application, 
+ since the long static strings will not be included in the executable. 
+ This default implementation under DOS is to have the library compiled 
+ with this switch. Defining this switch will cause <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">error4text</span></span> 
+ to return the string &quot;Invalid or Unknown Error Code&quot; whenever 
+ it is called.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4PARM_HIGH</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch causes CodeBase to include 
+ parameter checks for high-level functions. In general the library should 
+ be compiled with this switch defined. This switch should also be defined 
+ in end-user applications, since it will prevent applications from crashing 
+ when bad parameters are passed to CodeBase functions. The default setting 
+ for this switch is to be turned on.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4PAUSE</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">Compiling with this switch causes CodeBase 
+ programs to prompt the user to &quot;press a key to continue&quot; (when 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">S4CONSOLE</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">&nbsp;</span></span>is 
+ defined) whenever an error is encountered. This switch only applies to 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">S4CONSOLE 
+ </span></span>applications. The default setting for this switch is to 
+ be turned on.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4STOP</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch causes CodeBase to halt the 
+ execution whenever any CodeBase error is encountered. Note that using 
+ an error hook will override this switch.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4STOP</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">_CRITICAL</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch causes CodeBase programs to 
+ halt whenever any critical error is encountered. Critical errors include 
+ the following:</p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: .1in;
+			text-indent: -.1in;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span></span>Out of memory.</p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: .1in;
+			text-indent: -.1in;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span></span>Corrupt memory detected.</p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: .1in;
+			text-indent: -.1in;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span></span>Corrupt structures detected.</p>
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: .1in;
+			text-indent: -.1in;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span></span>Unexpected internal results (e.g. corrupt index)</p>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">Using an error hook will override this 
+ switch. The default setting for this switch is to be turned on.</td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 117.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=117.9pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">E4VBASIC</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 283.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=283.5pt>
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch adds extra code which validates 
+ the pointers passed to most functions. With this switch defined, an error 
+ is generated at run-time when an incorrect pointer is passed to a function. 
+ For example, passing a DATA4 pointer to a function like f4name(), which 
+ takes a FIELD4 pointer, will generate an error. This switch is only useful 
+ when the DLL is used by applications built by Visual Basic; compilers 
+ for other languages normally generate a warning or error if pointers are 
+ used incorrectly. </p>
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-indent: .7pt;">This switch only has an effect when S4DLL 
+ is defined.</td></tr>
+
+<tr style="height: 0px;">
+<td style="width: 121px;
+			border: none;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	width=121px>
+<p>&nbsp;</td>
+<td style="width: 36px;
+			border: none;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	width=36px>
+<p>&nbsp;</td>
+<td style="width: 378px;
+			border: none;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	width=378px>
+<p>&nbsp;</td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Library_Reducing_Switches>Library Reducing Switches</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;"><span style="font-size: 11.0pt;">The following 
+ switches, when defined within the CodeBase library, reduce the size of 
+ the library by removing some its functionality. As a result, applications 
+ linking into a reduced library will be smaller and in many cases faster 
+ than the standard library. When these switches are defined, many CodeBase 
+ functions will be unsupported. For example, attempting to append a new 
+ record to a data file with</span><span class=InlineFunctionNames><span 
+ style="font-size: 11.0pt; font-family: Arial;"> </span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4OFF_WRITE</span></span><span style="font-size: 11.0pt;">&nbsp;defined 
+ is unsupported and will generate an error. Listed below are the switches, 
+ and the functions they effect. </span></td></tr>
+</table>
+
+<p class=BodyTextIndent
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 1.25in;">Any number of the following switches 
+ can be defined at the same time.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Switch Name</td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;Description </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_INDEX</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is used to build a library that does not use indexes. All code related 
+ to indexes is removed from the library. This dramatically reduces the 
+ size of the CodeBase library. The following functions are disabled and 
+ always return 'success' when used with the</span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> S4OFF_INDEX</span></span><span style="font-size: 11.0pt;">&nbsp;switch:</span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4reindex</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4tagSync.</span></span><span 
+ style="font-size: 11.0pt;"> </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">i4fileName</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> t4alias</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> t4expr</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> t4filter</span></span><span style="font-size: 11.0pt;"> 
+ return null when this switch is defined. The following functions return 
+ uninitialized objects: </span><span class=InlineFunctionNames><span style="font-family: Arial;">d4index</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4tagSelect</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4tagDefault</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">.</span></span><span 
+ style="font-size: 11.0pt;"> When </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4OFF_INDEX</span></span><span style="font-size: 11.0pt;"> 
+ is defined, the following functions are unsupported and always generate 
+ an</span><span class=InlineFunctionNames><span style="font-family: Arial;"> 
+ e4notIndex</span></span><span style="font-size: 11.0pt;"> error if called:</span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4freeBlocks</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4seek</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4close</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4create</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4open</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4reindex</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4tag</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> t4open.</span></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ can only be defined when the application has been compiled with the </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">S4STAND_ALONE</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;switch defined.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_MEMO</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">References 
+ to memo files are taken from the library. This reduces the executable 
+ size when memo files are not needed. The following functions are disabled 
+ and always return 'success' when used with the </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4OFF_MEMO</span></span><span style="font-size: 11.0pt;">&nbsp;switch:</span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4memoFree.</span></span><span 
+ style="font-size: 11.0pt;"> When the</span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> memo field</span></span><span style="font-size: 11.0pt;"> 
+ functions are used to access memo fields (as opposed to any other 'generic' 
+ type of field) , the following functions are unsupported and always generate 
+ an </span><span class=InlineFunctionNames><span style="font-family: Arial;">e4notMemo 
+ </span></span><span style="font-size: 11.0pt;">error if used.</span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4memoAssign</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4memoNcpy</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4memoLen</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4memoPtr</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4memoStr</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4memoCompress</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial; font-weight: normal;">.</span></span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;">&nbsp;</td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ can only be defined when the application has been compiled with the </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">S4STAND_ALONE</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;switch defined.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_MULTI</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ compiles a single-user version of the CodeBase library. No file locking 
+ is performed or allowed when this switch is used. If an application is 
+ to be used in a single-user environment, this switch results in smaller 
+ code sizes and much faster execution times. This switch should also be 
+ used when using a compiler that does not perform file locking. This switch 
+ should not be used when an application is running in a multi-tasking environment 
+ and more than one instance may be running. The following functions do 
+ nothing but return 'success' when</span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> S4OFF_MULTI</span></span><span style="font-size: 11.0pt;">&nbsp;is 
+ defined (Note: an application will be slightly smaller if they are not 
+ called): </span><span class=InlineFunctionNames><span style="font-family: Arial;">d4lock</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockAll</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockAppend</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockFile</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockAdd</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockAddAll</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockAddAppend</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4lockAddFile</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4unlock</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> file4lock</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> file4refresh</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> file4unlock</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> relate4lockAdd</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> code4lock</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 12.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> code4unlock</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial; font-weight: normal;">.</span></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ can only be defined when the application has been compiled with the </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">S4STAND_ALONE</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;switch defined.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames
+									style="font-family: Arial;">S4OFF_OPTIMIZE</span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ disables CodeBase memory optimization. This results in slower execution 
+ time in both single and multi-user applications. It can be used to reduce 
+ CodeBase memory requirements and code size. When this switch is used, 
+ the following functions do nothing but return 'success' (Note: an application 
+ will be slightly smaller if they are not called): </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">code4optAll</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> code4optStart</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> code4optSuspend</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> d4optimize</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> d4optimizeWrite</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> file4optimize</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> file4optimizeWrite</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 12.0pt; font-weight: normal;">,</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;"> file4refresh</span></span><span class=InlineFunctionNames><span 
+ style="font-family: Arial; font-weight: normal;">.</span></span><span 
+ style="font-size: 11.0pt;"> </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">When the 
+ switch </span><span class=InlineFunctionNames><span style="font-family: Arial;">S4CLIENT</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;is defined, then this switch is automatically 
+ defined as the default setting.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_REPORT</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ can be used to remove all CodeReporter reporting functions and functionality 
+ from the CodeBase library (i.e. functions which are documented in the 
+ CodeReporter reference manual). Using this switch will reduce the size 
+ of the library and resultant executables, even for programs which do not 
+ otherwise call the CodeReporter reporting functions.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_TRAN</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Use this 
+ switch to remove transactional capabilities from the CodeBase library. 
+ This means that the transactional functions can not be called by the client, 
+ but the CodeBase database server will retain transactional file capabilities 
+ and compatibilities. For the stand-alone version of CodeBase, compiling 
+ with this switch removes the computability with other CodeBase applications 
+ that have transactional capabilities.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4OFF_WRITE&nbsp;</span></span></td>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is used to create read-only applications. All code that performs disk 
+ writes is excluded from the CodeBase library. The following functions 
+ do nothing but return 'success' when </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4OFF_WRITE</span></span><span style="font-size: 11.0pt;">&nbsp;is 
+ defined: </span><span class=InlineFunctionNames><span style="font-family: Arial;">code4flushFiles</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4flush</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4optimizeWrite</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial; font-weight: normal;">.</span></span><span 
+ style="font-size: 11.0pt;"> The following functions are completely unsupported, 
+ and always generate an </span><span class=InlineFunctionNames><span style="font-family: Arial;">e4notWrite 
+ </span></span><span style="font-size: 11.0pt;">error. </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">d4append</span></span><span style="font-size: 11.0pt;">, 
+ </span><span class=InlineFunctionNames><span style="font-family: Arial;">d4appendBlank</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ style="font-size: 11.0pt;"> </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">d4appendStart</span></span><span class=InlineFunctionNames><span 
+ style="font-size: 11.0pt; font-weight: normal;">,</span></span><span style="font-size: 11.0pt;"> 
+ </span><span class=InlineFunctionNames><span style="font-family: Arial;">d4changed</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4create</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4deleteRec</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4memoCompress</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4pack</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4recall</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4reindex</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4write</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> d4zap</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4assign</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4assignDouble</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> f4assignLong</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4create</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4reindex</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;"> i4tagAdd</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 11.0pt; font-weight: normal;">.</span></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ can only be defined when the application has been compiled with the </span><span 
+ class=InlineFunctionNames><span style="font-family: Arial;">S4STAND_ALONE</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;switch defined.</span></td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Spoken_Language_Switches>Spoken Language Switches</a></td>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Normal
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">Following 
+ are the switches for spoken language support. There are two supported 
+ sort orderings for English and German.</span></td>
+<td_null></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=TableHeading>Switch Name</td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=TableHeading>Description </td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4ANSI</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to make CodeBase use the ANSI sort ordering instead of the 
+ default ASCII ordering. The ANSI sort ordering makes CodeBase use the 
+ same ordering as the Microsoft Windows comparison functions. Unfortunately, 
+ this makes CodeBase incompatible with the dBASE, FoxPro</span><span style="font-size: 11.0pt;">&nbsp;and 
+ Clipper</span><span style="font-size: 11.0pt;">&nbsp;sort orderings. </span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4DICTIONARY</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">For the 
+ German version of CodeBase (if </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4GERMAN</span></span><span style="font-size: 11.0pt;">&nbsp;is 
+ defined), this switch determines whether the sort order is by the default 
+ (phone book sort ordering), or dictionary ordering (if </span><span class=InlineFunctionNames><span 
+ style="font-family: Arial;">S4DICTIONARY</span></span><span style="font-size: 11.0pt;">&nbsp;is 
+ defined).</span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4FINNISH</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to get Finnish language support.</span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4FRENCH</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to get French language support. </span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4GERMAN</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to get German language support. </span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4NORWEGIAN</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to get Norwegian language support.</span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4SCANDINAVIAN</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to get Scandinavian language support.</span></td></tr>
+
+<tr>
+<td colspan=2
+	style="x-cell-content-align: top;
+			width: 108.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=108.9pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlineFunctionNames><span style="font-family: Arial;">S4SWEDISH</span></span></td>
+<td_null>
+<td style="x-cell-content-align: top;
+			width: 292.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=292.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span style="font-size: 11.0pt;">This switch 
+ is defined to get Swedish language support.</span></td></tr>
+
+<tr style="height: 0px;">
+<td style="width: 121px;
+			border: none;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	width=121px>
+<p>&nbsp;</td>
+<td style="width: 24px;
+			border: none;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	width=24px>
+<p>&nbsp;</td>
+<td style="width: 390px;
+			border: none;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	width=390px>
+<p>&nbsp;</td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+</body>
+
+</html>

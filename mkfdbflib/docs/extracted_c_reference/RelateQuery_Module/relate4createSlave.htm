@@ -1,0 +1,195 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>relate4createSlave</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=796>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>relate4createSlave</h2>
+
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 202.5pt;
+			text-indent: -202.5pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>RELATE *relate4createSlave( RELATE4&nbsp;*master, DATA4&nbsp;*slave, 
+ char&nbsp;*masterExpr, TAG4&nbsp;*slaveTag&nbsp;) </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function specifies a relation between a master data 
+ file and a slave data file. </p>
+
+<p class=Body
+	style="text-indent: 0px;">When the relation is performed, the <i>masterExpr</i> 
+ is evaluated, based on the master data file, to obtain either a record 
+ number into the slave data file or a key expression that can be used in 
+ conjunction with the <i>slaveTag</i> to seek to a record in the slave 
+ data file. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin-left: 0in;
+			text-indent: 0in;
+			font-size: 16.0pt;
+			font-family: Arial;"><b style="font-weight: bold;"><sup style="vertical-align: super;"><img src="../Images/Warning.gif" v:shapes="_x0000_i1028" x-maintain-ratio="TRUE" style="width: 91px;
+			height: 57px;
+			float: none;
+			border-style: none;" width="91" height="57" border="0"></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>When a new data file is added to the relation set, <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4top</span></span> 
+ or <span class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4bottom</span></span> 
+ must be called to reset the entire relation set. Using an out of date 
+ relation set can cause unpredictable results. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">master</span></span>&nbsp;&nbsp; 
+ This is a pointer to the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">RELATE4</span></span> 
+ structure of the relation data file that is to become the master data 
+ file of the new relation. This <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">RELATE4 
+ </span></span>pointer could have been returned by<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> relate4init</span></span> 
+ or by a previous call to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4createSlave</span></span>. 
+ </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">slave</span></span>&nbsp;&nbsp; 
+ This <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">DATA4</span></span> 
+ pointer specifies a data file that is to become the slave data file.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">masterExpr</span></span>&nbsp;&nbsp; 
+ This is a null terminated character array, which specifies a dBASE expression. 
+ This expression is evaluated with <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">expr4parse </span></span>using 
+ the master data file as the default data file. There is no need to specify 
+ the master data file in the expression. <br>
+(i.e. &quot;MASTER-&gt;NAME&quot; may be entered as &quot;NAME&quot; ) 
+ The evaluated expression is then used to locate the corresponding record 
+ in the slave data file, when the relation is used.</p>
+
+<p class=Body
+	style="text-indent: 0px;">This expression should evaluate to an index 
+ key corresponding to <i>slaveTag</i> or a record number if no tag is used 
+ on the slave data file. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">slaveTag</span></span>&nbsp;&nbsp; 
+ This<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ TAG4</span></span> pointer is a reference to a tag for the slave data 
+ file, which corresponds to the evaluated <i>masterExpr</i> expression. 
+ Any seeking is performed using the <i>masterExpr</i> expression on this 
+ tag to locate the appropriate record in the slave data file. </p>
+
+<p class=Body
+	style="text-indent: 0px;">If the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">TAG4</span></span> pointer 
+ is null, then the <i>masterExpr</i> parameter must evaluate to a record 
+ number of the slave data file. <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4go</span></span> 
+ is then used to locate the appropriate record in the slave data file.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Not 
+ Null</span></span>&nbsp;&nbsp; This is a pointer to the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">RELATE4</span></span> structure 
+ of the created relation.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Null</span></span>&nbsp;&nbsp; 
+ Null is returned to indicate that the relation could not be created. Generally 
+ this results from an out of memory error condition. It could also mean 
+ that the parameter <i>master</i> was null. Check the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ for details.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4querySet.htm">relate4querySet</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4sortSet.htm">relate4sortSet</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4top.htm">relate4top</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4bottom.htm">relate4bottom</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4init.htm">relate4init</a></span></p>
+
+</body>
+
+</html>

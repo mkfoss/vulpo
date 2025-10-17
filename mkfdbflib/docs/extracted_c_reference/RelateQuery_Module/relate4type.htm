@@ -1,0 +1,170 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>relate4type</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=860>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>relate4type</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int relate4type( RELATE4 *relate, int newType )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>There are three ways data files may be related. Either an 
+ exact one-to-one relationship, an approximate one-to-one relationship, 
+ or a one-to-many relationship. This function specifies the type. </p>
+
+<p class=Body
+	style="text-indent: 0px;">None of these types apply if the relation 
+ expression evaluates directly to a record number.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin: 0in;
+			margin-bottom: .0001pt;
+			text-indent: 0in;
+			font-size: 16.0pt;
+			font-family: Arial;"><b><sup><img src="../Images/Warning.gif" v:shapes="_x0000_i1041" x-maintain-ratio="TRUE" style="width: 91px;
+														height: 57px;
+														float: none;" width="91" height="57" border="0"></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>If this function is called to change the relation type, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4top</span></span> 
+ or <span class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4bottom</span></span> 
+ must be called to reset the relation set. Using a relation where a relation 
+ type has changed can cause unpredictable results. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate&nbsp;&nbsp;&nbsp; </span></span><i>relate</i> specifies the relation 
+ set to which the new relation type applies. This is the relation that 
+ was initialized by a call to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4createSlave</span></span>. 
+ If <i>relate</i> was initialized by<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> relate4init</span></span> 
+ then this function has no effect.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">newType&nbsp;&nbsp;&nbsp; 
+ </span></span>This value determines how records in the slave data file 
+ are located. The possible values for <i>newType</i> are:</p>
+
+<p class=BodyIndent><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate4exact&nbsp;&nbsp;&nbsp; </span></span>This means that for a record 
+ to be located, the key value evaluated from the relation expression must 
+ be identical to the key value in the tag. However, the lengths of character 
+ values do not need to match. If the lengths are different, comparing is 
+ done using the shorter of the two lengths. An even shorter length may 
+ be used due to a call to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4matchLen</span></span>. 
+ </p>
+
+<p class=BodyIndent
+	style="text-indent: 0px;">This is the only option in which a lookup 
+ error, as described under function <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4errorAction</span></span>, 
+ can occur. </p>
+
+<p class=BodyIndent
+	style="text-indent: 0px;">This is the default value.</p>
+
+<p class=BodyIndent><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate4approx&nbsp;&nbsp;&nbsp; </span></span>This means that if a key 
+ value cannot be exactly located, the first one after is used instead. 
+ If the key value is greater than any key value in the tag, then a blank 
+ record is used. </p>
+
+<p class=BodyIndent
+	style="text-indent: 0px;">This option is useful for looking up a range 
+ of values using a single high value. See the User's Guide for an example 
+ of using this type of relation. </p>
+
+<p class=BodyIndent><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate4scan&nbsp;&nbsp;&nbsp; </span></span>A scan relation means that 
+ zero or more records can be located for each master record. </p>
+
+<p class=BodyIndent
+	style="text-indent: 0px;">A record is located for each key value in 
+ the tag that exactly matches the evaluated relation expression. </p>
+
+<p class=BodyIndent
+	style="text-indent: 0px;">Consider the case in which a single master 
+ data file has several slave data files, all specified as scan relation 
+ types. In this case, when one slave is being scanned, the other slave 
+ records are set to blank. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:&nbsp;&nbsp;&nbsp; 
+ </span></span>The previous type code is returned. If the relation has 
+ not been initialized, or is invalid, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4type</span></span> 
+ returns '-1'.</p>
+
+</body>
+
+</html>

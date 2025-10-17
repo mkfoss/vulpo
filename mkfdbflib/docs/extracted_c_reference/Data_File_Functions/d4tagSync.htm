@@ -1,0 +1,227 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4tagSync</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1006>
+<meta name=layout-width content=745>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4tagSync</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int d4tagSync( DATA4 *data, const TAG4 *tag)&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function is used to position the current record to 
+ a valid record position within the currently selected tag. Changes to 
+ the current record are flushed to disk if required.</p>
+
+<p class=Body
+	style="text-indent: 0px;">This function is useful for moving to a new 
+ record when changes to the record cause it to no longer be found within 
+ the tag. For example, if the change to the record causes it to contain 
+ a duplicate key entry in a unique tag, the record no longer is in a valid 
+ position. Calling <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4tagSync</span></span> 
+ ensures that the record and the tag are in valid positions within the 
+ tag.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1065" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>This function is only useful prior to a call to <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">d4skip</span></span><span 
+ class=InlineFunctionNames><span style="font-family: 'Times New Roman'; font-weight: normal;">,</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;"> d4seekNext</span></span>, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt;">d4seekNextDouble 
+ </span></span>or<span class=InlineFunctionNames><span style="font-size: 10.0pt;"> 
+ d4seekNextN </span></span>when<span class=InlineFunctionNames><span style="font-size: 10.0pt;"> 
+ </span></span>the current record is not found within the tag. Other positioning 
+ functions, such as <span class=InlineFunctionNames><span style="font-size: 10.0pt;">d4go</span></span>, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt;">d4top</span></span>, 
+ and <span class=InlineFunctionNames><span style="font-size: 10.0pt;">d4seek 
+ </span></span>perform their movements regardless of the state of the current 
+ record.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success</span></span>&nbsp;&nbsp; 
+ The record is in a valid position.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4after</span></span>&nbsp;&nbsp; 
+ The record was not found. The data file is positioned to the record after.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4eof</span></span>&nbsp;&nbsp; 
+ The record was not found and the search value was greater than the last 
+ key of the tag. Consequently, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4goEof</span></span> 
+ was called to turn the <i>EOF</i> condition on.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4locked</span></span>&nbsp;&nbsp; 
+ A required lock failed. The database is in an invalid position and a explicit 
+ positioning statement such as <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4top 
+ </span></span>should be called prior to calling <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4skip</span></span>.</p>
+
+<p class=Body><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ r4unique&nbsp;&nbsp;&nbsp; </span></span>This value is returned when a 
+ record flush causes a duplicate key in a unique tag, and <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">t4unique </span></span>returned 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4unique 
+ </span></span>for the tag.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span>&nbsp;&nbsp; An error has occurred during the repositioning.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:</span></span>&nbsp;&nbsp; 
+ If record buffer flushing is required, the record and index files are 
+ locked. If <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.readLock</span></span> 
+ is true (non-zero), the new record is locked before it is read. See <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4flush</span></span> 
+ and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4unlockAuto</span></span> 
+ for details on how any necessary locking and unlocking is accomplished.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="d4flush.htm">d4flush</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CodeBase_Function_Reference/code4unlockAuto.htm">code4unlockAuto</a></span></p>
+
+<p class=SourceCode>/* ex70.c */</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>#ifdef __TURBOC__</p>
+
+<p class=SourceCode>&nbsp;&nbsp; extern unsigned _stklen = 10000;</p>
+
+<p class=SourceCode>#endif</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void )</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; TAG4 *tag ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;DBF&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; tag = d4tag( data, &quot;DBF_NAME&quot; 
+ ) ; /* A tag with '.NOT.DELETED()' filter */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4top( data ) ; /* Position to the first 
+ record that is not deleted.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4delete( data ) ; /* The current record 
+ no longer is located in the tag*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4tagSync( data, tag ); /*The change to 
+ the record is flushed, and the datafile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ is positioned on a valid record.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4skip( data, 1L) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /*... some other code ...*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

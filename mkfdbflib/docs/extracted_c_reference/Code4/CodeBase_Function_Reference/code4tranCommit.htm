@@ -1,0 +1,177 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>code4tranCommit</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\code4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=544>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="../code4.css">
+
+
+
+<!--(Style Sheet)===================================================-->
+
+<style>
+<!--
+
+A:visited {
+	color: #800080;
+}
+
+A:link {
+	color: #0000ff;
+}
+
+-->
+</style>
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>code4tranCommit</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int code4tranCommit( CODE4 *codebase )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function commits the active transaction. Changes reflected 
+ in the transaction may not be undone with <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">code4tranRollback</span></span>. 
+ The changes are stored in the transaction log file, and may be viewed 
+ and/or recovered by using a utility program.</p>
+
+<p class=Body
+	style="text-indent: 0px;">All of the data files are flushed before 
+ the transaction is committed. If an error occurs during the flushing, 
+ the transaction will not be committed.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../../Images/Note.gif" v:shapes="_x0000_i1058" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>Depending upon the setting returned by <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">code4unlockAuto</span></span><span style="font-family: 'Times New Roman';">,</span> 
+ performing a <span class=InlineFunctionNames><span style="font-size: 10.0pt;">code4tranCommit 
+ </span></span>may not unlock the records affected by the transaction. 
+ It may be necessary to call <span class=InlineFunctionNames><span style="font-size: 10.0pt;">code4unlock 
+ </span></span>after calling&nbsp;<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">code4tranCommit</span></span>.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success</span></span>&nbsp;&nbsp; 
+ The transaction was successfully committed.</p>
+
+<p class=Body><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ r4locked&nbsp;&nbsp;&nbsp; </span></span>A required lock attempt did not 
+ succeed.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4unique&nbsp;&nbsp;&nbsp; 
+ </span></span>This value is returned when a record flush causes a duplicate 
+ key in a unique tag, and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">t4unique</span></span> 
+ returned <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4unique 
+ </span></span>for the tag.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span>&nbsp;&nbsp; An error occurred during the attempt to commit 
+ the changes.</p>
+
+<p class=Body
+	style="text-indent: 0px;">In general <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">code4tranCommit</span></span> 
+ does not fail. If <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4tranCommit</span></span> 
+ does fail, then a critical error has occurred and recovery can NOT be 
+ accomplished by calling <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4tranRollback</span></span>. 
+ Instead, try to recover by calling the utility programs.</p>
+
+<p class=Body><span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Locking:&nbsp;&nbsp;&nbsp; </span></span>If record buffer flushing is 
+ required, the record and index files are locked. See <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4flush</span></span> and 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4unlockAuto</span></span> 
+ for details on how any necessary locking and unlocking is accomplished.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="code4unlockAuto.htm">code4unlockAuto</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../../Data_File_Functions/d4flush.htm">d4flush</a></span></p>
+
+</body>
+
+</html>

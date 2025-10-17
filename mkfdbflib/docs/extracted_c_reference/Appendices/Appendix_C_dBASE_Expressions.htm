@@ -1,0 +1,3132 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Appendix C: dBASE Expressions</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\Zappendix.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=5646>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="Zappendix.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h1>Appendix C: dBASE Expressions</h1>
+
+<p class=Body
+	style="text-indent: 0px;">In CodeBase, a dBASE expression is represented 
+ as a character string and is evaluated using the expression evaluation 
+ functions. dBASE expressions are used to define the keys and filters of 
+ an index file. They can be useful for other purposes such as interactive 
+ queries. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in;
+			text-indent: 0in;
+			font-size: 16.0pt;
+			font-family: Arial;"><b style="font-weight: bold;"><sup style="vertical-align: super;
+	vertical-align: super;
+	vertical-align: super;
+	vertical-align: super;
+	vertical-align: super;"><img src="../Images/Warning.gif" v:shapes="_x0000_i1025" x-maintain-ratio="TRUE" style="width: 91px;
+										height: 57px;
+										float: none;
+										border-style: none;
+										border-style: none;" width="91" height="57" border="0"></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>The dBASE functions listed in this appendix are not C 
+ functions to be called directly from C programs. They are dBASE functions 
+ which are recognized by the CodeBase expression evaluation functions.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=General_dBASE_Expression_Information>General dBASE Expression 
+ Information</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: 0in;">All dBASE expressions return a value of 
+ a specific type. This type can be Numeric, Character, Date or Logical. 
+ A common form of a dBASE expression is the name of a field. In this case, 
+ the type of the dBASE expression is the type of the field. Field names, 
+ constants, and functions may all be used as parts of a dBASE expression. 
+ These parts can be combined with other functions or with operators. </p>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: 0in;">Example dBASE Expression: &quot;FIELD_NAME&quot; 
+ </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0px;">Memo fields evaluate to 
+ a maximum length as determined by the setting of CODE4.memSizeMemoExpr.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1026" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>In this manual all dBASE expressions are contained in 
+ double quotes (&quot; &quot;). The quotes are not considered part of the 
+ dBASE expression. Any quotes that are contained within the dBASE expression 
+ will be denoted by single quotes (' ').</td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=Field_Name_Qualifier>Field Name Qualifier</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: 0in;">It is possible to qualify a field name in 
+ a dBASE expression by specifying the data file. </p>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: 0in;">Example dBASE Expression: &quot;DBALIAS-&gt;FLD_NAME&quot; 
+ </p>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 0in;
+			text-indent: 0in;">Observe that the first part, the qualifier, 
+ specifies a data file alias (see <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4alias</span></span>). 
+ This is usually just the name of the data file. Then there is the &quot;-&gt;&quot; 
+ followed by the field name. </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=dBASE_Expression_Constants>dBASE Expression Constants</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: 0in;">dBASE Expressions can consist of a Numeric, 
+ Character or Logical constant. However, dBASE expressions which are constants 
+ are usually not very useful. Constants are usually used within a more 
+ complicated dBASE expression. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;
+			text-indent: 0in;">A Numeric constant is a number. For example, 
+ &quot;5&quot;, &quot;7.3&quot;, and &quot;18&quot; are all dBASE expressions 
+ containing Numeric constants. </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;
+			text-indent: 0in;">Character constants are letters with quote 
+ marks around them. &quot;'This is data'&quot; and &quot;'John Smith'&quot; 
+ are both examples of dBASE expressions containing Character constants. 
+ If you wish to specify a character constant with a single quote or a double 
+ quote contained inside it, use the other type of quote to mark the Character 
+ constant. For example,&quot; 'Man's' &quot; and ' &quot; OK&quot; ' are 
+ both legitimate Character constants. </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;
+			text-indent: 0in;">Unless otherwise specified, all dBASE Character 
+ constants in this manual are denoted by single quote characters.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0px;">Constants .TRUE. and .FALSE. 
+ are the only legitimate Logical constants. Constants .T. and .F. are legitimate 
+ abbreviations.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=dBASE_Expression_Operators>dBASE Expression Operators</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin: 0in;
+			margin-bottom: .0001pt;
+			text-indent: 0in;">Operators like '+' , ' * ', or '&lt;' are 
+ used to manipulate constants and fields. For example, &quot;3+8&quot; 
+ is an example of a dBASE expression in which the Add operator acts on 
+ two numeric constants to return the numeric value &quot;11&quot;.</p>
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 0in;
+			text-indent: 0in;">The values an operator acts on must have 
+ a type appropriate for the operator. For example, the divide '/' operator 
+ acts on two numeric values. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Precedence&nbsp;&nbsp;&nbsp; 
+ </span></span>Operators have a precedence which specifies operator evaluation 
+ order. The precedence of each operator is specified in the following tables 
+ which describe the various operators. The higher the precedence, the earlier 
+ the operation will be performed. For example, 'divide' has a precedence 
+ of 6 and 'plus' has a precedence of 5 which means 'divide' is evaluated 
+ before 'plus'. Consequently, &quot;1+4/2&quot; is &quot;3&quot;. </p>
+
+<p class=Body
+	style="margin-bottom: .0001pt; text-indent: 0px;">Evaluation order 
+ can be made explicit by using parentheses.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt; text-indent: 0px;">For example, &quot;1+2 
+ * 3&quot; returns &quot;7&quot; and &quot;(1+2) * 3&quot; returns &quot;9&quot;. 
+ </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;"><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Numeric 
+ Operators</span></span>&nbsp;&nbsp; The numeric operators all operate 
+ on Float fields, Numeric fields and constant numeric values. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 100.1pt;
+				border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=94.3pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Operator 
+ Name </span></b></td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=49.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-align: center;"
+	align=center><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Symbol</span></b></td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=1in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-align: center;"
+	align=center><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Precedence</span></b></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.3pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=94.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Add </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>+</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>5</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.3pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=94.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Subtract </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>-</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>5</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.3pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=94.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Multiply </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>*</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>6</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.3pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=94.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Divide </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>/</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>6</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.3pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=94.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Exponent </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>** or ^</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>7</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;"><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Character 
+ Operators&nbsp;&nbsp; </span></span>There are two character operators, 
+ named &quot;Concatenate I&quot; and &quot;Concatenate II&quot;, which 
+ combine two character values into one. They are distinguished from the 
+ Add and Subtract operators by the types of the values they operate on. 
+ </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 99.9pt;
+				border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=94.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Operator 
+ Name </span></b></td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=49.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-align: center;"
+	align=center><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Symbol</span></b></td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=1in>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;
+			text-align: center;"
+	align=center><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Precedence</span></b></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=94.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Concatenate I </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>+</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>5</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 94.5pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=94.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Concatenate II </td>
+<td style="x-cell-content-align: top;
+			width: 49.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=49.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>-</td>
+<td style="x-cell-content-align: top;
+			width: 1.0in;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=1in>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>5</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Examples:&nbsp;&nbsp;&nbsp; 
+ </span></span>&quot; 'John&nbsp; ' + 'Smith' &quot; becomes &quot; 'John&nbsp; 
+ Smith' &quot; </p>
+
+<p class=Body
+	style="text-indent: 0px;">&quot; 'ABC' + 'DEF' &quot; becomes &quot; 
+ 'ABCDEF' &quot; </p>
+
+<p class=Body
+	style="text-indent: 0px;">Concatenate II is slightly different as any 
+ spaces at the end of the first Character value are moved to the end of 
+ the result.</p>
+
+<p class=Body
+	style="text-indent: 0px;">&quot; 'John'-'Smith&nbsp; ' &quot; becomes 
+ &quot; 'JohnSmith&nbsp; ' &quot; </p>
+
+<p class=Body
+	style="text-indent: 0px;">&quot; 'ABC' - 'DEF' &quot; becomes &quot; 
+ 'ABCDEF' &quot;</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt; text-indent: 0px;">&quot; 'A&nbsp; ' 
+ - 'D&nbsp; ' &quot; becomes &quot; 'AD&nbsp;&nbsp;&nbsp; ' &quot;</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;"><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Relational 
+ Operators&nbsp; </span></span>Relational Operators are operators which 
+ return a Logical result (which is either true or false). All operators, 
+ except Contain, operate on Numeric, Character (single byte) or Date values. 
+ Contain operates on two character values and returns true if the first 
+ is contained in the second. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 95.4pt;
+				border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=130.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Operator 
+ Name </span></b></td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=53.3pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">&nbsp;Symbol 
+ </span></b></td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=72.7pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Precedence 
+ </span></b></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Equal To </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>= </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Not Equal To </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>&lt;&gt; or # </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Less Than </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>&lt; </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Greater Than </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>&gt; </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Less Than or Equal To </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>&lt; = </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Greater Than or Equal To </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>&gt; = </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 130.5pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=130.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Contain </td>
+<td style="x-cell-content-align: top;
+			width: 53.3pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=53.3pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>$ </td>
+<td style="x-cell-content-align: top;
+			width: 72.7pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=72.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>4 </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Examples:&nbsp;&nbsp;&nbsp; 
+ </span></span>&quot; 'CD' $ 'ABCD' &quot; returns &quot;.T.&quot; </p>
+
+<p class=Body
+	style="text-indent: 0px;">&quot; 8&lt;7 &quot; returns &quot;.F.&quot;</p>
+
+<p class=Body>&nbsp;&nbsp; <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Logical 
+ Operators&nbsp;&nbsp;&nbsp; </span></span>Logical Operators return a Logical 
+ Result and operate on two Logical values. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 95.4pt;
+				border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 115.8pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=115.8pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">Operator 
+ Name </span></b></td>
+<td style="x-cell-content-align: top;
+			width: 55.2pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=55.2pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">&nbsp;Symbol 
+ </span></b></td>
+<td style="x-cell-content-align: top;
+			width: 76.5pt;
+			border: solid #000000 .75pt;
+			border-left: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=76.5pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><b style="font-weight: bold;"><span style="font-size: 11.0pt;">&nbsp;Precedence 
+ </span></b></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 115.8pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=115.8pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Not </td>
+<td style="x-cell-content-align: top;
+			width: 55.2pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=55.2pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>.NOT.</td>
+<td style="x-cell-content-align: top;
+			width: 76.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=76.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>3 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 115.8pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=115.8pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">And </td>
+<td style="x-cell-content-align: top;
+			width: 55.2pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=55.2pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>.AND.</td>
+<td style="x-cell-content-align: top;
+			width: 76.5pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=76.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>2 </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 115.8pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=115.8pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Or </td>
+<td style="x-cell-content-align: top;
+			width: 55.2pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=55.2pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>.OR.</td>
+<td style="x-cell-content-align: top;
+			width: 76.5pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #ffffff;"
+	bgcolor=#FFFFFF
+	valign=top
+	width=76.5pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;
+			text-align: center;"
+	align=center>1 </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Examples&nbsp;&nbsp;&nbsp; 
+ </span></span>&quot; .NOT. .T. &quot; returns &quot;.F.&quot;</p>
+
+<p class=Body
+	style="text-indent: 0px;">&quot; .T. .AND. .F.&quot; returns &quot;.F.&quot;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 4.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4><a name=dBASE_Expression_Functions>dBASE Expression Functions</a></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;">A function can be used 
+ as a dBASE expression or as part of an dBASE expression. Like operators, 
+ constants, and fields, functions return a value. Functions always have 
+ a function name and are followed by a left and right bracket. Values (parameters) 
+ may be inside the brackets. </td></tr>
+</table>
+
+<p class=TableHeading
+	style="margin-top: 6.0pt;"><span style="font-size: 18.0pt;">Function 
+ List</span></p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr style="height: 51.0pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 51.0pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=68
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">ALLtRIM(CHAR_VALUE)</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function trims all of the blanks from both the beginning and the end of 
+ the expression.</span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 37.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 37.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=50
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">Ascend(VALUE)</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function is not supported by dBASE, FoxPro or Clipper. </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">ASCEND() 
+ accepts all types of parameters, except complex numeric expressions. ASCEND() 
+ converts all types into a Character type in ascending order. In the case 
+ of numeric types, the conversion is done so that the sorting will work 
+ correctly even if negative values are present.</span></td></tr>
+
+<tr style="height: 81.75pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 81.75pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=109
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">CHR( Integer_Value )</span></b></span><b><span 
+ style="font-size: 11.0pt;"> </span></b></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function returns the character whose numeric ASCII code is identical to 
+ the given integer. The integer must be between 0 and 255. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Example: 
+ CHR(65) returns A.</span></td></tr>
+
+<tr style="height: 69.0pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 69.0pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=92
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">CTOD( Char_Value ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ character to date function converts a character value into a date value.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; CTOD( &quot;11/30/88&quot; ) &quot; </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ character representation is always in the format specified by the code4dateFormat 
+ member variable which is by default &quot;MM/DD/YY&quot;. </span></td></tr>
+
+<tr style="height: 37.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 37.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=50
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DATE() </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ system date is returned.</span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 37.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 37.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=50
+	valign=top
+	width=401.4pt>
+<p class=PageHeaderLeft
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><span style="font-family: 'Times New Roman';">DATETIME( 
+ Year, Month, Day [, Hour [, Minute [, Second ] ] ] ) </span></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ given date and time is returned as a DateTime.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;STOPTIME = DATETIME( 2003,03,21,13,30,00 )&quot;</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ expression would evaluate to .TRUE. if the DateTime field STOPTIME is 
+ set to March 21, 2003 at 1:30 pm.</span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DAY( Date_Value )</span></b></span></td></tr>
+
+<tr style="height: 68.9pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 68.9pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=92
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ the day of the date parameter as a numeric value from &quot;1&quot; to 
+ &quot;31&quot;.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;DAY(DATE())&quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ &quot;30&quot; if it is the thirtieth of the month. </span></td></tr>
+
+<tr style="height: 62.7pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 62.7pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=84
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DESCEND(VALUE)</span></b></span><span style="font-size: 11.0pt;"> 
+ </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function is not supported by dBASE or FoxPro. DESCEND() is compatible 
+ with Clipper, only if the parameter is a Character type. </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">DESCEND() 
+ accepts any type of parameter, except complex numeric expressions. DESCEND() 
+ converts all types into a character type in descending order. </span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">For 
+ example, the following expression would produce a reverse order sort on 
+ the field ORD_DATE followed by normal sub-sort on COMPANY.</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ DESCEND(ORD_DATE) + COMPANY</span></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">See 
+ also ASCEND().</span></td></tr>
+
+<tr style="height: 37.15pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 37.15pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=50
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DELETED()</span></b></span><span style="font-size: 11.0pt;"> 
+ </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ .TRUE. if the current record is marked for deletion. </span></td></tr>
+
+<tr style="height: 130.85pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 130.85pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=174
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DTOC( Date_Value )</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DTOC( Date_Value, 1 )</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ date to character function converts a date value into a character value. 
+ The format of the resulting character value is specified by the code4dateFormat 
+ member variable which is by default &quot;MM/DD/YY&quot;.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; DTOC( DATE() ) &quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ the character value &quot;05/30/87&quot; if the date is May 30, 1987. 
+ </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 63.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 63.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=85
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">If the 
+ optional second argument is used, the result will be identical to the 
+ dBASE expression function <i>DTOS</i>. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">For 
+ example, DTOC( DATE(), 1 ) will return &quot;19940731&quot; if the date 
+ is July 31, 1994.</span></td></tr>
+
+<tr style="height: 99.85pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 99.85pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=133
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">DTOS( Date_Value ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ date to string function converts a date value into a character value. 
+ The format of the resulting character value is &quot;CCYYMMDD&quot;. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; DTOS( DATE() ) &quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ the character value &quot;19870530&quot; if the date is May 30, 1987. 
+ </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 112.25pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 112.25pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=150
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">IIF( Log_Value, True_Result, False_Result )</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">If 'Log_Value' 
+ is .TRUE. then IIF returns the 'True_Result' value. Otherwise, IIF returns 
+ the 'False_Result' value. Both True_Result and False_Result must be the 
+ same length and type. Otherwise, an error results. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;IIF( VALUE &lt; 0, &quot;Less than zero&nbsp;&nbsp; &quot;, &quot;Greater 
+ than zero&quot; )&quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;IIF( NAME = &quot;John&quot;, &quot;The name is John&quot;, &quot;Not 
+ John&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; )&quot; </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 113.05pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 113.05pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=151
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">LEFT( Char_Value, Num_Chars ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function returns a specified number of characters from a character expression, 
+ beginning at the first character on the left. The parameter 'NUM_CHARS' 
+ must be constant.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;LEFT( 'SEQUITER', 3)&quot; returns &quot;SEQ&quot;. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ same result could be achieved with &quot;SUBSTR('SEQUITER',&nbsp;1,&nbsp;3)&quot;.</span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 50.3pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 50.3pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=67
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">LTRIM( Char_Value ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function trims any blanks from the beginning of the expression. </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 74.3pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 74.3pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=99
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">MONTH( Date_Value ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ the month of the date parameter as a numeric.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; MONTH( DT_FIELD ) &quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ 12 if the date field's month is December. </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 50.3pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 50.3pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=67
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">PAGENO() </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">When 
+ using the report module or CodeReporter, this function returns the current 
+ report page number. </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 87.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 87.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=117
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">RECCOUNT() </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ record count function returns the total number of records in the database: 
+ </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; RECCOUNT() &quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ 10 if there are ten records in the database. </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 50.3pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 50.3pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=67
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">RECNO() </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ record number function returns the record number of the current record. 
+ </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 81.3pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 81.3pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=108
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">RIGHT( Char_Value, Num_Chars ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function returns a specified number of characters from the end of a character 
+ expression. The parameter 'NUM_CHARS' must be constant.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;RIGHT( 'SEQUITER', 3)&quot; returns &quot;TER&quot;. </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 87.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 87.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=117
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">STOD( Char_Value ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ string to date function converts a character value into a date value: 
+ </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; STOD( '19881130' ) &quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ character representation is in the format &quot;CCYYMMDD&quot;. </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 150.75pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 150.75pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=201
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">STR( Number, Length, Decimals ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ string function converts a numeric value into a character value. &quot;Length&quot; 
+ is the number of characters in the new string, including the decimal point. 
+ &quot;Decimals&quot; is the number of decimal places desired. The parameters 
+ 'LENGTH' and 'DECIMALS' must be constant. If the number is too big for 
+ the allotted space, *'s will be returned. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ e.g. &quot; STR( 5.7, 4, 2) &quot; returns &quot; '5.70' &quot; </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ number 5.7 is converted to a string of length 4. In addition, there will 
+ be 2 decimal places. </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 50.25pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 50.25pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=67
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; STR( 5.7, 3, 2) &quot; returns &quot; '***' &quot; </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ number 5.7 cannot fit into a string of length 3 if it is to have 2 decimal 
+ places. Consequently, *'s are filled in. </span></td></tr>
+
+<tr style="height: 112.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 112.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=150
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">SUBSTR( Char_Value, Start_Position, Num_Chars) 
+ </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">A substring 
+ of the Character value is returned. The substring will be 'NUM_CHARS' 
+ long, and will start at the 'START_POSITION' character of 'CHAR_VALUE'. 
+ The parameters 'START_POSITION' and 'NUM_CHARS' must be constant.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; SUBSTR( &quot;ABCDE&quot;, 2, 3 )&quot; returns &quot; 'BCD' &quot; 
+ </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;SUBSTR( &quot;Mr. Smith&quot;, 5, 1 )&quot; returns &quot; 'S' &quot; 
+ </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 87.75pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 87.75pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=117
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">TIME()</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ time function returns the system time as a character representation. It 
+ uses the following format: HH:MM:SS. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; TIME() &quot; returns &quot; 12:00:00 &quot; if it is noon. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot; TIME() &quot; returns &quot; 13:30:00 &quot; if it is one thirty 
+ PM. </span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 37.5pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 37.5pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=50
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">TRIM(cHAR_VALUE) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">This 
+ function trims any blanks off the end of the expression. </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 50.25pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 50.25pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=67
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">UPPER( Char_Value ) </span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">A character 
+ string is converted to uppercase and the result is returned. </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 75.0pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 75.0pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	height=100
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">VAL( Char_Value )</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">The 
+ value function converts a character value to a numeric value. </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ VAL( '10' ) returns &quot;10&quot;.</span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ VAL( '-8.7' ) returns &quot;-8.7&quot;.</span><span class=InlinedBaseFunction>&nbsp;</span></td></tr>
+
+<tr style="height: 56.25pt;">
+<td style="x-cell-content-align: top;
+			width: 401.4pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			height: 56.25pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	height=75
+	valign=top
+	width=401.4pt>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 0in;"><span class=InlinedBaseFunction><b style="font-weight: bold;"><span 
+ style="font-size: 11.0pt;">YEAR( Date_Value )</span></b></span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">Returns 
+ the year of the date parameter as a numeric: </span></p>
+<p class=Normal
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 3.0pt;
+			margin-left: 1.25in;"><span style="font-size: 11.0pt;">e.g. 
+ &quot;YEAR( STOD( '19920830' ) ) &quot; returns &quot; 1992&quot; </span><span 
+ class=InlinedBaseFunction>&nbsp;</span></td></tr>
+</table>
+
+&nbsp; 
+
+</body>
+
+</html>

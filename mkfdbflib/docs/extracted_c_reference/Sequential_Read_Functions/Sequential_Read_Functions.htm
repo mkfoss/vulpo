@@ -1,0 +1,289 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>Sequential Read Functions</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\file4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1202>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="file4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h1>Sequential Read Functions</h1>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqRead.htm">file4seqRead</a></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqReadAll.htm">file4seqReadAll</a></td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 81.9pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=81.9pt>
+<p class=TableSpecial><a href="file4seqReadInit.htm">file4seqReadInit</a></td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0px;">The file sequential read 
+ functions are used to efficiently read information&nbsp;from a file in 
+ a sequential manner. The file sequential read functions boost performance 
+ by buffering read information in memory. This gives subsequent reads the 
+ advantage of quickly reading from memory instead of having to wait for 
+ the comparatively slow hardware to locate and read the information. </p>
+
+<p class=Body
+	style="text-indent: 0px;">The file sequential read functions are independent 
+ of the memory optimizations used by the file<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;"> </span></span>module. 
+ Instead of performing customized buffering for data or index files, the 
+ data is buffered directly and sequentially using a program-allocated buffer. 
+ With the ability to allocate a buffer directly in the calling program, 
+ CodeBase sequential read functions provide a low-memory method of buffering 
+ read information. It is therefore unnecessary to call <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">file4optimize</span></span> 
+ for a sequential read function<b>.</b></p>
+
+<p class=Body
+	style="text-indent: 0px;">It is possible to have more than one sequential 
+ read and/or sequential write happening at once on the same file. However, 
+ if information is written using sequential writing and then immediately 
+ read using sequential reading, there is no guarantee that the read information 
+ will be the most current. This is because the buffers is not flushed until 
+ it is full or re-read until it is empty.</p>
+
+<p class=Body
+	style="text-indent: 0px;">When the read buffers must be refreshed, 
+ the file sequential read functions read directly from disk. However, since 
+ they are read in large blocks, instead of smaller chunks, the disk access 
+ time is significantly reduced. </p>
+
+<p class=Body
+	style="text-indent: 0px;">The sequential read functions do no locking. 
+ </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1035" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>In general, the file functions should be used for file 
+ reading and writing, since they use the CodeBase memory optimizations. 
+ The sequential read functions are provided for programmers who may be 
+ in a low memory situation where the added memory for read optimizations 
+ is unavailable. </td></tr>
+</table>
+
+<p class=Normal>&nbsp;</p>
+
+<p class=SourceCode>/*ex116.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>typedef struct myStructSt </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; int id ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; char password[9] ;</p>
+
+<p class=SourceCode>} MY_STRUCT ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FILE4SEQ_WRITE writePassFile ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FILE4SEQ_READ readPassFile ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FILE4 passFile ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; MY_STRUCT person ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; char buffer[ 0x1400 ] ; /* 5K bytes... 
+ space for 200 structures */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; int i ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.safety = 0 ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4create( &amp;passFile, &amp;cb, &quot;TEST.FIL&quot;, 
+ 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4seqWriteInit( &amp;writePassFile, 
+ &amp;passFile, 0, buffer, sizeof( buffer ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; for( i = 10 ; i ; i -- )</p>
+
+<p class=SourceCode>&nbsp;&nbsp; {</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; person.id = i 
+ ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; strcpy( person.password, 
+ &quot;PASSWORD&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; person.password[8] 
+ = 0 ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file4seqWrite( 
+ &amp;writePassFile, &amp;person, sizeof( MY_STRUCT ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; } /* physically write only once.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4seqWriteFlush( &amp;writePassFile 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4seqReadInit( &amp;readPassFile, &amp;passFile, 
+ 0, buffer, sizeof(buffer) );</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; for( i = 10 ; i ; i -- )</p>
+
+<p class=SourceCode>&nbsp;&nbsp; {</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* only one physical 
+ read occurs... the rest are in memory*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file4seqRead( 
+ &amp;readPassFile, &amp;person, sizeof( MY_STRUCT ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;id: 
+ %d password: %s\n&quot;, person.id, person.password ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; }</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4close( &amp;passFile ) ; /* writePassFile 
+ and readPassFile are invalid now*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

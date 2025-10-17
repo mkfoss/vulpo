@@ -1,0 +1,535 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>i4create</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\index4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=2523>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="index4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>i4create</h2>
+
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 2.5in;
+			text-indent: -2.5in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>INDEX4 *i4create(DATA4 data, const&nbsp;char&nbsp;*fileName, 
+ const&nbsp;TAG4INFO&nbsp;*tags&nbsp;)</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">i4create</span></span> 
+ creates a new index file and associates it with the data file <i>data</i>. 
+ The <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span> 
+ array is used to specify the sort orderings stored in the index file.</p>
+
+<p class=Body
+	style="text-indent: 0px;">An index file may also be created using <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4create</span></span>.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in;
+			text-indent: 0in;
+			font-size: 16.0pt;
+			font-family: Arial;"><b style="font-weight: bold;"><sup style="vertical-align: super;
+	vertical-align: super;
+	vertical-align: super;"><img src="../Images/Warning.gif" v:shapes="_x0000_i1025" x-maintain-ratio="TRUE" style="width: 91px;
+										height: 57px;
+										float: none;
+										border-style: none;
+										border-style: none;" width="91" height="57" border="0"></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=SourceCode><span style="font-size: 11.0pt; font-family: Arial;">In 
+ the multi-user configuration, open the data file exclusively, which can 
+ be done by setting </span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.accessMode</span></span><span 
+ style="font-size: 11.0pt; font-family: Arial;"> to</span> <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">OPEN4DENY_RW </span></span><span 
+ style="font-size: 11.0pt; font-family: Arial;">before opening or creating 
+ the data file. If the data file is not opened exclusively before </span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">i4create</span></span><span 
+ style="font-size: 11.0pt; font-family: Arial;"> is called, the other applications 
+ may not be aware of the newly created index file and as a result the new 
+ index file may not be updated correctly. </span></td></tr>
+</table>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 1.0pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<div style="border: none;
+			border-top: solid #000000 .75pt;
+			padding: 1.0pt 0in 0in 0in;">
+<p class=Topic>TAG4INFO structure</p>
+</div></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.0pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: .9pt;">The first two members 
+ of every <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span> 
+ structure must be defined. The last three members are used to specify 
+ special properties of the tag, which are discussed later in this chapter. 
+ </td></tr>
+</table>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">(char *)name</span></span>&#8195;This 
+ is a pointer to a character array containing the name of the tag. The 
+ name may be composed of letters, numbers and underscores. Only letters 
+ and underscores are permitted as the first character of the name. This 
+ member cannot be null except to indicate that there are no more tags.</p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: 0in;">When using FoxPro&nbsp;or 
+ <b>.MDX</b>&nbsp;formats, the tag name must be unique to the data file 
+ and have a length of ten characters or less.</p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: 0in;">If you are using the<b> 
+ .NTX</b>&nbsp;index format, then this name includes the index file name 
+ with a path. In this case, the index file name within the path is limited 
+ to eight characters or less, excluding the extension.</p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">(char *) expression</span></span>&#8195;This 
+ is a <span class=InlineLanguageType>(char)</span> pointer to the tag's 
+ index expression. This expression determines the sorting order of the 
+ tag. Refer to the dBASE Expression appendix for more information on possible 
+ key expressions. This is often just a field name. This member cannot be 
+ null, except to indicate that there are no more tags. </p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">(char *)filter</span></span>&#8195;This 
+ is a Logical dBASE expression. If this filter expression evaluates to 
+ true (non-zero) for any given data file record, a key for the record is 
+ included in the tag. If a null string is specified, keys for all data 
+ file records are included in the tag.</p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">(int) unique</span></span>&#8195;This 
+ integer code specifies how to treat duplicate keys. See below for more 
+ information. </p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">(int) descending</span></span>&#8195;This 
+ flag must be zero or<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ r4descending</span></span>. If it is set to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">r4descending</span></span>, 
+ the keys are in a reverse order compared to how they would otherwise be 
+ arranged.</p>
+
+<p class=Body
+	style="text-indent: 0px;">Following is information about the possible 
+ values for the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">unique</span></span> 
+ member of <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span>. 
+ The integers are defined in 'D4DATA.H'. </p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">0</span></span>&#8195;Duplicate 
+ keys are allowed. </p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">r4uniqueContinue</span></span>&#8195;Any 
+ duplicate keys are discarded. In this case, there may not be a tag entry 
+ for a particular record. </p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">e4unique</span></span>&#8195;Generate 
+ an <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">e4unique</span></span> 
+ error if a duplicate key is encountered.</p>
+
+<p class=Body
+	style="margin-left: 1.5in; text-indent: -13.5pt;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">r4unique</span></span>&#8195;Do 
+ not generate an error if a duplicate key is encountered. However, the 
+ operation is aborted and<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ r4unique</span></span> is returned. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				border-collapse: separate;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 90.9pt;
+			border: none;
+			border-top: solid #000000 1.0pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=90.9pt>
+<h4>Unique Tags </td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: none;
+			border-top: solid #000000 1.0pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=310.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;">The dBASE file format, 
+ which CodeBase uses, only saves to disk a TRUE/FALSE flag, which indicates 
+ whether a tag is unique or non-unique. No information on how to respond 
+ to a duplicate key for unique key tags is saved. </td></tr>
+</table>
+
+<p class=Body
+	style="text-indent: 0in;">If a duplicate key is encountered for a unique 
+ key tag, dBASE responds by ensuring there is no corresponding key for 
+ the record. Any duplicate keys are ignored and are not saved in the tag. 
+ Consequently, there may be records in the data file that do not have a 
+ corresponding tag entry. </p>
+
+<p class=Body
+	style="text-indent: 0in;">CodeBase mimics the dBASE response to non-unique 
+ keys when <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">t4uniqueSet</span></span> 
+ is called with <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4uniqueContinue</span></span>. 
+ CodeBase also provides extra flexibility by allowing different responses 
+ when a non-unique key is encountered in unique key tags. <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">t4uniqueSet</span></span> 
+ can accept either <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">e4unique</span></span>, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4unique</span></span> 
+ or <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4uniqueContinue</span></span> 
+ as an argument.</p>
+
+<p class=Body
+	style="text-indent: 0in;"><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">t4uniqueSet</span></span> 
+ can be set directly by passing the desired value to the function or indirectly 
+ when an index file is created or opened. When an index file is created, 
+ the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">TAG4INFO.unique</span></span> 
+ value is passed to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">t4uniqueSet</span></span>. 
+ When an index file is opened, the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">t4uniqueSet</span></span> 
+ is initialized from <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errDefaultUnique 
+ </span></span>for any unique tags. </p>
+
+<p class=Body
+	style="margin-bottom: .0001pt; text-indent: 0in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">code4init</span></span> 
+ initializes <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errDefaultUnique</span></span> 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4uniqueContinue 
+ </span></span>by default. Note that this setting only applies to unique 
+ key tags. For non-unique key tags, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">t4uniqueSet</span></span> 
+ is internally initialized to false (zero), meaning there can be duplicate 
+ keys.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.25in;
+			text-indent: 0in;">See the Indexing chapter of the User's Guide 
+ for more information.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">data&nbsp;&nbsp;&nbsp; 
+ </span></span>The data file corresponding to the index file to be created. 
+ </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">fileName&nbsp;&nbsp;&nbsp; 
+ </span></span>This is the name of the index file to be created. </p>
+
+<p class=Body
+	style="text-indent: 0px;">When using FoxPro<span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">&nbsp;.CDX</span></span>&nbsp;or 
+ dBASE IV&nbsp;<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">.MDX</span></span>&nbsp;files, 
+ it is possible to create a &quot;production&quot; index file with <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">i4create</span></span> 
+ when a data file already exists. This is done by passing a null pointer 
+ for <i>fileName</i>. In this case, the index file name is the same as 
+ the data file name. The data file must be opened exclusively by setting 
+ the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.accessMode</span></span> 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">OPEN4DENY_RW 
+ </span></span>before the data file is opened.</p>
+
+<p class=Body
+	style="text-indent: 0px;">When the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">S4CLIPPER</span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">&nbsp;</span></span>switch 
+ is defined, the <i>fileName</i> parameter specifies the name of the index 
+ group file. This index group file is filled with a list of the created 
+ tag files. If the <i>fileName</i> parameter is not provided, all of the 
+ tag files are created but no index group file is created. Even if the 
+ index group file is not created, CodeBase still creates an <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">INDEX4</span></span> structure, 
+ which can be used by all of the index file functions. For more information 
+ on group files, refer to the section on Clipper support in the User's 
+ Guide. </p>
+
+<p class=Body
+	style="text-indent: 0px;">If a path is provided in the single user 
+ or multi-user configuration, it is used. Otherwise, the file is assumed 
+ to be in the current directory.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">tags&nbsp;&nbsp;&nbsp; 
+ </span></span>This points to an array of <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span> 
+ structures. The last entry is always null to signal that there are no 
+ more tags. Refer to the example below.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Not 
+ Null</span></span>&nbsp;&nbsp; Success. A pointer to the corresponding 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">INDEX4</span></span> 
+ structure is returned.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Null&nbsp;&nbsp;&nbsp; 
+ </span></span>The index file was not successfully created. Inspect <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ for more detailed information. If the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ is negative, then an error has occurred.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:&nbsp;&nbsp;&nbsp; 
+ </span></span>The data file is locked. In general, consider opening a 
+ data file exclusively before calling <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">i4create</span></span>. 
+ The data file can be opened exclusively by setting <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.accessMode</span></span> 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">OPEN4DENY_RW</span></span> 
+ before opening or creating the data file.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Client-Server:</span></span>&nbsp;&nbsp; 
+ A production index may not be recreated under the client-server configuration. 
+ The production index is always opened when the data file is opened, regardless 
+ of the setting of <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.autoOpen</span></span>. 
+ Since a file can not be recreated while it is open, an error is returned 
+ when <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">i4create</span></span> 
+ is called after <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4open 
+ </span></span>under the client-server configuration.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Data_File_Functions/d4create.htm">d4create</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CODE4_Structure_Variables/CODE4.accessMode.htm">CODE4.accessMode</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CODE4_Structure_Variables/CODE4.autoOpen.htm">CODE4.autoOpen</a></span></p>
+
+<p class=SourceCode>/* ex119.c */</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>#ifdef __TURBOC__</p>
+
+<p class=SourceCode>&nbsp;&nbsp; extern unsigned _stklen = 10000;</p>
+
+<p class=SourceCode>#endif</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>static FIELD4INFO fieldInfo[ ] =</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; &nbsp;{ &quot;FIELD_NAME&quot;, 'C', 10, 
+ 0 },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; &nbsp;{ &quot;VALUE&quot;, 'N', 7, 2 },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; &nbsp;{ 0,0,0,0 }</p>
+
+<p class=SourceCode>} ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>TAG4INFO tagInfo[ ] =</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; &nbsp;{ &quot;T_NAME&quot;, &quot;FIELD_NAME&quot;, 
+ &quot;FIELD_NAME &gt; 'A'&quot;, 0,0 },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; &nbsp;{ &quot;NAME_TWO&quot;, &quot;VALUE&quot;, 
+ &quot;&quot;, e4unique, r4descending },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; &nbsp;{ 0,0,0,0,0 }</p>
+
+<p class=SourceCode>} ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ; /* for all Borland 
+ compilers&nbsp; */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void )</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; INDEX4 *index ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.safety = 0 ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4create( &amp;cb, &quot;DB_NAME&quot;, 
+ fieldInfo, 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if ( data )</p>
+
+<p class=SourceCode>&nbsp;&nbsp; {</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index = i4create( 
+ data, &quot;name&quot;, tagInfo ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d4close( data 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; }</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

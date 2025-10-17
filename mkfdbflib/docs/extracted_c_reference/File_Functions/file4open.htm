@@ -1,0 +1,132 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>file4open</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\file4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=528>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="file4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<div style="border: none;
+			border-bottom: solid #000000 2.25pt;
+			padding: 0in 0in 1.0pt 0in;">
+<h2>file4open</h2>
+</div>
+
+<p class=Body
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 171.0pt;
+			text-indent: -171.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int file4open( FILE4 *file, CODE4 *cb, const char *name, 
+ int&nbsp;doAlloc&nbsp;) </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>A file is opened for reading and (possibly) writing. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ cb<span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp; 
+ </span></span>This is a pointer to the<span class=InlineCommentText><span 
+ style="font-size: 9.0pt; font-family: Arial;"> </span></span><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> structure 
+ in order to handle optimization, memory allocation, and error messaging 
+ in a manner consistent with the rest of CodeBase.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">name&nbsp;&nbsp;&nbsp; 
+ </span></span><i>name </i>should be a null terminated string containing 
+ the drive, path, and file name (including extension) of the file to open. 
+ If the drive and path are not provided in <i>name</i>, the current working 
+ directory is assumed. </p>
+
+<p class=Body
+	style="text-indent: 0px;"><i style="font-style: italic;">name </i>may 
+ point to temporary memory. However, if temporary memory is used, <i>doAlloc 
+ </i>should be set to true (non-zero). </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">doAlloc&nbsp;&nbsp;&nbsp; 
+ </span></span>If <i>doAlloc </i>is true (non-zero), <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">file4open</span></span> 
+ allocates memory and creates a copy of the <i>name </i>for future use. 
+ Any memory allocated as a result is freed by <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">file4close</span></span>. 
+ If <i>doAlloc </i>is false (zero) pointer <i>name </i>is saved for future 
+ use. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success. </p>
+
+<p class=Body><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ r4noOpen</span></span>&nbsp;&nbsp; The new file could not be opened and 
+ the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errOpen</span></span> 
+ is false (zero).</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span>&nbsp;&nbsp; Error.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:&nbsp;&nbsp;&nbsp; 
+ </span></span>If <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.accessMode</span></span> 
+ is set to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">OPEN4DENY_RW</span></span>, 
+ the file is opened in exclusive mode, otherwise it is opened in shared 
+ mode. If <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.readOnly</span></span> 
+ is set to a true (non-zero) value, the file is opened as a read only file.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CODE4_Structure_Variables/CODE4.accessMode.htm">CODE4.accessMode</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CODE4_Structure_Variables/CODE4.readOnly.htm">CODE4.readOnly</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CODE4_Structure_Variables/CODE4.errOpen.htm">CODE4.errOpen</a></span></p>
+
+</body>
+
+</html>

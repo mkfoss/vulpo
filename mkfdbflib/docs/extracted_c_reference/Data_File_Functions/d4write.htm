@@ -1,0 +1,219 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4write</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1099>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4write</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int d4write( DATA4 *data, long recordNumber )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4write</span></span> 
+ explicitly writes the current record buffer to a specific record in the 
+ data file. If <i>recordNumber </i>is <span class=InlineLanguageType>(long)</span> 
+ -1, the current record number is used. </p>
+
+<p class=Body
+	style="text-indent: 0px;">The 'record changed flag' for the current 
+ record buffer is reset to unchanged (zero). The record buffer is NOT flushed. 
+ In fact <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4flush</span></span> 
+ uses <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4write</span></span> 
+ to perform flushing.</p>
+
+<p class=Body
+	style="text-indent: 0px;">The record is written regardless of the status 
+ of the 'record changed flag'. <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4write</span></span> 
+ also locks and updates all open index files. Finally, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4write</span></span> checks 
+ to see if any memo fields have been changed. If they have, they are updated 
+ to disk and the record buffer references to the memo entries are updated. 
+ </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineCommentText><span 
+ style="font-size: 9.0pt; font-family: Arial;">recordNumber&nbsp;&nbsp;&nbsp; 
+ </span></span><i>recordNumber </i>specifies the record to which the record 
+ buffer is written. This may reference any valid record number. If <i>recordNumber</i> 
+ is <span class=InlineLanguageType>(long)</span> -1, the current record 
+ buffer is written to the current record. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4locked&nbsp;&nbsp;&nbsp; 
+ </span></span>A required lock attempt did not succeed. If there was a 
+ problem locking the record or an index file tag, the record will not have 
+ been written. However, if the problem was due to not being able to lock 
+ the memo file when extending the memo file, only that memo file entry 
+ will not have been written. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4unique&nbsp;&nbsp;&nbsp; 
+ </span></span>The record was not written due to the following circumstances: 
+ first, writing the record caused a duplicate key in a unique key tag. 
+ Secondly, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">t4unique 
+ </span></span>returned <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4unique</span></span> 
+ for the tag. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Error. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1066" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>Usually, it is not necessary to explicitly call <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">d4write</span></span>. 
+ If the data file is modified using a field function, the record is written 
+ automatically upon skipping, seeking, flushing, going, or closing. This 
+ is possible because the record changed flag&nbsp;determines whether the 
+ data file record buffer has been written to disk since it was last changed. 
+ When using <span class=InlineFunctionNames><span style="font-size: 10.0pt;">d4write</span></span> 
+ on a modified record buffer, a call to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">d4appendStart </span></span>is recommended, 
+ to suspend flushing before changing the record buffer with the field functions. 
+ </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4write</span></span> 
+ locks the record and may lock the index files during the write. See <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4unlockAuto</span></span> 
+ for details on how any necessary locking and unlocking is accomplished.</p>
+
+<p class=SourceCode>/*ex73.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ; /* for all Borland 
+ compilers */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; long numRecs ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.accessMode = OPEN4DENY_RW ; /* open 
+ exclusively to avoid corruption&nbsp;*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;INFO1&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4go( data, 1L ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Make all of the records in the data 
+ file the same as the first record&nbsp;*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; for( numRecs = d4recCount( data ) ; numRecs-1 
+ ; numRecs -- )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if( d4write( data, 
+ numRecs ) != 0 )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ break ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4close( data ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

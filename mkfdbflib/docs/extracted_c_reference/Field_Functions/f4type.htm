@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+ <title>f4type</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="field4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>f4type</h2>
+
+<p class=Body>                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>int f4type( const FIELD4
+*field ) </p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>The type of the field, as
+defined when the data file was created, is returned. See &quot;Appendix E:
+Field Types&quot; for a list of field types that could be returned.</p>
+
+<p class="SourceCode">/* ex130.c */</p>
+
+<p class="SourceCode">#include &quot;d4all.h&quot;</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">#ifdef __TURBOC__</p>
+
+<p class="SourceCode">   extern unsigned _stklen = 10000;</p>
+
+<p class="SourceCode">#endif</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">void main()</p>
+
+<p class="SourceCode">{</p>
+
+<p class="SourceCode">   CODE4 cb ;</p>
+
+<p class="SourceCode">   DATA4 *data ;</p>
+
+<p class="SourceCode">   FIELD4 *field ;</p>
+
+<p class=SourceCode>   short j ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   code4init( &amp;cb
+) ;</p>
+
+<p class=SourceCode>   data = d4open(
+&amp;cb, &quot;DATA1&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class="SourceCode">   /* list the fields that are character fields */</p>
+
+<p class="SourceCode">   for (j = 1 ; j &lt; d4numFields( data ) ; j++ )</p>
+
+<p class="SourceCode">   {</p>
+
+<p class="SourceCode">       field = d4fieldJ( data, j ) ;</p>
+
+<p class="SourceCode">       if ( f4type( field ) == r4str )</p>
+
+<p class="SourceCode">          printf( &quot;%s\n&quot;, f4name( field ) ) ;</p>
+
+<p class=SourceCode>   }</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   code4initUndo(
+&amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

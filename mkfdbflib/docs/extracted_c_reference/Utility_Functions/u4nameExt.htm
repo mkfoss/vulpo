@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\util4.doc">
+ <title>u4nameExt</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="util4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>u4nameExt</h2>
+
+<p class="Body" style="margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:184.3pt; text-indent:-184.3pt; ">              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:              </span></span>void u4nameExt( char
+*name, int lenMax, const char *ext, int&nbsp;doReplace&nbsp;) </p>
+
+<p class="Body" style="margin-top:6.0pt; ">       <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>The file name extension of
+a file name is added or replaced. The resulting file name is converted to
+uppercase and a null character is added to the end of the file name. </p>
+
+<p class=Body>     <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Parameters:</span></span></p>
+
+<p class=Body>                <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">name        </span></span>Parameter <i>name</i> points to the file name. </p>
+
+<p class=Body>              <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">lenMax        </span></span>This the number of bytes
+of memory that <i>name</i> points to. If
+there is not enough memory for the operation, a severe error results. </p>
+
+<p class=Body>                    <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">ext        </span></span>This is the new file name
+extension. </p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">         <span class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">doReplace        </span></span>If
+<i>doReplace</i> is false (zero), the new
+extension in parameter <i>ext</i> is added
+only if the file name currently has no extension. However, if <i>doReplace</i> is true (non-zero), the new
+extension replaces any existing file name extension. </p>
+
+</div>
+</body>
+</html>

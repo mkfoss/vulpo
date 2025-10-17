@@ -1,0 +1,347 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4create</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1450>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4create</h2>
+
+<p class=UsageLine1
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 171.0pt;
+			text-indent: -171.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>DATA4 *d4create( CODE4 *code, const char *name, const&nbsp;FIELD4INFO&nbsp;*fields, 
+ const&nbsp;TAG4INFO&nbsp;*tags) </p>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4create</span></span> 
+ creates a data file, possibly a &quot;production&quot; index file, and 
+ possibly a memo file. A &quot;production&quot; index file is created if 
+ the <i>tags </i>parameter is not null. A memo file is created if the <i>fields</i> 
+ structure contains a memo field. See the chapters on field and tag functions 
+ for more information.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1035" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=310.5pt>
+<p class=NoteText>In the client-server configuration, <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">code4connect</span></span> will automatically 
+ be called&nbsp;if a connection to the server has not been previously established.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">code&nbsp;&nbsp;&nbsp; 
+ </span></span>This is a pointer to a <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> structure. 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4init</span></span> 
+ must be executed before calling <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4create</span></span>. 
+ The <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> 
+ structure contains default settings, which are used to determine how the 
+ data file is opened and accessed. See <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4</span></span> member 
+ variables for more information. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">name&nbsp;&nbsp;&nbsp; 
+ </span></span>The name for the data file, index file, and memo file. The 
+ default data file name extension is<b> .DBF</b>. See <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4open</span></span> for 
+ a list of default index and memo file extensions. </p>
+
+<p class=Body
+	style="text-indent: 0px;">If a path is provided in the single user 
+ or multi-user configuration, it is used. Otherwise, the file is assumed 
+ to be in the current directory.</p>
+
+<p class=Body
+	style="text-indent: 0px;">When using the client-server configuration, 
+ refer to the DEFPATH documentation in the Getting Started manual for the 
+ details on how to specify the file name.</p>
+
+<p class=Body
+	style="text-indent: 0px;">The default alias for the data file is initially 
+ set to <i>name</i>, disregarding path and extension.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">fields&nbsp;&nbsp;&nbsp; 
+ </span></span>A pointer to an array of<span class=InlineCommentText><span 
+ style="font-size: 9.0pt; font-family: Arial;"> </span></span><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">FIELD4INFO</span></span> 
+ structures. Each element in the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">FIELD4INFO</span></span> 
+ array defines a field to be created in the new data file. The last element 
+ is null to signal that there are no additional entries.</p>
+
+<p class=Body
+	style="margin-top: 6.0pt;
+			margin-bottom: .0001pt;
+			text-indent: 0px;">The members of <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">FIELD4INFO</span></span> 
+ are:</p>
+
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.5in;
+			text-indent: -12.25pt;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">(char 
+ *) name</span></span><b>&#8195;</b>This is the name of the field. Each 
+ field name should be unique to the data file. A field name is up to ten 
+ alphanumeric or underscore characters. Any characters in the field name 
+ over ten are ignored. The first character must be a letter. </p>
+
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.5in;
+			text-indent: -12.25pt;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">(short) 
+ type</span></span><b>&#8195;</b>This is the type of the field. See &quot;Appendix 
+ E: Field Types&quot; for valid types.</p>
+
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.5in;
+			text-indent: -12.25pt;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">(unsigned 
+ short) len</span></span><b>&#8195;</b>This is the length of the field 
+ in bytes. This member is ignored if the field type has a fixed length. 
+ </p>
+
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: .0001pt;
+			margin-left: 1.5in;
+			text-indent: -12.25pt;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">(unsigned 
+ short) dec</span></span><b>&#8195;</b>This is the number of decimals in 
+ Numeric or Floating Point fields.</p>
+
+<p class=Body
+	style="margin-top: 3.0pt;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 1.5in;
+			text-indent: -12.25pt;"><span style="font-family: Symbol;">·<span 
+ style="font: 7.0pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">(unsigned 
+ short) nulls</span></span><b>&#8195;</b> This specifies if the field can 
+ be marked as null and must be <b><span style="font-size: 10.0pt; font-family: Arial;">r4null</span></b> 
+ or zero. This setting is only used when creating Visual FoxPro-compatible 
+ tables.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">tags&nbsp;&nbsp;&nbsp; 
+ </span></span><i>tags </i>is a pointer to an array of<span class=InlineCommentText><span 
+ style="font-size: 9.0pt; font-family: Arial;"> </span></span><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span> 
+ structures. Each element in the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span> 
+ array defines a tag to be created in the new index file. The last element 
+ is null to signal that there are no additional entries. If <i>tags</i> 
+ is null, no production index file is created. See <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">i4create</span></span> 
+ for details on the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">TAG4INFO</span></span> 
+ structure.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Not 
+ Null&nbsp;&nbsp;&nbsp; </span></span>Success. A pointer to the corresponding 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">DATA4 
+ </span></span>structure is returned. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">Null</span></span>&nbsp;&nbsp; 
+ The data, index or memo file was not successfully created. Inspect the 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ for more detailed information. If a negative value is returned then an 
+ error has occurred.</p>
+
+<p class=Body
+	style="text-indent: 0px;">A file cannot be created when a file with 
+ the same name already exists and <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.safety</span></span> 
+ is true (non-zero). Refer to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.safety</span></span> 
+ for more details.</p>
+
+<p class=Body
+	style="text-indent: 0px;"><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errorCode</span></span> 
+ may contain <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4noCreate</span></span>. 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4noCreate 
+ </span></span>indicates that a file could not be created and <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.errCreate</span></span> 
+ is false (zero).</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:&nbsp;&nbsp;&nbsp; 
+ </span></span>Nothing related to the data file is locked upon completion.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Code4/CodeBase_Function_Reference/code4connect.htm">code4connect</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Index_Functions/i4create.htm">i4create</a></span>,<span 
+ class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CODE4_Structure_Variables/CODE4.safety.htm">CODE4.safety</a></span>,<span 
+ class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CODE4_Structure_Variables/CODE4.compatibility.htm">CODE4.compatibility</a></span></p>
+
+<p class=SourceCode>/*ex39.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>static FIELD4INFO fieldArray[ ] = </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; { &quot;NAME_FIELD&quot;, 'C', 20, 0 },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; { &quot;AGE_FIELD&quot;,&nbsp; 'N',&nbsp; 
+ 3, 0 },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; { &quot;BIRTH_DATE&quot;, 'D',&nbsp; 8, 
+ 0 },</p>
+
+<p class=SourceCode>&nbsp;&nbsp; { 0,0,0,0 }</p>
+
+<p class=SourceCode>};</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.safety = 0 ; /* overwrite the file 
+ if it exists */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4create( &amp;cb, &quot;NEWDBF&quot;, 
+ fieldArray, 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; error4exitTest( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if( cb.errorCode )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;An 
+ error occurred, NEWDBF not created\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; else</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Created 
+ successfully!\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4close( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

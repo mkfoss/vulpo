@@ -1,0 +1,164 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>CODE4.codePage</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\code4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=443>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="../code4.css">
+
+
+
+<!--(Style Sheet)===================================================-->
+
+<style>
+<!--
+
+A:visited {
+	color: #800080;
+}
+
+A:link {
+	color: #0000ff;
+}
+
+-->
+</style>
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<p class=StructMemberHeading>CODE4.codePage</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:</span></span>&nbsp;&nbsp; 
+ int CODE4.codePage = cp0</p>
+
+<p class=Normal
+	style="margin-top: 0in;
+			margin-right: 0in;
+			margin-bottom: 6.0pt;
+			margin-left: 1.25in;
+			text-indent: -1.25in;"><span style="font-size: 11.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:</span></span><span 
+ style="font-size: 11.0pt;">&nbsp;&nbsp; CodeBase supports the use of code 
+ pages used in Visual FoxPro</span><span style="font-size: 11.0pt;">. A 
+ code page is a set of characters specific to a language of a hardware 
+ platform. Accented characters are not represented by the same ASCII values 
+ across platforms and code pages. In addition, some characters available 
+ in one code page are not available in another.</span></p>
+
+<p class=Body
+	style="text-indent: 0in;">This member controls which code page to use 
+ when creating FoxPro&nbsp;database files (.DBF) and index files (.CDX). 
+ This member will only be used when creating a new database file. An attempt 
+ to open a database file that is using a different code page will fail 
+ if support for that code page has not been added to the CodeBase library 
+ using conditional compilation switches.</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin: 0in;
+			margin-bottom: .0001pt;
+			text-indent: 0in;">&nbsp;&nbsp; <img src="../../Images/Note.gif" v:shapes="_x0000_i1027" x-maintain-ratio="TRUE" style="border-style: none;
+														width: 47px;
+														height: 40px;
+														float: none;
+														border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>This <span class=InlineFunctionNames><span style="font-size: 10.0pt;">CODE4</span></span> 
+ member will only have an effect when the CodeBase library has been built 
+ with the <span class=InlineFunctionNames><span style="font-size: 10.0pt;">S4FOX</span></span>&nbsp;switch 
+ defined.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt; text-indent: 0in;"><span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.codePage</span></span> 
+ may be assigned one of the following values:</p>
+
+<p class=Body
+	style="margin-left: 2.25in; text-indent: -2.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">cp1252</span></span>&nbsp;&nbsp; 
+ This value supports a Windows ANSI code page used in Visual FoxPro.</p>
+
+<p class=Body
+	style="margin-left: 2.25in; text-indent: -2.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">cp437</span></span>&nbsp;&nbsp; 
+ This value supports a U.S. MS-DOS code page used in Visual FoxPro.</p>
+
+<p class=Body
+	style="margin-left: 2.25in; text-indent: -2.25in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">cp0</span></span>&nbsp;&nbsp; 
+ This value supports FoxPro&nbsp;2.x file formats which do not use a code 
+ page. This is the default setting.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:&nbsp;&nbsp;&nbsp; 
+ </span><span class=InlineFunctionNames
+				style="font-size: 10.0pt; font-family: Arial;"><a href="../../Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#File_Format_Switches">S4FOX</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="CODE4.collatingSequence.htm">CODE4.collatingSequence</a></span></p>
+
+</body>
+
+</html>

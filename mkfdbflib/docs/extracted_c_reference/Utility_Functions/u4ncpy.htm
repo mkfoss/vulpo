@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\util4.doc">
+ <title>u4ncpy</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="util4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>u4ncpy</h2>
+
+<p class="Body" style="margin-bottom:.0001pt; ">              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:        </span></span>unsigned u4ncpy( char *to,
+const char *from, unsigned&nbsp;lenTo )</p>
+
+<p class="Body" style="margin-top:6.0pt; ">       <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>This function copies one
+string to the other. It will guarantee null termination, provided <i>lenTo</i> is greater than zero, and will
+guarantee that memory will not be overwritten when the <b>sizeof</b> operator is used as the last parameter. For these reasons, <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4ncpy</span></span> tends to be more
+useful than standard C runtime library functions <b>strcpy</b> and <b>strncpy</b>. </p>
+
+<p class=Body>     <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Parameters:</span></span></p>
+
+<p class=Body>                     <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">to        </span></span>This points to the storage
+where <i>from</i> is copied to. </p>
+
+<p class=Body>                  <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">from        </span></span><i>from</i> points to the string which is to be copied. </p>
+
+<p class=Body>                <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">lenTo        </span></span>This is the number of
+bytes of allocated memory that <i>to</i>
+points to. </p>
+
+<p class=Body>            <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:        </span></span>The number of characters
+actually copied is returned. This value is always less than or equal to
+parameter <i>lenTo</i> and does not include
+the null termination character. </p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">void display20( char *ptr ) </p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">{</p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">   char buf[21] ;</p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">&nbsp;</p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">   u4ncpy( buf, ptr, sizeof(buf) ) ;</p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">   cout &lt;&lt; &quot;Display: &quot; &lt;&lt; buf ;</p>
+
+<p class="SourceCode" style="background:#E5E5E5; ">}</p>
+
+</div>
+</body>
+</html>

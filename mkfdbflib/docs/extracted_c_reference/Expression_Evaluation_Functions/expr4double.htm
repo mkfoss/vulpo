@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\expr4.doc">
+ <title>expr4double</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="expr4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>expr4double</h2>
+
+<p class=Body>                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>double expr4double( EXPR4
+*expr ) </p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>The expression is evaluated
+and the result is returned as a <span class=InlineLanguageType>(double)</span>. This function assumes
+that if the dBASE expression evaluates to a character result, the result is a
+character representation of a decimal number. If the result is a numeric
+result, it is cast to a <span class=InlineLanguageType>(double)</span>. If the expression evaluates to a date value, <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">expr4double </span></span>converts the
+resulting date into a Julian date value. </p>
+
+<p class=Body>               <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:    </span></span><span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">expr4double </span></span>returns the <span
+class=InlineLanguageType>(double)</span>
+value of the evaluated expression. Since there is no error return on this
+operator, check the <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">CODE4</span></span>.<span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">errorCode</span></span>, or call <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">error4exitTest </span></span>to
+determine if an error occurred. </p>
+
+<p class="SourceCode">/*ex90.c*/</p>
+
+<p class="SourceCode">#include &quot;d4all.h&quot;
+</p>
+
+<p class="SourceCode">#define VOTE_AGE 18.0</p>
+
+<p class="SourceCode">extern unsigned _stklen =
+10000 ; /* for all Borland compilers */</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">void main( ) </p>
+
+<p class="SourceCode">{</p>
+
+<p class="SourceCode">   CODE4 cb ;</p>
+
+<p class="SourceCode">   DATA4 *data ;</p>
+
+<p class="SourceCode">   EXPR4 *expr ;</p>
+
+<p class="SourceCode">   long count = 0;</p>
+
+<p class="SourceCode">   int rc ;</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class=SourceCode>   code4init( &amp;cb
+) ;</p>
+
+<p class=SourceCode>   data = d4open(
+&amp;cb, &quot;INFO&quot; ) ;</p>
+
+<p class=SourceCode>   expr = expr4parse(
+data, &quot;AGE&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   for( rc = d4top(
+data ) ; rc != r4eof ; rc = d4skip( data, 1 ) )</p>
+
+<p class=SourceCode>       if(
+expr4double( expr ) &gt;= VOTE_AGE )</p>
+
+<p class=SourceCode>        count ++ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   printf(
+&quot;Possible voters: %d\n&quot;, count ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   expr4free( expr ) ;</p>
+
+<p class=SourceCode>   code4initUndo(
+&amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>relate4doAll</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1238>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>relate4doAll</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int relate4doAll( RELATE4 *relate )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function looks up the slave family of the specified 
+ parameter <i>relate</i>. It assumes that the relation data file specified 
+ by this parameter is positioned appropriately. </p>
+
+<p class=Body
+	style="text-indent: 0px;"><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4doAll</span></span> 
+ provides a way to use the relate module to perform automatic lookups. 
+ Consequently, you can go to records directly using lower level data file 
+ functions (such as <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4go</span></span>) 
+ and then have related records looked up. </p>
+
+<p class=Body
+	style="text-indent: 0px;">The relation set's query and sort expressions 
+ are ignored by <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4doAll</span></span>. 
+ Consequently, this function provides somewhat independent functionality. 
+ This means using <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4doAll</span></span> 
+ in conjunction with relate functions such as <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4top</span></span> 
+ and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4skip</span></span> 
+ is not particularly useful. For this reason, it is not necessary to call 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4top</span></span> 
+ or <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4bottom</span></span> 
+ before calling <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4doAll</span></span>. 
+ </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1029" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>To use this function on the entire relation set, position 
+ the top master file using a call to a function such as <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">d4go</span></span>. Then call <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4doAll </span></span>using the <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">RELATE4</span></span> 
+ pointer returned by <span class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4init</span></span>.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin: 0in;
+			margin-bottom: .0001pt;
+			text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1030" x-maintain-ratio="TRUE" style="width: 47px;
+											height: 40px;
+											float: none;" width="47" height="40" border="0">&nbsp;<b><sup><span style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText><span class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4doAll</span></span> 
+ ignores any query expression set by <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4querySet</span></span>. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4terminate&nbsp;&nbsp;&nbsp; 
+ </span></span>A lookup into a slave data file failed. This was returned 
+ because the error action was set to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4terminate </span></span>and 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errRelate</span></span> 
+ is set to false (zero). </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0</span></span>&nbsp;&nbsp; Error </p>
+
+<p class=SourceCode>/*ex123.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>#ifdef __TURBOC__</p>
+
+<p class=SourceCode>&nbsp;&nbsp; extern unsigned _stklen = 10000;</p>
+
+<p class=SourceCode>#endif</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void )</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *employee, *office, *building ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; TAG4 *officeNo, *buildNo ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; RELATE4 *master, *toOffice, *toBuilding 
+ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; employee = d4open( &amp;cb, &quot;EMPLOYEE&quot; 
+ );</p>
+
+<p class=SourceCode>&nbsp;&nbsp; office = d4open( &amp;cb, &quot;OFFICE&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; building = d4open( &amp;cb, &quot;BUILDING&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /*set up the tags */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; officeNo = d4tag( office, &quot;OFF_NUM&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; buildNo = d4tag( building, &quot;BUILD_NO&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Create the relations */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; master = relate4init( employee ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; toOffice = relate4createSlave(master,office, 
+ &quot;EMPLOYEE-&gt;OFFICE_NO&quot;, officeNo );</p>
+
+<p class=SourceCode>&nbsp;&nbsp; toBuilding = relate4createSlave( toOffice, 
+ building, &quot;OFFICE-&gt;BUILD_NO&quot;, buildNo ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Go to employee, at record 2*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4go( employee, 2L ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Lock the data files and their index 
+ files.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relate4lockAdd( master ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4lock( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* This call causes the corresponding 
+ records in data files &quot;OFFICE&quot;</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and &quot;BUILDING&quot; 
+ to be looked up.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relate4doAll( master ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Go to office, at record 3*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4go( office, 3L ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* This call causes the building record 
+ to be positioned according to</p>
+
+<p class=SourceCode>&nbsp;&nbsp; its master, the office data file. */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relate4doOne( toBuilding ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /*&nbsp; ..&nbsp; and so on*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relate4free( master, 1 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb&nbsp; ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>date4init</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\date4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=502>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="date4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>date4init</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>void date4init( char *date, const char *value, char *picture 
+ )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>The <i>date</i> is initialized from parameter <i>value</i>. 
+ Parameter <i>value</i> must be formatted according to picture parameter 
+ <i>picture</i>.</p>
+
+<p class=Body
+	style="text-indent: 0px;">This is the inverse function of <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">date4format</span></span>.</p>
+
+<p class=Body
+	style="text-indent: 0px;">If any of the date is missing, the missing 
+ portion is filled in using the date January 1, 1980.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">date&nbsp;&nbsp;&nbsp; 
+ </span></span>After the call to<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ date4init</span></span><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;"> 
+ </span></span>is completed, date will contain a string in standard date 
+ format “CCYYMMDD”.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">value&nbsp;&nbsp;&nbsp; 
+ </span></span>This is a character string that represents a date.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">picture&nbsp;&nbsp;&nbsp; 
+ </span></span>This null terminated character array specifies the format 
+ of parameter <i>value</i>.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ Date Functions chapter in the Users Guide, <span class=InlineFunctionNames
+													style="font-size: 10.0pt; font-family: Arial;"><a href="date4assign.htm">date4assign</a></span></p>
+
+<p class=SourceCode>/*ex81.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; char day[8] ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /*date4init puts the given date in CCYYMMDD 
+ format */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; date4init( day, &quot;Oct 07/90&quot;, 
+ &quot;MMM DD/YY&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;Oct 07/90 becomes %s\n&quot;, 
+ day ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; date4init( day, &quot;08/07/1989&quot;, 
+ &quot;MM/DD/CCYY&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;08/07/1989 becomes %s \n&quot;, 
+ day );</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

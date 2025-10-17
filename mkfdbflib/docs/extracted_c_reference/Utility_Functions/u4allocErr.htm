@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\util4.doc">
+ <title>u4allocErr</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="util4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>u4allocErr</h2>
+
+<p class=Body>              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:        </span></span>void *u4allocErr( CODE4
+*codeBase, long len ) </p>
+
+<p class=Body>       <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>This function allocates
+memory from the operating system. It is identical to <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4allocFree</span></span> except that
+if memory cannot be allocated, an error is generated. </p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">            <span class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:        </span></span>A
+pointer to the allocated memory is returned. The memory is initialized to null.
+A null pointer is returned to indicate that no memory was available. In this
+case, if the <i>codeBase</i> parameter is
+not null an error is generated. </p>
+
+</div>
+</body>
+</html>

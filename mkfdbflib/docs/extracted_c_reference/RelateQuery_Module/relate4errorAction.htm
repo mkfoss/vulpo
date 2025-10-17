@@ -1,0 +1,154 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>relate4errorAction</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=660>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>relate4errorAction</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int relate4errorAction( RELATE4 *relate, int newAction )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>At times, a slave data file record cannot be located when 
+ the relation is performed. For example, the master key expression has 
+ no corresponding entry in the slave tag. </p>
+
+<p class=Body
+	style="text-indent: 0px;">When a slave record cannot be located, the 
+ relation<span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;"> 
+ </span></span>module performs one of the following actions, depending 
+ on the setting of <i>newAction</i>.</p>
+
+<p class=BodyIndent><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate4blank&nbsp;&nbsp;&nbsp; </span></span>This is the default action. 
+ It means that when a slave record cannot be located, it becomes blank. 
+ When using scan relations, a blank composite record will be generated 
+ for each slave data file that does not contain a match for the master's 
+ record. </p>
+
+<p class=BodyIndent><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate4skipRec&nbsp;&nbsp;&nbsp; </span></span>This code means that the 
+ entire composite record is skipped as if it did not exist. </p>
+
+<p class=BodyIndent><span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ relate4terminate&nbsp;&nbsp;&nbsp; </span></span>This means that a CodeBase 
+ error is generated and the CodeBase relate module function, possibly <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4skip</span></span>, 
+ returns an error code. When using a master with more than one slave, an 
+ error is generated if any slave data files do not contain a match for 
+ the mater's record. </p>
+
+<p class=BodyIndent
+	style="text-indent: 0px;">If the <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">CODE4.errRelate</span></span> 
+ member variable is set to false (zero), the error message is suppressed, 
+ although the executing function still returns <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">r4terminate</span></span>. 
+ </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1033" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>Approximate Match relations are unaffected by this setting. 
+ In this type of relation, a blank record is generated if no match is found 
+ in the slave data file.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Parameters:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">relate</span></span>&nbsp;&nbsp; 
+ This parameter specifies the relation on which the new error action applies. 
+ <i>relate</i> must be initialized by a call to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4createSlave</span></span>. 
+ If <i>relate</i> was initialized by <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4init</span></span> 
+ then this function has no effect.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">newAction&nbsp;&nbsp;&nbsp; 
+ </span></span>This code specifies the new error action to take. The possible 
+ values are <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4blank</span></span>, 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4skipRec</span></span>, 
+ and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4terminate</span></span>.</p>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4errorAction</span></span> 
+ returns the previous error action code. If the relation is not initialized, 
+ '-1' is returned.</p>
+
+</body>
+
+</html>

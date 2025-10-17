@@ -1,0 +1,67 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4fileName</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=428>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4fileName</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>const char *d4fileName( DATA4 *data )</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>The file name of the data file is returned as a null terminated 
+ character string complete with the file extension and all path information. 
+ This information is returned regardless of whether a file extension or 
+ a path was specified in the name parameter passed to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4open</span></span> or 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4create</span></span>. 
+ This value is not altered by <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4alias</span></span>. 
+ </p>
+
+<p class=Body
+	style="margin-bottom: .0001pt; text-indent: 0px;">The pointer that 
+ is returned by this function, points to internal memory, which may not 
+ be valid after the next call to a CodeBase function. Therefore, if the 
+ name is needed for an extended period of time, the file name should be 
+ copied by the application.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,1570 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800002">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="CodeBase 6 Reference Guide">
+    <param name="Local" value="Title.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Legal Notices">
+      <param name="Local" value="LegalNotices.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Local" value="Introduction.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Conditional Compilation Switches">
+      <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Spoken Language Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Spoken_Language_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Library Reducing Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Library_Reducing_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Operating System Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Operating_System_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="General Configuration Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#General_Configuration_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Client-Server Configuration Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Client_Server_Configuration_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Error Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Error_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Screen Output Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Screen_Output_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="FoxPro Configuration Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#FoxPro_Configuration_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Compiler Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#Compiler_Switches">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="File Format Switches">
+        <param name="Local" value="Conditional_Compilation_Switches/Conditional_Compilation_Switches.htm#File_Format_Switches">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Conversion Functions">
+      <param name="Local" value="Conversion_Functions/Conversion_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="c4atod">
+        <param name="Local" value="Conversion_Functions/c4atod.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="c4atoi">
+        <param name="Local" value="Conversion_Functions/c4atoi.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="c4atol">
+        <param name="Local" value="Conversion_Functions/c4atol.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="c4encode">
+        <param name="Local" value="Conversion_Functions/c4encode.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="c4trimN">
+        <param name="Local" value="Conversion_Functions/c4trimN.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Code4">
+      <param name="Local" value="Code4/CodeBase_Members_and_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CODE4 Structure Variables">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.accessMode">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.accessMode.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.autoOpen">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.autoOpen.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.codePage">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.codePage.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.collatingSequence">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.collatingSequence.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.compatibility">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.compatibility.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.createTemp">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.createTemp.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errCreate">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errCreate.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errDefaultUnique">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errDefaultUnique.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errExpr">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errExpr.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errFieldName">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errFieldName.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errGo">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errGo.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errOff">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errOff.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errOpen">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errOpen.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errorCode">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errorCode.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errRelate">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errRelate.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errSkip">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errSkip.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.errTagName">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.errTagName.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.fileFlush">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.fileFlush.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.hInst">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.hInst.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.hWnd">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.hWnd.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.lockAttempts">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.lockAttempts.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.lockAttemptsSingle">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.lockAttemptsSingle.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.lockDelay">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.lockDelay.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.lockEnforce">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.lockEnforce.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.log">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.log.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memExpandBlock">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memExpandBlock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memExpandData">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memExpandData.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memExpandIndex">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memExpandIndex.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memExpandLock">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memExpandLock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memExpandTag">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memExpandTag.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memSizeBlock">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memSizeBlock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memSizeBuffer">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memSizeBuffer.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memSizeMemo">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memSizeMemo.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memSizeMemoExpr">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memSizeMemoExpr.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memSizeSortBuffer">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memSizeSortBuffer.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memSizeSortPool">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memSizeSortPool.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memStartBlock">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memStartBlock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memStartData">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memStartData.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memStartIndex">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memStartIndex.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memStartLock">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memStartLock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memStartMax">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memStartMax.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.memStartTag">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.memStartTag.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.optimize">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.optimize.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.optimizeWrite">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.optimizeWrite.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.readLock">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.readLock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.readOnly">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.readOnly.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.safety">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.safety.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.singleOpen">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.singleOpen.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="CODE4.useGeneralTagsInRelate">
+          <param name="Local" value="Code4/CODE4_Structure_Variables/CODE4.useGeneralTagsInRelate.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CodeBase Function Reference">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4actionCode">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4actionCode.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4calcCreate">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4calcCreate.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4calcReset">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4calcReset.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4close">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4close.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4collate, code4collateUnicode">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4collate,_code4collateUnicode.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4connect">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4connect.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4data">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4data.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4dateFormat">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4dateFormat.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4dateFormatSet">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4dateFormatSet.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4exit">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4exit.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4flush">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4flush.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4indexBlockSize">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4indexBlockSize.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4indexBlockSizeSet">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4indexBlockSizeSet.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4indexExtension">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4indexExtension.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4init">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4init.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4initUndo">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4initUndo.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4largeOn">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4largeOn.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4lock">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4lock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4lockClear">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4lockClear.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4lockFileName">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4lockFileName.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4lockItem">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4lockItem.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4lockNetworkId">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4lockNetworkId.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4lockUserId">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4lockUserId.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4logCreate">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4logCreate.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4logFileName">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4logFileName.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4logOpen">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4logOpen.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4logOpenOff">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4logOpenOff.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4optAll">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4optAll.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4optStart">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4optStart.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4optSuspend">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4optSuspend.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4timeout">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4timeout.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4timeoutSet">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4timeoutSet.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4tranCommit">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4tranCommit.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4tranRollback">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4tranRollback.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4tranStart">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4tranStart.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4tranStatus">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4tranStatus.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4unlock">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4unlock.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4unlockAuto">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4unlockAuto.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="code4unlockAutoSet">
+          <param name="Local" value="Code4/CodeBase_Function_Reference/code4unlockAutoSet.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Data File Functions">
+      <param name="Local" value="Data_File_Functions/Data_File_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4alias">
+        <param name="Local" value="Data_File_Functions/d4alias.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4aliasSet">
+        <param name="Local" value="Data_File_Functions/d4aliasSet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4append">
+        <param name="Local" value="Data_File_Functions/d4append.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4appendBlank">
+        <param name="Local" value="Data_File_Functions/d4appendBlank.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4appendStart">
+        <param name="Local" value="Data_File_Functions/d4appendStart.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4blank">
+        <param name="Local" value="Data_File_Functions/d4blank.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4bof">
+        <param name="Local" value="Data_File_Functions/d4bof.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4bottom">
+        <param name="Local" value="Data_File_Functions/d4bottom.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4changed">
+        <param name="Local" value="Data_File_Functions/d4changed.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4check">
+        <param name="Local" value="Data_File_Functions/d4check.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4close">
+        <param name="Local" value="Data_File_Functions/d4close.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4create">
+        <param name="Local" value="Data_File_Functions/d4create.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4delete">
+        <param name="Local" value="Data_File_Functions/d4delete.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4deleted">
+        <param name="Local" value="Data_File_Functions/d4deleted.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4eof">
+        <param name="Local" value="Data_File_Functions/d4eof.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4field">
+        <param name="Local" value="Data_File_Functions/d4field.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4fieldInfo">
+        <param name="Local" value="Data_File_Functions/d4fieldInfo.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4fieldJ">
+        <param name="Local" value="Data_File_Functions/d4fieldJ.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4fieldNumber">
+        <param name="Local" value="Data_File_Functions/d4fieldNumber.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4fileName">
+        <param name="Local" value="Data_File_Functions/d4fileName.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4flush">
+        <param name="Local" value="Data_File_Functions/d4flush.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4freeBlocks">
+        <param name="Local" value="Data_File_Functions/d4freeBlocks.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4go">
+        <param name="Local" value="Data_File_Functions/d4go.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4goBof">
+        <param name="Local" value="Data_File_Functions/d4goBof.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4goEof">
+        <param name="Local" value="Data_File_Functions/d4goEof.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4index">
+        <param name="Local" value="Data_File_Functions/d4index.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lock">
+        <param name="Local" value="Data_File_Functions/d4lock.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockAdd">
+        <param name="Local" value="Data_File_Functions/d4lockAdd.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockAddAll">
+        <param name="Local" value="Data_File_Functions/d4lockAddAll.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockAddAppend">
+        <param name="Local" value="Data_File_Functions/d4lockAddAppend.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockAddFile">
+        <param name="Local" value="Data_File_Functions/d4lockAddFile.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockAll">
+        <param name="Local" value="Data_File_Functions/d4lockAll.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockAppend">
+        <param name="Local" value="Data_File_Functions/d4lockAppend.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4lockFile">
+        <param name="Local" value="Data_File_Functions/d4lockFile.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4log">
+        <param name="Local" value="Data_File_Functions/d4log.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4logStatus">
+        <param name="Local" value="Data_File_Functions/d4logStatus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4memoCompress">
+        <param name="Local" value="Data_File_Functions/d4memoCompress.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4numFields">
+        <param name="Local" value="Data_File_Functions/d4numFields.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4open">
+        <param name="Local" value="Data_File_Functions/d4open.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4openClone">
+        <param name="Local" value="Data_File_Functions/d4openClone.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4optimize">
+        <param name="Local" value="Data_File_Functions/d4optimize.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4optimizeWrite">
+        <param name="Local" value="Data_File_Functions/d4optimizeWrite.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4pack">
+        <param name="Local" value="Data_File_Functions/d4pack.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4position">
+        <param name="Local" value="Data_File_Functions/d4position.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4positionSet">
+        <param name="Local" value="Data_File_Functions/d4positionSet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4recall">
+        <param name="Local" value="Data_File_Functions/d4recall.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4recCount">
+        <param name="Local" value="Data_File_Functions/d4recCount.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4recNo">
+        <param name="Local" value="Data_File_Functions/d4recNo.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4record">
+        <param name="Local" value="Data_File_Functions/d4record.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4recWidth">
+        <param name="Local" value="Data_File_Functions/d4recWidth.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4refresh">
+        <param name="Local" value="Data_File_Functions/d4refresh.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4refreshRecord">
+        <param name="Local" value="Data_File_Functions/d4refreshRecord.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4reindex">
+        <param name="Local" value="Data_File_Functions/d4reindex.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4reindexWithProgress">
+        <param name="Local" value="Data_File_Functions/d4reindexWithProgress.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4remove">
+        <param name="Local" value="Data_File_Functions/d4remove.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4seek">
+        <param name="Local" value="Data_File_Functions/d4seek.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4seekDouble">
+        <param name="Local" value="Data_File_Functions/d4seekDouble.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4seekN">
+        <param name="Local" value="Data_File_Functions/d4seekN.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4seekNext">
+        <param name="Local" value="Data_File_Functions/d4seekNext.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4seekNextDouble">
+        <param name="Local" value="Data_File_Functions/d4seekNextDouble.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4seekNextN">
+        <param name="Local" value="Data_File_Functions/d4seekNextN.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4skip">
+        <param name="Local" value="Data_File_Functions/d4skip.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tag">
+        <param name="Local" value="Data_File_Functions/d4tag.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tagDefault">
+        <param name="Local" value="Data_File_Functions/d4tagDefault.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tagNext">
+        <param name="Local" value="Data_File_Functions/d4tagNext.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tagPrev">
+        <param name="Local" value="Data_File_Functions/d4tagPrev.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tagSelect">
+        <param name="Local" value="Data_File_Functions/d4tagSelect.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tagSelected">
+        <param name="Local" value="Data_File_Functions/d4tagSelected.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4tagSync">
+        <param name="Local" value="Data_File_Functions/d4tagSync.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4top">
+        <param name="Local" value="Data_File_Functions/d4top.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4unlock">
+        <param name="Local" value="Data_File_Functions/d4unlock.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4write">
+        <param name="Local" value="Data_File_Functions/d4write.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="d4zap">
+        <param name="Local" value="Data_File_Functions/d4zap.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Date Functions">
+      <param name="Local" value="Date_Functions/Date_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4assign">
+        <param name="Local" value="Date_Functions/date4assign.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4cdow">
+        <param name="Local" value="Date_Functions/date4cdow.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4cmonth">
+        <param name="Local" value="Date_Functions/date4cmonth.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4day">
+        <param name="Local" value="Date_Functions/date4day.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4dow">
+        <param name="Local" value="Date_Functions/date4dow.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4format">
+        <param name="Local" value="Date_Functions/date4format.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4init">
+        <param name="Local" value="Date_Functions/date4init.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4isLeap">
+        <param name="Local" value="Date_Functions/date4isLeap.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4long">
+        <param name="Local" value="Date_Functions/date4long.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4month">
+        <param name="Local" value="Date_Functions/date4month.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4timeNow">
+        <param name="Local" value="Date_Functions/date4timeNow.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4today">
+        <param name="Local" value="Date_Functions/date4today.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="date4year">
+        <param name="Local" value="Date_Functions/date4year.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Error Functions">
+      <param name="Local" value="Error_Functions/Error_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4">
+        <param name="Local" value="Error_Functions/error4.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4describe">
+        <param name="Local" value="Error_Functions/error4describe.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4exitTest">
+        <param name="Local" value="Error_Functions/error4exitTest.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4file">
+        <param name="Local" value="Error_Functions/error4file.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4hook">
+        <param name="Local" value="Error_Functions/error4hook.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4set">
+        <param name="Local" value="Error_Functions/error4set.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="error4text">
+        <param name="Local" value="Error_Functions/error4text.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Expression Evaluation Functions">
+      <param name="Local" value="Expression_Evaluation_Functions/Expression_Evaluation_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4data">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4data.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4double">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4double.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4free">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4free.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4len">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4len.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4null">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4null.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4parse">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4parse.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4source">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4source.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4str">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4str.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4true">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4true.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4type">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4type.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="expr4vary">
+        <param name="Local" value="Expression_Evaluation_Functions/expr4vary.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Field Functions">
+      <param name="Local" value="Field_Functions/Field_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assign">
+        <param name="Local" value="Field_Functions/f4assign.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignChar">
+        <param name="Local" value="Field_Functions/f4assignChar.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignCurrency">
+        <param name="Local" value="Field_Functions/f4assignCurrency.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignDateTime">
+        <param name="Local" value="Field_Functions/f4assignDateTime.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignDouble">
+        <param name="Local" value="Field_Functions/f4assignDouble.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignField">
+        <param name="Local" value="Field_Functions/f4assignField.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignInt">
+        <param name="Local" value="Field_Functions/f4assignInt.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignLong">
+        <param name="Local" value="Field_Functions/f4assignLong.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignN">
+        <param name="Local" value="Field_Functions/f4assignN.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignNull">
+        <param name="Local" value="Field_Functions/f4assignNull.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignPtr">
+        <param name="Local" value="Field_Functions/f4assignPtr.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4assignUnicode">
+        <param name="Local" value="Field_Functions/f4assignUnicode.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4blank">
+        <param name="Local" value="Field_Functions/f4blank.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4char">
+        <param name="Local" value="Field_Functions/f4char.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4currency">
+        <param name="Local" value="Field_Functions/f4currency.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4data">
+        <param name="Local" value="Field_Functions/f4data.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4dateTime">
+        <param name="Local" value="Field_Functions/f4dateTime.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4decimals">
+        <param name="Local" value="Field_Functions/f4decimals.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4double">
+        <param name="Local" value="Field_Functions/f4double.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4int">
+        <param name="Local" value="Field_Functions/f4int.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4len">
+        <param name="Local" value="Field_Functions/f4len.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4long">
+        <param name="Local" value="Field_Functions/f4long.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoAssign">
+        <param name="Local" value="Field_Functions/f4memoAssign.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoAssignN">
+        <param name="Local" value="Field_Functions/f4memoAssignN.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoAssignUnicode">
+        <param name="Local" value="Field_Functions/f4memoAssignUnicode.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoFree">
+        <param name="Local" value="Field_Functions/f4memoFree.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoLen">
+        <param name="Local" value="Field_Functions/f4memoLen.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoNcpy">
+        <param name="Local" value="Field_Functions/f4memoNcpy.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoPtr">
+        <param name="Local" value="Field_Functions/f4memoPtr.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4memoStr">
+        <param name="Local" value="Field_Functions/f4memoStr.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4name">
+        <param name="Local" value="Field_Functions/f4name.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4ncpy">
+        <param name="Local" value="Field_Functions/f4ncpy.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4null">
+        <param name="Local" value="Field_Functions/f4null.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4number">
+        <param name="Local" value="Field_Functions/f4number.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4ptr">
+        <param name="Local" value="Field_Functions/f4ptr.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4str">
+        <param name="Local" value="Field_Functions/f4str.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4true">
+        <param name="Local" value="Field_Functions/f4true.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="f4type">
+        <param name="Local" value="Field_Functions/f4type.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="File Functions">
+      <param name="Local" value="File_Functions/File_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4close">
+        <param name="Local" value="File_Functions/file4close.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4create">
+        <param name="Local" value="File_Functions/file4create.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4flush">
+        <param name="Local" value="File_Functions/file4flush.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4len">
+        <param name="Local" value="File_Functions/file4len.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4lenSet">
+        <param name="Local" value="File_Functions/file4lenSet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4lock">
+        <param name="Local" value="File_Functions/file4lock.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4name">
+        <param name="Local" value="File_Functions/file4name.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4open">
+        <param name="Local" value="File_Functions/file4open.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4optimize">
+        <param name="Local" value="File_Functions/file4optimize.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4optimizeWrite">
+        <param name="Local" value="File_Functions/file4optimizeWrite.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4read">
+        <param name="Local" value="File_Functions/file4read.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4readAll">
+        <param name="Local" value="File_Functions/file4readAll.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4refresh">
+        <param name="Local" value="File_Functions/file4refresh.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4replace">
+        <param name="Local" value="File_Functions/file4replace.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4unlock">
+        <param name="Local" value="File_Functions/file4unlock.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4write">
+        <param name="Local" value="File_Functions/file4write.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Sequential Read Functions">
+      <param name="Local" value="Sequential_Read_Functions/Sequential_Read_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqRead">
+        <param name="Local" value="Sequential_Read_Functions/file4seqRead.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqReadAll">
+        <param name="Local" value="Sequential_Read_Functions/file4seqReadAll.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqReadInit">
+        <param name="Local" value="Sequential_Read_Functions/file4seqReadInit.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Sequential Write Functions">
+      <param name="Local" value="Sequential_Write_Functions/Sequential_Write_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqWrite">
+        <param name="Local" value="Sequential_Write_Functions/file4seqWrite.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqWriteFlush">
+        <param name="Local" value="Sequential_Write_Functions/file4seqWriteFlush.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqWriteInit">
+        <param name="Local" value="Sequential_Write_Functions/file4seqWriteInit.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="file4seqWriteRepeat">
+        <param name="Local" value="Sequential_Write_Functions/file4seqWriteRepeat.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Index Functions">
+      <param name="Local" value="Index_Functions/Index_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4close">
+        <param name="Local" value="Index_Functions/i4close.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4create">
+        <param name="Local" value="Index_Functions/i4create.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4fileName">
+        <param name="Local" value="Index_Functions/i4fileName.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4open">
+        <param name="Local" value="Index_Functions/i4open.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4reindex">
+        <param name="Local" value="Index_Functions/i4reindex.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4tag">
+        <param name="Local" value="Index_Functions/i4tag.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4tagAdd">
+        <param name="Local" value="Index_Functions/i4tagAdd.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4tagInfo">
+        <param name="Local" value="Index_Functions/i4tagInfo.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="i4tagRemove">
+        <param name="Local" value="Index_Functions/i4tagRemove.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Linked List Functions">
+      <param name="Local" value="Linked_List_Functions/Linked_List_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="LIST4 Structure Variables">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="LIST4.selected">
+          <param name="Local" value="Linked_List_Functions/LIST4_Structure_Variables/LIST4.selected.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Linked List Function Reference">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4add">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4add.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4addAfter">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4addAfter.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4addBefore">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4addBefore.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4first">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4first.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4init">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4init.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4last">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4last.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4next">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4next.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4numNodes">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4numNodes.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4pop">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4pop.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4prev">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4prev.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="l4remove">
+          <param name="Local" value="Linked_List_Functions/Linked_List_Function_Reference/l4remove.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Memory Functions">
+      <param name="Local" value="Memory_Functions/Memory_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="mem4alloc">
+        <param name="Local" value="Memory_Functions/mem4alloc.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="mem4create">
+        <param name="Local" value="Memory_Functions/mem4create.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="mem4free">
+        <param name="Local" value="Memory_Functions/mem4free.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="mem4release">
+        <param name="Local" value="Memory_Functions/mem4release.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Relate/Query Module">
+      <param name="Local" value="RelateQuery_Module/Relate_Query_Module.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4bottom">
+        <param name="Local" value="RelateQuery_Module/relate4bottom.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4changed">
+        <param name="Local" value="RelateQuery_Module/relate4changed.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4createSlave">
+        <param name="Local" value="RelateQuery_Module/relate4createSlave.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4data">
+        <param name="Local" value="RelateQuery_Module/relate4data.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4dataTag">
+        <param name="Local" value="RelateQuery_Module/relate4dataTag.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4doAll">
+        <param name="Local" value="RelateQuery_Module/relate4doAll.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4doOne">
+        <param name="Local" value="RelateQuery_Module/relate4doOne.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4eof">
+        <param name="Local" value="RelateQuery_Module/relate4eof.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4errorAction">
+        <param name="Local" value="RelateQuery_Module/relate4errorAction.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4free">
+        <param name="Local" value="RelateQuery_Module/relate4free.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4init">
+        <param name="Local" value="RelateQuery_Module/relate4init.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4lockAdd">
+        <param name="Local" value="RelateQuery_Module/relate4lockAdd.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4master">
+        <param name="Local" value="RelateQuery_Module/relate4master.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4masterExpr">
+        <param name="Local" value="RelateQuery_Module/relate4masterExpr.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4matchLen">
+        <param name="Local" value="RelateQuery_Module/relate4matchLen.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4next">
+        <param name="Local" value="RelateQuery_Module/relate4next.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4optimizeable">
+        <param name="Local" value="RelateQuery_Module/relate4optimizeable.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4querySet">
+        <param name="Local" value="RelateQuery_Module/relate4querySet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4skip">
+        <param name="Local" value="RelateQuery_Module/relate4skip.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4skipEnable">
+        <param name="Local" value="RelateQuery_Module/relate4skipEnable.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4sortSet">
+        <param name="Local" value="RelateQuery_Module/relate4sortSet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4top">
+        <param name="Local" value="RelateQuery_Module/relate4top.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="relate4type">
+        <param name="Local" value="RelateQuery_Module/relate4type.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Sort Functions">
+      <param name="Local" value="Sort_Functions/Sort_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="sort4assignCmp">
+        <param name="Local" value="Sort_Functions/sort4assignCmp.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="sort4free">
+        <param name="Local" value="Sort_Functions/sort4free.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="sort4get">
+        <param name="Local" value="Sort_Functions/sort4get.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="sort4getInit">
+        <param name="Local" value="Sort_Functions/sort4getInit.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="sort4init">
+        <param name="Local" value="Sort_Functions/sort4init.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="sort4put">
+        <param name="Local" value="Sort_Functions/sort4put.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tag Functions">
+      <param name="Local" value="Tag_Functions/Tag_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="TAG4 Structure Variables">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="TAG4.index">
+          <param name="Local" value="Tag_Functions/TAG4_Structure_Variables/TAG4.index.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Tag Function Reference">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4alias">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4alias.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4close">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4close.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4expr">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4expr.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4filter">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4filter.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4open">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4open.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4unique">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4unique.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="t4uniqueSet">
+          <param name="Local" value="Tag_Functions/Tag_Function_Reference/t4uniqueSet.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Utility Functions">
+      <param name="Local" value="Utility_Functions/Utility_Functions.htm">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4alloc">
+        <param name="Local" value="Utility_Functions/u4alloc.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4allocAgain">
+        <param name="Local" value="Utility_Functions/u4allocAgain.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4allocErr">
+        <param name="Local" value="Utility_Functions/u4allocErr.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4allocFree">
+        <param name="Local" value="Utility_Functions/u4allocFree.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4free">
+        <param name="Local" value="Utility_Functions/u4free.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4nameChar">
+        <param name="Local" value="Utility_Functions/u4nameChar.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4nameExt">
+        <param name="Local" value="Utility_Functions/u4nameExt.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4namePiece">
+        <param name="Local" value="Utility_Functions/u4namePiece.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4ncpy">
+        <param name="Local" value="Utility_Functions/u4ncpy.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="u4yymmdd">
+        <param name="Local" value="Utility_Functions/u4yymmdd.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Appendices">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appendix A: Error Codes">
+        <param name="Local" value="Appendices/Appendix_A_Error_Codes.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appendix B: Return Codes">
+        <param name="Local" value="Appendices/Appendix_B_Return_Codes.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appendix C: dBASE Expressions">
+        <param name="Local" value="Appendices/Appendix_C_dBASE_Expressions.htm">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="General dBASE Expression Information">
+          <param name="Local" value="Appendices/Appendix_C_dBASE_Expressions.htm#General_dBASE_Expression_Information">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="dBASE Expression Constants">
+          <param name="Local" value="Appendices/Appendix_C_dBASE_Expressions.htm#dBASE_Expression_Constants">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="dBASE Expression Functions">
+          <param name="Local" value="Appendices/Appendix_C_dBASE_Expressions.htm#dBASE_Expression_Functions">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="dBASE Expression Operators">
+          <param name="Local" value="Appendices/Appendix_C_dBASE_Expressions.htm#dBASE_Expression_Operators">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Field Name Qualifier">
+          <param name="Local" value="Appendices/Appendix_C_dBASE_Expressions.htm#Field_Name_Qualifier">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appendix D: CodeBase Limits">
+        <param name="Local" value="Appendices/Appendix_D_CodeBase_Limits.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appendix E: Field Types">
+        <param name="Local" value="Appendices/Appendix_E_Field_Types.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

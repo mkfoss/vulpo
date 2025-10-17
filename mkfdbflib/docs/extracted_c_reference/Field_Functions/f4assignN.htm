@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+ <title>f4assignN</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="field4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>f4assignN</h2>
+
+<p class="Body" style="margin-bottom:.0001pt; ">                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>void f4assignN ( FIELD4
+*field, const char *ptr, unsigned&nbsp;ptrLen ) </p>
+
+<p class="Body" style="margin-top:6.0pt; ">          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>The contents of the specified
+field are replaced by the character array pointed to by <i>ptr</i>.</p>
+
+<p class=Body>         <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Parameters:</span></span></p>
+
+<p class=Body>                     <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">field    </span></span>A pointer to a field’s <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">FIELD4 </span></span>structure.</p>
+
+<p class=Body>                        <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">ptr</span></span>   A pointer to a character array of length <i>ptrLen</i>. If the length of the new data is
+less than the field length, then the extra space in the field is filled with
+blanks. On the other hand, if <i>ptr</i>
+points to too much data then the extra data is ignored.</p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">                  <span class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">ptrLen</span></span>   The
+length of the character array.</p>
+
+</div>
+</body>
+</html>

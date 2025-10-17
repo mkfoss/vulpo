@@ -1,0 +1,107 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+ <title>d4eof</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="data4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>d4eof</h2>
+
+<p class=Body>                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>int d4eof( DATA4 *data )</p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>If you attempt to position
+past the last record in the data file with <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">d4skip
+</span></span>or <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">d4seek</span></span>,
+the End of File flag is set and <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">d4eof
+</span></span>returns a true (non-zero) value. At any other point in the data
+file, a false (zero) value is returned. </p>
+
+<p class=Body>               <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:</span></span></p>
+
+<p class=Body>                       <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">&gt; 0</span></span>   An end of file condition has occurred. <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">d4eof </span></span>will return this
+value until the data file is repositioned or modified. </p>
+
+<p class=Body>                         <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">0    </span></span>This return indicates that an
+end of file condition has not occurred.</p>
+
+<p class=Body>                       <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">&lt; 0</span></span>   The <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">DATA4</span></span>
+structure is invalid or contains an error value. </p>
+
+<p class=SourceCode>/*ex42.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>   CODE4 cb ;</p>
+
+<p class=SourceCode>   DATA4 *infoFile ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   code4init( &amp;cb
+) ;</p>
+
+<p class=SourceCode>   infoFile = d4open(
+&amp;cb, &quot;INFO&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   /* Go to the end of
+file and set the End of file flag*/</p>
+
+<p class=SourceCode>   d4goEof( infoFile )
+;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   /* Check to see if
+the end of file flag is set*/</p>
+
+<p class=SourceCode>   if( d4eof( infoFile
+) )</p>
+
+<p class=SourceCode>   {</p>
+
+<p class=SourceCode>       printf(
+&quot;This is always true\n&quot;) ;</p>
+
+<p class=SourceCode>       d4bottom(
+infoFile ) ; /* reset the eof flag*/</p>
+
+<p class=SourceCode>   }</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   d4close( infoFile )
+;</p>
+
+<p class=SourceCode>   code4initUndo(
+&amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

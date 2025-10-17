@@ -1,0 +1,303 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>f4assignField</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=809>
+<meta name=layout-width content=677>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="field4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>f4assignField</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>void f4assignField( FIELD4 *fieldTo, const&nbsp;FIELD4&nbsp;*fieldFrom 
+ )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>The contents of <i>fieldTo</i> are replaced by the contents 
+ of <i>fieldFrom</i>. </p>
+
+<p class=Body
+	style="text-indent: 0px;">Data will only be copied if <i>fieldTo</i> 
+ and <i>fieldFrom</i> are the same field types with the following exceptions:</p>
+
+<div style="text-align: center;"
+	align=center>
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="border-collapse: collapse; border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 100.65pt;
+			border: solid #000000 .75pt;
+			border-bottom: none;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=100.7pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Type of fieldTo </td>
+<td style="x-cell-content-align: top;
+			width: 259.35pt;
+			border-top: solid #000000 .75pt;
+			border-left: none;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=259.4pt>
+<p class=TableHeading
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">&nbsp;Copying Method </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 100.65pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=100.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Character </td>
+<td style="x-cell-content-align: top;
+			width: 259.35pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=259.4pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">The characters in <i>fieldFrom</i> are 
+ copied into <i>fieldTo</i> regardless of the type of <i>fieldFrom</i>. 
+ If <i>fieldTo</i> has a longer width, it is padded with blanks. </td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 100.65pt;
+			border-top: none;
+			border-left: solid #000000 .75pt;
+			border-bottom: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=100.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Numeric or Floating Point </td>
+<td style="x-cell-content-align: top;
+			width: 259.35pt;
+			border: none;
+			border-right: solid #000000 .75pt;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=259.4pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">If<i> fieldFrom</i> is of type Numeric 
+ or Floating Point and<i> fieldFrom</i> has the same number of decimals 
+ and the same width, then the value in <i>fieldFrom</i> is efficiently 
+ copied into <i>fieldTo</i>. Otherwise, regardless of the type of <i>fieldFrom</i>, 
+ the data in <i>fieldFrom</i> is converted into a <span class=InlineLanguageType><span 
+ style="font-size: 10.0pt;">double</span></span> using <b>f4double</b> 
+ and then assigned using <b>f4assignDouble</b>.</td></tr>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 100.65pt;
+			border: solid #000000 .75pt;
+			border-top: none;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=100.7pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Memo, Binary or General </td>
+<td style="x-cell-content-align: top;
+			width: 259.35pt;
+			border-top: none;
+			border-left: none;
+			border-bottom: solid #000000 .75pt;
+			border-right: solid #000000 .75pt;
+			padding: 0in 0in 0in 0in;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=259.4pt>
+<p class=TableText
+	style="margin-top: 3.0pt;
+			margin-right: .05in;
+			margin-bottom: 3.0pt;
+			margin-left: .05in;">Cannot be done. An error is generated.</td></tr>
+</table>
+</div>
+
+<p class=Body
+	style="margin-top: 6.0pt;"><span class=InlineFunctionDescTitle><span 
+ style="font-size: 9.0pt; font-family: Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ Parameters:&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">fieldTo&nbsp;&nbsp;&nbsp; 
+ </span></span>A pointer to a field’s <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">FIELD4 </span></span>structure 
+ whose contents will be replaced.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">fieldFrom</span></span>&nbsp;&nbsp; 
+ A pointer to a field’s <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">FIELD4 
+ </span></span>structure whose contents will be copied.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </p>
+
+<p class=SourceCode>/*ex95.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *info, *data ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FIELD4 *infoName, *dataLname ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.accessMode = OPEN4DENY_RW ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; info = d4open( &amp;cb, &quot;INFO&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;DATA&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; error4exitTest( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; infoName = d4field( info, &quot;NAME&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; dataLname = d4field( data, &quot;LNAME&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; for( d4top( info ), d4top( data ) ; !d4eof( 
+ info ) &amp;&amp; !d4eof( data ) ;</p>
+
+<p class=SourceCode
+	style="text-align: right;"
+	align=right>d4skip(&nbsp;info,&nbsp;1&nbsp;), d4skip( data, 1 ) )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f4assignField( 
+ infoName, dataLname ) ; /* copy 'LNAME' into 'NAME' */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

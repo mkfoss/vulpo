@@ -1,0 +1,227 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>d4pack</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\data4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=955>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="data4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>d4pack</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int d4pack( DATA4 *data )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4pack</span></span> 
+ physically removes all records marked for deletion from the data file. 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4pack</span></span> 
+ automatically reindexes all open index files attached to the data file. 
+ </p>
+
+<p class=Body
+	style="text-indent: 0px;">After <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4pack</span></span> completes, 
+ the contents of the record buffer and the record number are undefined. 
+ Explicitly call a positioning function such as <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4top</span></span> to 
+ position to a desired record. </p>
+
+<p class=Body
+	style="text-indent: 0px;">Appropriate backup measures should be taken 
+ before calling this function.</p>
+
+<p class=Body
+	style="text-indent: 0px;"><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">d4pack</span></span> 
+ does not alter the memo file. Consequently, memo entries referenced by 
+ removed records will be wasted disk space. Explicitly call <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4memoCompress</span></span> 
+ to compress the memo file. </p>
+
+<p class=Body
+	style="text-indent: 0px;">Consider opening the data file exclusively 
+ (set <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.accessMode</span></span> 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">OPEN4DENY_RW 
+ </span></span>before opening the file) before packing, since <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">d4pack</span></span> can 
+ seriously interfere with the data retrieved by other users. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 85.5pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=85.5pt>
+<p class=Body
+	style="margin: 0in;
+			margin-bottom: .0001pt;
+			text-indent: 0in;"><img src="../Images/Warning.gif" v:shapes="_x0000_i1058" x-maintain-ratio="TRUE" style="width: 91px;
+											height: 57px;
+											float: none;
+											border-style: none;" width="91" height="57" border="0"></td>
+<td style="width: 310.5pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	width=310.5pt>
+<p class=NoteText>This function may not be used to remove records from 
+ a data file while a transaction is in progress. Attempts to do so will 
+ fail and generate an <span class=InlineFunctionNames><span style="font-size: 10.0pt;">e4transViolation 
+ </span></span>error.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4locked&nbsp;&nbsp;&nbsp; 
+ </span></span>A required lock did not succeed. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4unique&nbsp;&nbsp;&nbsp; 
+ </span></span>An index file could not be rebuilt because doing so resulted 
+ in a non-unique key in an unique-key tag. In this case <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">t4unique</span></span> 
+ returns <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">r4unique 
+ </span></span>for the tag so an error is not generated. The records marked 
+ for deletion are removed, but the index file(s) are out of date. Refer 
+ to <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errDefaultUnique</span></span>. 
+ </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Error </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Locking:&nbsp;&nbsp;&nbsp; 
+ </span></span>The data file and its index files must be locked. See <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">code4unlockAuto</span></span> 
+ for details on how any necessary locking and unlocking is accomplished.</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="d4delete.htm">d4delete</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="d4recall.htm">d4recall</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="d4memoCompress.htm">d4memoCompress</a></span><span 
+ class=InlineFunctionNames
+	style="font-size: 12.0pt; font-weight: normal;">,</span><span class=InlineFunctionNames
+	style="font-size: 10.0pt; font-family: Arial;"> <a href="../Code4/CodeBase_Function_Reference/code4unlockAuto.htm">code4unlockAuto</a></span></p>
+
+<p class=SourceCode>/*ex55.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ; /* Borland compilers 
+ only */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; cb.accessMode = OPEN4DENY_RW ; /* open 
+ file exclusively*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;cb, &quot;INFO&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; error4exitTest( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4optStart( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; for( d4top( data ); ! d4eof( data ); d4skip( 
+ data, 2 ) )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d4delete( data 
+ ) ; /* Mark every other record for deletion*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* Remove the deleted records from the 
+ physical disk */</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4pack( data ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4close( data ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

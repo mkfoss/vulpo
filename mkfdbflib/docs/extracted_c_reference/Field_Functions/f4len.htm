@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+ <title>f4len</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="field4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>f4len</h2>
+
+<p class=Body>                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>unsigned f4len( const FIELD4
+*field )</p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>The length of the field, in
+bytes, is returned. This is the length specified for the field when the data
+file was originally created. </p>
+
+<p class="SourceCode">/*ex97.c*/</p>
+
+<p class="SourceCode">#include &quot;d4all.h&quot;</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">char *createBufCopy( FIELD4
+*f ) </p>
+
+<p class="SourceCode">{</p>
+
+<p class="SourceCode">   char *buf ;</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">   buf = (char *) malloc(f4len( f ) +1 ) ;</p>
+
+<p class="SourceCode">   memcpy( buf, f4ptr( f ), f4len( f ) );</p>
+
+<p class="SourceCode">   buf[f4len( f )] = 0;</p>
+
+<p class="SourceCode">   return buf ;</p>
+
+<p class=SourceCode>}</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class="SourceCode">void main()</p>
+
+<p class="SourceCode">{</p>
+
+<p class="SourceCode">   CODE4 cb ;</p>
+
+<p class="SourceCode">   DATA4 *data; </p>
+
+<p class="SourceCode">   FIELD4 *field ;</p>
+
+<p class="SourceCode">   char *buffer ;</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">   code4init( &amp;cb ) ;</p>
+
+<p class="SourceCode">   data = d4open( &amp;cb, &quot;INFO&quot; ) ;</p>
+
+<p class="SourceCode">   field = d4field( data, &quot;NAME&quot; ) ;</p>
+
+<p class="SourceCode">   d4top( data ) ;</p>
+
+<p class="SourceCode">   buffer = createBufCopy( field ) ;</p>
+
+<p class="SourceCode">   printf( &quot;the copy of the buffer is %s\n&quot;, buffer ) ;</p>
+
+<p class="SourceCode">   code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

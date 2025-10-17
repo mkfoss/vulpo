@@ -1,0 +1,184 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>file4refresh</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\file4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=861>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="file4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<div style="border: none;
+			border-bottom: solid #000000 2.25pt;
+			padding: 0in 0in 1.0pt 0in;">
+<h2>file4refresh</h2>
+</div>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int file4refresh( FILE4 *file)</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This function, which is only relevant to memory optimized 
+ files, discards all 'read' information buffered in memory for the file. 
+ This ensures that the next file read returns information read directly 
+ from disk. In addition, <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">file4flush</span></span> 
+ is called to ensure information that is 'write' buffered is written to 
+ disk. </p>
+
+<p class=Body
+	style="text-indent: 0px;">When <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">S4OFF_OPTIMIZE</span></span>&nbsp;is 
+ defined, all file functions read directly from disk. As a result, <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">file4refresh</span></span> 
+ always returns 'Success' when <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">S4OFF_OPTIMIZE</span></span> 
+ is defined. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Error. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../Data_File_Functions/d4refresh.htm">d4refresh</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="file4flush.htm">file4flush</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="file4optimize.htm">file4optimize</a></span></p>
+
+<p class=SourceCode>/*ex112.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FILE4 file ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; char before[6], after[6] ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4open( &amp;file, &amp;cb, &quot;TEST.FIL&quot;, 
+ 0 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; memset( before, 0, sizeof( before ) ) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; memset( after, 0, sizeof( after ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; memset( before, ' ', sizeof( before )-1 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; memset( after, ' ', sizeof( after )-1 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4optimize( &amp;file, 1, OPT4OTHER) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; /* read the first 5 bytes and buffer it.*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4read( &amp;file, 0, before, sizeof( 
+ before )-1 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4read( &amp;file, 0, after, sizeof( 
+ after )-1 ) ; /* read from memory, not disk*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if( strcmp( before, after ) )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;This 
+ will always be true, since the read was from memory\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;Press ENTER to re-read information&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; getchar( ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4refresh( &amp;file ) ; /* next read 
+ will be from disk*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4read( &amp;file, 0, after, sizeof( 
+ after )-1 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if( strcmp( before, after ) )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;No 
+ changes detected\n&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; else</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf( &quot;Good 
+ thing it was read from disk... \nsomeone has changed it\n&quot;) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; file4close( &amp;file ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

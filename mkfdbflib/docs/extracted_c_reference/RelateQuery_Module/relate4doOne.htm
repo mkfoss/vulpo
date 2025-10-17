@@ -1,0 +1,316 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>relate4doOne</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=1319>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>relate4doOne</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int relate4doOne( RELATE4 *relate )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span><span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">relate4doOne</span></span> 
+ looks up the relation data file using the specified relation. That is, 
+ the relation's master expression is evaluated and a seek is performed 
+ into the slave data file using the relation's slave tag. The slaves (if 
+ any) of the relation's slave data file are not repositioned. </p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin-left: 0in; text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1031" x-maintain-ratio="TRUE" style="width: 47px;
+															height: 40px;
+															float: none;
+															border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span 
+ style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText>The function<span class=InlineFunctionNames><span style="font-size: 10.0pt;"> 
+ relate4doOne</span></span> looks up the relation data file and <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4doAll </span></span>looks up the slaves 
+ of the relation data file ( and the slaves of those slaves). </p>
+<p class=NoteText
+	style="margin-top: 6.0pt;">For example, if a relation set has exactly 
+ one slave, the slave could be looked up using either <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4doAll</span></span> or <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4doOne</span></span>. </p>
+<p class=NoteText
+	style="margin-top: 6.0pt;">However, a different <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">RELATE4</span></span> pointer must be used 
+ depending on which function is called. If <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4doOne</span></span> is called, the <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">RELATE4</span></span> 
+ pointer parameter must be the one returned from <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4createSlave</span></span>. If <span 
+ class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4doAll</span></span> 
+ is called, the <span class=InlineFunctionNames><span style="font-size: 10.0pt;">RELATE4</span></span> 
+ pointer parameter must be the one returned from <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4init</span></span>.</td></tr>
+</table>
+
+<p class=Body
+	style="margin-bottom: .0001pt;">&nbsp;</p>
+
+<!--(Table)=========================================================-->
+<table x-use-null-cells
+		style="margin-left: 5.4pt;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0>
+
+<tr>
+<td style="x-cell-content-align: top;
+			width: 89.7pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;"
+	valign=top
+	width=89.7pt>
+<p class=Body
+	style="margin: 0in;
+			margin-bottom: .0001pt;
+			text-indent: 0in;"><img src="../Images/Note.gif" v:shapes="_x0000_i1032" x-maintain-ratio="TRUE" style="width: 47px;
+											height: 40px;
+											float: none;
+											border-style: none;" width="47" height="40" border="0">&nbsp;<b><sup><span style="font-size: 16.0pt; font-family: Arial;">Note</span></sup></b></td>
+<td style="x-cell-content-align: top;
+			width: 306.3pt;
+			border: solid #000000 .75pt;
+			padding: 0in 5.4pt 0in 5.4pt;
+			padding-left: 0px;
+			padding-top: 0px;
+			padding-right: 0px;
+			padding-bottom: 0px;
+			background-color: #e5e5e5;"
+	bgcolor=#E5E5E5
+	valign=top
+	width=306.3pt>
+<p class=NoteText><span class=InlineFunctionNames><span style="font-size: 10.0pt;">relate4doOne 
+ </span></span>ignores any query expression set by <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt;">relate4querySet</span></span>. </td></tr>
+</table>
+
+<p class=Body
+	style="margin-top: 6.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Returns:</span></span></p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4success&nbsp;&nbsp;&nbsp; 
+ </span></span>Success. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">r4terminate&nbsp;&nbsp;&nbsp; 
+ </span></span>A lookup into the slave data file failed. This was returned 
+ because the error action was set to <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">relate4terminate</span></span> 
+ and <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">CODE4.errRelate</span></span> 
+ is set to a false (zero) value. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineCommentText><span style="font-size: 9.0pt; font-family: Arial;">&lt; 
+ 0&nbsp;&nbsp;&nbsp; </span></span>Error. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4init.htm">relate4init</a></span>, 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="relate4doAll.htm">relate4doAll</a></span></p>
+
+<p class=SourceCode>/*ex124.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>#ifdef __TURBOC__</p>
+
+<p class=SourceCode>&nbsp;&nbsp; extern unsigned _stklen = 10000;</p>
+
+<p class=SourceCode>#endif</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>int seekMaster( DATA4 *master, RELATE4 *r, TAG4 *masterTag, 
+ char *seekKey )</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; int rc ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; d4tagSelect( master, masterTag ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; rc = d4seek( master, seekKey ) ; /* seek 
+ for the requested value*/</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; if( rc == r4success )</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; relate4doOne( 
+ r ) ; /* position the slave data file to the appropriate</p>
+
+<p class=SourceCode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ record according to its master*/</p>
+
+<p class=SourceCode>&nbsp;&nbsp; return rc ;</p>
+
+<p class=SourceCode>}</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void )</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 cb ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *enroll, *master ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; TAG4 *enrollTag, *codeTag ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; RELATE4 *MasterRelation, *relation1 ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; FIELD4 *classCode, *classTitle, *enrollStudentId 
+ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; enroll = d4open( &amp;cb, &quot;ENROLL&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; master = d4open( &amp;cb, &quot;CLASSES&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; enrollTag = d4tag( enroll, &quot;ENR_CODE&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; codeTag = d4tag( master, &quot;CODE_TAG&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; MasterRelation = relate4init( master ) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relation1 = relate4createSlave( MasterRelation, 
+ enroll, &quot;CODE&quot;, enrollTag ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relate4type( relation1, relate4scan ) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; classCode = d4field( master, &quot;CODE&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; classTitle = d4field( master, &quot;TITLE&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; enrollStudentId = d4field( enroll, &quot;STU_ID_TAG&quot;) 
+ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; error4exitTest( &amp;cb ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; seekMaster( master, relation1, codeTag, 
+ &quot;MATH521&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;%s &quot;, f4str( enrollStudentId 
+ ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;%s &quot;, f4str( classCode 
+ ) ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;%s\n&quot;, f4str(classTitle 
+ ) ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; relate4free( MasterRelation, 1 ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

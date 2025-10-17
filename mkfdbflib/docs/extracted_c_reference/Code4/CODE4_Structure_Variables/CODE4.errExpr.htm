@@ -1,0 +1,131 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>CODE4.errExpr</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\code4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=492>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="../code4.css">
+
+
+
+<!--(Style Sheet)===================================================-->
+
+<style>
+<!--
+
+A:visited {
+	color: #800080;
+}
+
+A:link {
+	color: #0000ff;
+}
+
+-->
+</style>
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<p class=StructMemberHeading>CODE4.errExpr</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>int CODE4.errExpr = 1</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>This true/false flag specifies whether <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">expr4parse </span></span>should 
+ generate an error message if an invalid expression is specified. This 
+ is useful to turn off if a user is providing the expression to be evaluated. 
+ This flag is initialized to true (non-zero).</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="../../Expression_Evaluation_Functions/expr4parse.htm">expr4parse</a></span></p>
+
+<p class=SourceCode>/*ex5.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot;</p>
+
+<p class=SourceCode>extern unsigned _stklen = 15000; /* for all Borland 
+ compilers */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( void )</p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>&nbsp;&nbsp; CODE4 code ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; DATA4 *data;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; EXPR4 *expression ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; char badExpr[ ] = &quot;NAME = 5&quot; 
+ ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4init( &amp;code ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; data = d4open( &amp;code, &quot;INFO&quot; 
+ );</p>
+
+<p class=SourceCode>&nbsp;&nbsp; expression = expr4parse( data, badExpr 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;\nAn error message just 
+ displayed \n&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code.errorCode = code.errExpr = 0 ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; expression = expr4parse( data, badExpr 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; printf( &quot;No error message displayed.&quot; 
+ ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; expr4free( expression ) ;</p>
+
+<p class=SourceCode>&nbsp;&nbsp; code4initUndo( &amp;code ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</body>
+
+</html>

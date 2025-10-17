@@ -1,0 +1,74 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<!--(==============================================================)-->
+<!--(Document created with RoboEditor. )============================-->
+<!--(==============================================================)-->
+
+<head>
+
+<title>mem4release</title>
+
+<!--(Meta)==========================================================-->
+
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content=ImportDoc>
+<meta name=OriginalFile content="C:\Documentation\C Reference Guide Word Docs\mem4.doc">
+<meta name=generator content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<meta name=generator-major-version content=0.1>
+<meta name=generator-minor-version content=1>
+<meta name=filetype content=kadov>
+<meta name=filetype-version content=1>
+<meta name=page-count content=1>
+<meta name=layout-height content=428>
+<meta name=layout-width content=741>
+
+
+<!--(Links)=========================================================-->
+
+<link rel="stylesheet" href="mem4.css">
+
+
+
+</head>
+
+<!--(Body)==========================================================-->
+
+
+<body lang=EN-US>
+
+<h2>mem4release</h2>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Usage:&nbsp;&nbsp;&nbsp; 
+ </span></span>void mem4release( MEM4 *memoryType )&nbsp;</p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span 
+ class=InlineFunctionDescTitle><span style="font-size: 9.0pt; font-family: Arial;">Description:&nbsp;&nbsp;&nbsp; 
+ </span></span>CodeBase keeps a count of the number of times an internal 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> 
+ entry has been used. <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">mem4release</span></span> 
+ reduces this count by one, each time it's called, and when the count becomes 
+ zero, the internal <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> 
+ entry is freed. When the <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> 
+ entry is freed, the memory allocated from the operating system for the 
+ <span class=InlineFunctionNames><span style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> 
+ is returned to the operating system. </p>
+
+<p class=Body
+	style="text-indent: 0px;">When a <span class=InlineFunctionNames><span 
+ style="font-size: 10.0pt; font-family: Arial;">MEM4</span></span> is freed, 
+ all of the memory allocated using that memory type is also freed. Consequently, 
+ it is the programmer's responsibility to ensure that the freed memory 
+ is not subsequently used. </p>
+
+<p class=Body>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ <span class=InlineFunctionDescTitle
+		style="font-size: 9.0pt; font-family: Arial;">See Also:</span>&nbsp;&nbsp; 
+ <span class=InlineFunctionNames
+		style="font-size: 10.0pt; font-family: Arial;"><a href="mem4create.htm">mem4create</a></span></p>
+
+</body>
+
+</html>

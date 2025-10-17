@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\field4.doc">
+ <title>f4data</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="field4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>f4data</h2>
+
+<p class=Body>                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>DATA4 *f4data( const FIELD4
+*field )</p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span>This function returns a
+pointer to <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">DATA4 </span></span>structure
+corresponding to the field.</p>
+
+<p class="SourceCode">/*ex96.c*/</p>
+
+<p class="SourceCode">#include &quot;d4all.h&quot;
+</p>
+
+<p class="SourceCode">&nbsp;</p>
+
+<p class="SourceCode">void displayFieldStats(
+FIELD4 *f ) </p>
+
+<p class="SourceCode">{</p>
+
+<p class=SourceCode>   DATA4 *db ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   db = f4data( f ) ;</p>
+
+<p class=SourceCode>   printf(
+&quot;-----------------------------------------------------\n&quot;) ;</p>
+
+<p class=SourceCode>   printf(
+&quot;DataFile: %s Field: %s\n&quot;, d4alias( db ), f4name( f ) ) ;</p>
+
+<p class=SourceCode>   printf( &quot;Length:
+%d     Type: %c\n&quot;, f4len( f ),
+f4type( f ) ) ;</p>
+
+<p class=SourceCode>   printf(
+&quot;Decimals: %d\n&quot;, f4decimals( f ) ) ;</p>
+
+<p class=SourceCode>   printf(
+&quot;-----------------------------------------------------\n&quot; ) ;</p>
+
+<p class="SourceCode">   return ;</p>
+
+<p class=SourceCode>}</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class="SourceCode">void main()</p>
+
+<p class="SourceCode">{</p>
+
+<p class="SourceCode">   CODE4 cb ;</p>
+
+<p class="SourceCode">   DATA4 *data ;</p>
+
+<p class=SourceCode>   FIELD4 *field ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   code4init( &amp;cb
+) ;</p>
+
+<p class=SourceCode>   data = d4open(
+&amp;cb, &quot;INFO&quot; ) ;</p>
+
+<p class=SourceCode>   field = d4field(
+data, &quot;NAME&quot; ) ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class="SourceCode">   displayFieldStats( field );</p>
+
+<p class="SourceCode">   code4initUndo( &amp;cb ) ;</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\util4.doc">
+ <title>u4free</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="util4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>u4free</h2>
+
+<p class=Body>              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:        </span></span>void u4free( void *ptr ) </p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">       <span class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>This
+function frees memory previously allocated by <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4alloc</span></span>,
+<span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4allocErr</span></span>, <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4allocFree</span></span> or <span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4allocAgain</span></span>. <i>ptr</i> should point to memory allocated
+with one of these functions. When the <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">E4MISC</span></span><span
+class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; "> </span></span>switch is defined,<span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">
+u4free</span></span> ensures that the memory had previously been allocated and
+not previously deallocated. In addition, <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">u4free</span></span>
+checks that there was no overwriting just before or just after the allocated
+memory. </p>
+
+</div>
+</body>
+</html>

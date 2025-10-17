@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\date4.doc">
+ <title>date4format</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="date4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>date4format</h2>
+
+<p class=Body>                 <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:    </span></span>void date4format( const char
+*date, char *result, char *picture )</p>
+
+<p class=Body>          <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:    </span></span><i>date</i> is formatted according to the date picture parameter <i>picture</i> and copied into parameter <i>result</i>. <span class=InlineFunctionNames><span style="font-size:10.0pt; font-family:Arial; ">date4format</span></span>
+is guaranteed to be null terminated. The special formatting characters are 'C'
+- Century, 'Y' - Year, 'M' - Month, and 'D' - Day. If there are more than two
+'M' characters, a character representation of the month is returned. </p>
+
+<p class=Body>         <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Parameters:</span></span></p>
+
+<p class=Body>                     <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">date</span></span>   A string in standard date format “CCYYMMDD”.</p>
+
+<p class=Body>                   <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">result    </span></span>This is a character array
+pointing to at least <span class=InlineLanguageType>strlen(</span> <i>picture</i><span
+class=InlineLanguageType> )</span>
+characters. The date, formatted according to <i>picture,</i> is stored in <i>result</i>.
+The result will be null terminated.</p>
+
+<p class=Body>                  <span
+class=InlineCommentText><span style="font-size:9.0pt; font-family:Arial; ">picture    </span></span>This is a null-terminated
+character string that contains a date picture. </p>
+
+<p class=SourceCode>/*ex80.c*/</p>
+
+<p class=SourceCode>#include &quot;d4all.h&quot; </p>
+
+<p class=SourceCode>extern unsigned _stklen = 10000 ; /* for all Borland
+compilers */</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>void main( ) </p>
+
+<p class=SourceCode>{</p>
+
+<p class=SourceCode>   char dt[8] =
+&quot;19901002&quot; ;</p>
+
+<p class=SourceCode>   char result[20] ;</p>
+
+<p class=SourceCode>&nbsp;</p>
+
+<p class=SourceCode>   date4format( dt,
+result, &quot;YY.MM.DD&quot; ) ; /* result will contain &quot;90.10.02&quot; */</p>
+
+<p class=SourceCode>   printf(&quot;%s\n&quot;,
+result ) ;</p>
+
+<p class=SourceCode>   date4format( dt,
+result, &quot;CCYY.MM.DD&quot; ) ; /* result will contain
+&quot;1990.10.02&quot; */</p>
+
+<p class=SourceCode>   printf(&quot;%s\n&quot;,
+result ) ;</p>
+
+<p class=SourceCode>   date4format( dt,
+result, &quot;MM/DD/YY&quot; ) ; /* result will contain &quot;10/02/90&quot; */</p>
+
+<p class=SourceCode>   printf(&quot;%s\n&quot;,
+result ) ;</p>
+
+<p class=SourceCode>   date4format( dt,
+result, &quot;MMM DD/CCYY&quot; ) ;</p>
+
+<p class=SourceCode>   printf(&quot;%s\n&quot;,
+result) ; /* outputs &quot;Oct 02/1990&quot;*/</p>
+
+<p class=SourceCode>}</p>
+
+</div>
+</body>
+</html>

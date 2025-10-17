@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name="Generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<meta name="Originator" content="ImportDoc">
+ <meta name="OriginalFile" content="C:\Documentation\C Reference Guide Word Docs\util4.doc">
+ <title>u4alloc</title>
+
+ <!--(Links)===================================================-->
+
+ <link rel="stylesheet" href="util4.css">
+
+</head>
+
+<body lang="EN-US">
+
+<h2>u4alloc</h2>
+
+<p class="Body" style="margin-left:2.5in; text-indent:-2.5in; ">              <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Usage:                </span></span>void *u4alloc(
+long len ) </p>
+
+<p class=Body>       <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Description:        </span></span>This function allocates
+memory from the operating system.</p>
+
+<p class=Body>      <span
+class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Parameters:        </span></span>Parameter <i>len</i> is the number of bytes to allocate.
+Even though <i>len</i> is defined as a long
+integer, it does not necessarily mean that more than an unsigned integer worth
+of memory can be allocated under the operating system. </p>
+
+<p class="Body" style="margin-bottom:.0001pt; ">            <span class=InlineFunctionDescTitle><span style="font-size:9.0pt; font-family:Arial; ">Returns:        </span></span>A
+pointer to the allocated memory is returned. The memory is initialized to null.
+A null pointer is returned to indicate that no memory was available. </p>
+
+</div>
+</body>
+</html>
