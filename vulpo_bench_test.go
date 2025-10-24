@@ -41,11 +41,11 @@ func BenchmarkVulpo_HeaderAccess(b *testing.B) {
 		header := v.Header()
 
 		// Access all header fields to ensure they're computed
-		_ = header.RecordCount()
-		_ = header.LastUpdated()
-		_ = header.HasIndex()
-		_ = header.HasFpt()
-		_ = header.Codepage()
+		_ = header.Recordcount
+		_ = header.LastUpdated
+		_ = header.HasIndex
+		_ = header.HasFpt
+		_ = header.DbfCodepage
 	}
 }
 
@@ -68,7 +68,7 @@ func BenchmarkVulpo_Active(b *testing.B) {
 	}
 }
 
-// BenchmarkCodepage_Methods measures the performance of codepage operations
+// BenchmarkCodepage_Methods measures the performance of DbfCodepage operations
 func BenchmarkCodepage_Methods(b *testing.B) {
 	cp := Codepage(0x03)
 

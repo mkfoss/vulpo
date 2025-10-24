@@ -4,29 +4,29 @@ import "C"
 import "time"
 
 type Header struct {
-	recordcount uint
-	lastUpdated time.Time
-	hasIndex    bool
-	hasFpt      bool
-	codepage    Codepage
+	Recordcount uint
+	LastUpdated time.Time
+	HasIndex    bool
+	HasFpt      bool
+	DbfCodepage Codepage
 }
 
-func (h *Header) RecordCount() uint {
-	return h.recordcount
-}
-
-func (h *Header) LastUpdated() time.Time {
-	return h.lastUpdated
-}
-
-func (h *Header) HasIndex() bool {
-	return h.hasIndex
-}
-
-func (h *Header) HasFpt() bool {
-	return h.hasFpt
-}
-
-func (h *Header) Codepage() Codepage {
-	return h.codepage
-}
+//func (h *Header) RecordCount() uint {
+//	return h.Recordcount
+//}
+//
+//func (h *Header) LastUpdated() time.Time {
+//	return h.LastUpdated
+//}
+//
+//func (h *Header) HasIndex() bool {
+//	return h.HasIndex
+//}
+//
+//func (h *Header) HasFpt() bool {
+//	return h.HasFpt
+//}
+//
+//func (h *Header) DbfCodepage() DbfCodepage {
+//	return h.DbfCodepage
+//}

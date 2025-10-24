@@ -247,7 +247,7 @@ func (v *Vulpo) reset() error {
 // Header returns the database file header information.
 //
 // Returns:
-//   - Header: Contains record count, last update date, codepage, index flags, etc.
+//   - Header: Contains record count, last update date, DbfCodepage, index flags, etc.
 //
 // Returns a zero-value Header if no database is open. The header provides
 // metadata about the database structure and content.
@@ -412,7 +412,7 @@ func (v *Vulpo) readHeader() error {
 	header := &Header{}
 
 	// Record count from file header (little-endian)
-	header.recordcount = uint(headerRead.Recordcount)
+	header.Recordcount = uint(headerRead.Recordcount)
 
 	// Date from file header
 	year := int(headerRead.LastupdateYear)
@@ -425,21 +425,21 @@ func (v *Vulpo) readHeader() error {
 	day := int(headerRead.LastupdateDay)
 
 	if month >= 1 && month <= 12 && day >= 1 && day <= 31 {
-		header.lastUpdated = time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
+		header.LastUpdated = time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
 	} else {
 		// Invalid date, use zero time
-		header.lastUpdated = time.Time{}
+		header.LastUpdated = time.Time{}
 	}
 
-	// Read actual codepage from file header
-	header.codepage = Codepage(headerRead.CodePage)
+	// Read actual DbfCodepage from file header
+	header.DbfCodepage = Codepage(headerRead.CodePage)
 
 	// For FoxPro files, detect CDX index from table flags
 	// TableFlags bit 0 = CDX index exists
-	header.hasIndex = (headerRead.TableFlags & 0x01) != 0
+	header.HasIndex = (headerRead.TableFlags & 0x01) != 0
 
 	// FoxPro memo files use FPT extension, detected via table flags bit 1
-	header.hasFpt = (headerRead.TableFlags & 0x02) != 0
+	header.HasFpt = (headerRead.TableFlags & 0x02) != 0
 
 	// Validate against codebase values for consistency
 	if uint32(C.d4recCountDo(v.data)) != headerRead.Recordcount {

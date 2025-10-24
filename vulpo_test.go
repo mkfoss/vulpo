@@ -9,7 +9,6 @@ import (
 const (
 	testDBFPath         = "mkfdbflib/data/info.dbf"
 	WindowsANSICodepage = "Windows ANSI"
-	BlankDateString     = "        "
 )
 
 func TestVulpo_NewInstance(t *testing.T) {
@@ -226,23 +225,23 @@ func TestVulpo_Header_AfterOpen(t *testing.T) {
 	header := v.Header()
 
 	// Record count should be positive for test file
-	if header.RecordCount() == 0 {
+	if header.Recordcount == 0 {
 		t.Error("Expected positive record count for test DBF file")
 	}
 
 	// Last updated should not be zero time
-	if header.LastUpdated().IsZero() {
+	if header.LastUpdated.IsZero() {
 		t.Error("Expected non-zero last updated date")
 	}
 
 	// Last updated should be a reasonable date (after 1980, before future)
-	if header.LastUpdated().Year() < 1980 || header.LastUpdated().After(time.Now().AddDate(1, 0, 0)) {
-		t.Errorf("Expected reasonable last updated date, got %v", header.LastUpdated())
+	if header.LastUpdated.Year() < 1980 || header.LastUpdated.After(time.Now().AddDate(1, 0, 0)) {
+		t.Errorf("Expected reasonable last updated date, got %v", header.LastUpdated)
 	}
 
-	// Codepage should be readable (0 is valid - means no specific codepage set)
+	// DbfCodepage should be readable (0 is valid - means no specific DbfCodepage set)
 	// Just verify we can read it without error
-	_ = header.Codepage()
+	_ = header.DbfCodepage
 }
 
 func TestVulpo_Header_BeforeOpen(t *testing.T) {
@@ -252,24 +251,24 @@ func TestVulpo_Header_BeforeOpen(t *testing.T) {
 	header := v.Header()
 
 	// All fields should be zero values
-	if header.RecordCount() != 0 {
+	if header.Recordcount != 0 {
 		t.Error("Expected zero record count when no file is open")
 	}
 
-	if !header.LastUpdated().IsZero() {
+	if !header.LastUpdated.IsZero() {
 		t.Error("Expected zero time for last updated when no file is open")
 	}
 
-	if header.HasIndex() != false {
+	if header.HasIndex != false {
 		t.Error("Expected false for HasIndex when no file is open")
 	}
 
-	if header.HasFpt() != false {
+	if header.HasFpt != false {
 		t.Error("Expected false for HasFpt when no file is open")
 	}
 
-	if header.Codepage() != 0 {
-		t.Error("Expected zero codepage when no file is open")
+	if header.DbfCodepage != 0 {
+		t.Error("Expected zero DbfCodepage when no file is open")
 	}
 }
 
@@ -281,13 +280,13 @@ func TestCodepage_Name(t *testing.T) {
 		{0x01, "U.S. MS-DOS"},
 		{0x03, WindowsANSICodepage},
 		{0x02, "International MS-DOS"},
-		{0xFF, "Unknown / Unsupported Codepage"}, // Invalid codepage
+		{0xFF, "Unknown / Unsupported DbfCodepage"}, // Invalid DbfCodepage
 	}
 
 	for _, test := range tests {
 		result := test.codepage.Name()
 		if result != test.expected {
-			t.Errorf("Codepage %d: expected %s, got %s", test.codepage, test.expected, result)
+			t.Errorf("DbfCodepage %d: expected %s, got %s", test.codepage, test.expected, result)
 		}
 	}
 }
@@ -309,13 +308,13 @@ func TestCodepage_VfpCodepageID(t *testing.T) {
 	}{
 		{0x03, 0x03},
 		{0x01, 0x01},
-		{0xFF, 0x00}, // Invalid codepage should return 0
+		{0xFF, 0x00}, // Invalid DbfCodepage should return 0
 	}
 
 	for _, test := range tests {
 		result := test.codepage.VfpCodepageID()
 		if result != test.expected {
-			t.Errorf("Codepage %d VFP ID: expected %d, got %d", test.codepage, test.expected, result)
+			t.Errorf("DbfCodepage %d VFP ID: expected %d, got %d", test.codepage, test.expected, result)
 		}
 	}
 }
@@ -327,28 +326,28 @@ func TestCodepage_MsCodepageID(t *testing.T) {
 	}{
 		{0x03, 1252},
 		{0x01, 437},
-		{0xFF, 0x0000}, // Invalid codepage should return 0
+		{0xFF, 0x0000}, // Invalid DbfCodepage should return 0
 	}
 
 	for _, test := range tests {
 		result := test.codepage.MsCodepageID()
 		if result != test.expected {
-			t.Errorf("Codepage %d MS ID: expected %d, got %d", test.codepage, test.expected, result)
+			t.Errorf("DbfCodepage %d MS ID: expected %d, got %d", test.codepage, test.expected, result)
 		}
 	}
 }
 
 func TestCodepage_Supported(t *testing.T) {
-	// Only codepage 0x03 is marked as supported
+	// Only DbfCodepage 0x03 is marked as supported
 	supported := Codepage(0x03)
 	unsupported := Codepage(0x01)
 
 	if !supported.Supported() {
-		t.Error("Codepage 0x03 should be supported")
+		t.Error("DbfCodepage 0x03 should be supported")
 	}
 
 	if unsupported.Supported() {
-		t.Error("Codepage 0x01 should not be supported")
+		t.Error("DbfCodepage 0x01 should not be supported")
 	}
 }
 
@@ -366,26 +365,26 @@ func TestHeader_Getters(t *testing.T) {
 	header := v.Header()
 
 	// Test that getter methods return expected types and reasonable values
-	recordCount := header.RecordCount()
+	recordCount := header.Recordcount
 	if recordCount == 0 {
 		t.Error("Expected non-zero record count")
 	}
 
-	lastUpdated := header.LastUpdated()
+	lastUpdated := header.LastUpdated
 	if lastUpdated.IsZero() {
 		t.Error("Expected non-zero last updated time")
 	}
 
-	hasIndex := header.HasIndex()
-	// hasIndex is boolean, any value is valid
+	hasIndex := header.HasIndex
+	// HasIndex is boolean, any value is valid
 	_ = hasIndex
 
-	hasFpt := header.HasFpt()
-	// hasFpt is boolean, any value is valid
+	hasFpt := header.HasFpt
+	// HasFpt is boolean, any value is valid
 	_ = hasFpt
 
-	codepage := header.Codepage()
-	// Codepage 0 is valid (means no specific codepage), just verify we can read it
+	codepage := header.DbfCodepage
+	// DbfCodepage 0 is valid (means no specific DbfCodepage), just verify we can read it
 	_ = codepage
 }
 
@@ -402,16 +401,16 @@ func TestVulpo_CodepageReadFromFile(t *testing.T) {
 
 	header := v.Header()
 
-	// The test file should have codepage 0 (no specific codepage)
+	// The test file should have DbfCodepage 0 (no specific DbfCodepage)
 	// This verifies we're reading from file, not assuming a default value
-	if header.Codepage() != 0 {
-		t.Errorf("Expected codepage 0 from test file, got %d", header.Codepage())
+	if header.DbfCodepage != 0 {
+		t.Errorf("Expected DbfCodepage 0 from test file, got %d", header.DbfCodepage)
 	}
 
-	// Verify codepage name works for 0
-	expectedName := "Unknown / Unsupported Codepage"
-	if header.Codepage().Name() != expectedName {
-		t.Errorf("Expected codepage name '%s', got '%s'", expectedName, header.Codepage().Name())
+	// Verify DbfCodepage name works for 0
+	expectedName := "Unknown / Unsupported DbfCodepage"
+	if header.DbfCodepage.Name() != expectedName {
+		t.Errorf("Expected DbfCodepage name '%s', got '%s'", expectedName, header.DbfCodepage.Name())
 	}
 }
 
@@ -424,7 +423,7 @@ func TestVulpo_TestdataFiles_Comprehensive(t *testing.T) {
 		expectedFpt      bool
 		description      string
 	}{
-		{"testdata/empty.dbf", 3, 0, false, "Empty file with " + WindowsANSICodepage + " codepage"},
+		{"testdata/empty.dbf", 3, 0, false, "Empty file with " + WindowsANSICodepage + " DbfCodepage"},
 		{"testdata/fieldy.dbf", 3, 12, false, "Field testing file"},
 		{"testdata/basicmemo.dbf", 3, 3, true, "Basic memo file with FPT"},
 		{"testdata/idcharsdate.dbf", 3, 9, false, "ID/chars/date composite"},
@@ -453,33 +452,33 @@ func TestVulpo_TestdataFiles_Comprehensive(t *testing.T) {
 
 			header := v.Header()
 
-			// Verify codepage
-			if header.Codepage() != tc.expectedCodepage {
-				t.Errorf("%s: expected codepage %d, got %d", tc.description, tc.expectedCodepage, header.Codepage())
+			// Verify DbfCodepage
+			if header.DbfCodepage != tc.expectedCodepage {
+				t.Errorf("%s: expected DbfCodepage %d, got %d", tc.description, tc.expectedCodepage, header.DbfCodepage)
 			}
 
 			// Verify record count
-			if header.RecordCount() != tc.expectedRecords {
-				t.Errorf("%s: expected %d records, got %d", tc.description, tc.expectedRecords, header.RecordCount())
+			if header.Recordcount != tc.expectedRecords {
+				t.Errorf("%s: expected %d records, got %d", tc.description, tc.expectedRecords, header.Recordcount)
 			}
 
 			// Verify FPT memo file presence
-			if header.HasFpt() != tc.expectedFpt {
-				t.Errorf("%s: expected HasFpt=%v, got %v", tc.description, tc.expectedFpt, header.HasFpt())
+			if header.HasFpt != tc.expectedFpt {
+				t.Errorf("%s: expected HasFpt=%v, got %v", tc.description, tc.expectedFpt, header.HasFpt)
 			}
 
-			// Verify codepage name is correct for " + WindowsANSICodepage
+			// Verify DbfCodepage name is correct for " + WindowsANSICodepage
 			if tc.expectedCodepage == 3 {
 				expectedName := WindowsANSICodepage
-				if header.Codepage().Name() != expectedName {
-					t.Errorf("%s: expected codepage name '%s', got '%s'", tc.description, expectedName, header.Codepage().Name())
+				if header.DbfCodepage.Name() != expectedName {
+					t.Errorf("%s: expected DbfCodepage name '%s', got '%s'", tc.description, expectedName, header.DbfCodepage.Name())
 				}
 			}
 
 			// Verify last updated date is reasonable
-			if !header.LastUpdated().IsZero() {
-				if header.LastUpdated().Year() < 1980 || header.LastUpdated().After(time.Now().AddDate(1, 0, 0)) {
-					t.Errorf("%s: unreasonable last updated date: %v", tc.description, header.LastUpdated())
+			if !header.LastUpdated.IsZero() {
+				if header.LastUpdated.Year() < 1980 || header.LastUpdated.After(time.Now().AddDate(1, 0, 0)) {
+					t.Errorf("%s: unreasonable last updated date: %v", tc.description, header.LastUpdated)
 				}
 			}
 
@@ -492,26 +491,26 @@ func TestVulpo_TestdataFiles_Comprehensive(t *testing.T) {
 }
 
 func TestVulpo_CodepageMapping_WindowsAnsi(t *testing.T) {
-	// Test that codepage 3 (" + WindowsANSICodepage + ") maps correctly
+	// Test that DbfCodepage 3 (" + WindowsANSICodepage + ") maps correctly
 	cp := Codepage(3)
 
 	expectedName := WindowsANSICodepage
 	if cp.Name() != expectedName {
-		t.Errorf("Expected codepage 3 name '%s', got '%s'", expectedName, cp.Name())
+		t.Errorf("Expected DbfCodepage 3 name '%s', got '%s'", expectedName, cp.Name())
 	}
 
 	expectedVfpID := uint8(0x03)
 	if cp.VfpCodepageID() != expectedVfpID {
-		t.Errorf("Expected VFP codepage ID %d, got %d", expectedVfpID, cp.VfpCodepageID())
+		t.Errorf("Expected VFP DbfCodepage ID %d, got %d", expectedVfpID, cp.VfpCodepageID())
 	}
 
 	expectedMsID := uint16(1252)
 	if cp.MsCodepageID() != expectedMsID {
-		t.Errorf("Expected MS codepage ID %d, got %d", expectedMsID, cp.MsCodepageID())
+		t.Errorf("Expected MS DbfCodepage ID %d, got %d", expectedMsID, cp.MsCodepageID())
 	}
 
 	if !cp.Supported() {
-		t.Error("Expected codepage 3 (" + WindowsANSICodepage + ") to be supported")
+		t.Error("Expected DbfCodepage 3 (" + WindowsANSICodepage + ") to be supported")
 	}
 }
 
@@ -529,13 +528,13 @@ func TestVulpo_EmptyFile_EdgeCase(t *testing.T) {
 	header := v.Header()
 
 	// Empty file should have 0 records but still valid header
-	if header.RecordCount() != 0 {
-		t.Errorf("Expected 0 records in empty file, got %d", header.RecordCount())
+	if header.Recordcount != 0 {
+		t.Errorf("Expected 0 records in empty file, got %d", header.Recordcount)
 	}
 
-	// Should still have valid codepage
-	if header.Codepage() == 0 {
-		t.Error("Expected non-zero codepage even in empty file")
+	// Should still have valid DbfCodepage
+	if header.DbfCodepage == 0 {
+		t.Error("Expected non-zero DbfCodepage even in empty file")
 	}
 
 	// Should still be active
@@ -558,18 +557,18 @@ func TestVulpo_MemoFile_Detection(t *testing.T) {
 	header := v.Header()
 
 	// Should detect FPT memo file
-	if !header.HasFpt() {
+	if !header.HasFpt {
 		t.Error("Expected HasFpt=true for basicmemo.dbf")
 	}
 
 	// Should have records
-	if header.RecordCount() == 0 {
+	if header.Recordcount == 0 {
 		t.Error("Expected records in memo file")
 	}
 
-	// Should have proper codepage
-	if header.Codepage() != 3 {
-		t.Errorf("Expected codepage 3, got %d", header.Codepage())
+	// Should have proper DbfCodepage
+	if header.DbfCodepage != 3 {
+		t.Errorf("Expected DbfCodepage 3, got %d", header.DbfCodepage)
 	}
 }
 
@@ -596,18 +595,18 @@ func TestVulpo_FieldTypeFiles_Variety(t *testing.T) {
 
 			header := v.Header()
 
-			// All field type files should have " + WindowsANSICodepage + " codepage
-			if header.Codepage() != 3 {
-				t.Errorf("%s: expected codepage 3, got %d", file, header.Codepage())
+			// All field type files should have " + WindowsANSICodepage + " DbfCodepage
+			if header.DbfCodepage != 3 {
+				t.Errorf("%s: expected DbfCodepage 3, got %d", file, header.DbfCodepage)
 			}
 
 			// All should have some records
-			if header.RecordCount() == 0 {
-				t.Errorf("%s: expected records > 0, got %d", file, header.RecordCount())
+			if header.Recordcount == 0 {
+				t.Errorf("%s: expected records > 0, got %d", file, header.Recordcount)
 			}
 
 			// None of the field type test files should have memo
-			if header.HasFpt() {
+			if header.HasFpt {
 				t.Errorf("%s: expected no FPT file", file)
 			}
 
@@ -1144,7 +1143,7 @@ func TestVulpo_Navigation_Basic(t *testing.T) {
 
 	// Should not be at BOF after going to first record (if records exist)
 	header := v.Header()
-	recordCount := int(header.RecordCount())
+	recordCount := int(header.Recordcount)
 	if recordCount > 0 {
 		pos := v.Position()
 		if pos != 1 {
@@ -1185,7 +1184,7 @@ func TestVulpo_Navigation_Goto(t *testing.T) {
 	}()
 
 	header := v.Header()
-	recordCount := int(header.RecordCount())
+	recordCount := int(header.Recordcount)
 	if recordCount == 0 {
 		t.Skip("No records in test file")
 		return
@@ -1237,7 +1236,7 @@ func TestVulpo_Navigation_Skip(t *testing.T) {
 	}()
 
 	header := v.Header()
-	recordCount := int(header.RecordCount())
+	recordCount := int(header.Recordcount)
 	if recordCount < 3 {
 		t.Skip("Need at least 3 records for skip tests")
 		return
@@ -1282,7 +1281,7 @@ func TestVulpo_Navigation_NextPrevious(t *testing.T) {
 	}()
 
 	header := v.Header()
-	recordCount := int(header.RecordCount())
+	recordCount := int(header.Recordcount)
 	if recordCount < 2 {
 		t.Skip("Need at least 2 records for next/previous tests")
 		return
@@ -1329,7 +1328,7 @@ func TestVulpo_Navigation_BofEof(t *testing.T) {
 	}()
 
 	header := v.Header()
-	recordCount := int(header.RecordCount())
+	recordCount := int(header.Recordcount)
 	if recordCount == 0 {
 		t.Skip("No records in test file")
 		return
@@ -1386,7 +1385,7 @@ func TestVulpo_Navigation_Position(t *testing.T) {
 	}()
 
 	header := v.Header()
-	recordCount := int(header.RecordCount())
+	recordCount := int(header.Recordcount)
 	if recordCount == 0 {
 		t.Skip("No records in test file")
 		return
@@ -1490,7 +1489,7 @@ func TestMultipleOpenClose_Cycles(t *testing.T) {
 		}
 
 		header := v.Header()
-		if header.RecordCount() == 0 {
+		if header.Recordcount == 0 {
 			t.Errorf("Expected valid header on cycle %d", i)
 		}
 

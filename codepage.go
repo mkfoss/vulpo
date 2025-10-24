@@ -7,7 +7,7 @@ type Codepage uint8
 func (c Codepage) Name() string {
 	cp, ok := KnownCodepages[c]
 	if !ok {
-		return "Unknown / Unsupported Codepage"
+		return "Unknown / Unsupported DbfCodepage"
 	}
 	return cp.Name
 }
